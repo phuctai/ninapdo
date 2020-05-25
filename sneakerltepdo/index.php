@@ -1,0 +1,46 @@
+<?php
+    session_start();
+    @define('_LIB','./libraries/');
+    @define('_SOURCE','./sources/');
+    @define('_LAYOUT','layout/');
+
+    /* Config */
+    include_once _LIB."AntiSQLInjection.php";
+    include_once _LIB."config.php";
+    include_once _LIB."PDODb.php";
+    include_once _LIB."breadCrumbs.php";
+    $d = new PDODb($config['database']);
+    $bc = new breadCrumbs($d);
+
+    /* Setting */
+    $setting = $d->rawQueryOne("select * from table_setting");
+
+    /* Cấu hình ngôn ngữ */
+    if($_REQUEST['lang']!='') $_SESSION['lang'] = $_REQUEST['lang'];
+    else if(!isset($_SESSION['lang']) && !isset($_REQUEST['lang'])) $_SESSION['lang'] = $setting['lang_default'];
+    $lang = $_SESSION['lang'];
+
+    /* Cấu hình SEO Lang */
+    if($config['website']['seo']['lang']) $seolangkey = $lang;
+    else $seolangkey = "vi";
+
+    /* Mobile detect */
+    include_once _LIB."Mobile_Detect.php";
+    $detect = new Mobile_Detect;
+    $deviceType = ($detect->isMobile() ? ($detect->isTablet() ? 'tablet' : 'phone') : 'computer');
+    if($deviceType != 'computer') @define('_TEMPLATE','./templates-mobile/');
+    else @define('_TEMPLATE','./templates/');
+
+    /* Libraries */
+    include_once _LIB."constant.php";
+    require_once _LIB."lang$lang.php";
+    include_once _LIB."functions.php";
+    include_once _LIB."functionsCart.php";
+    include_once _LIB."file_requick.php";
+    include_once _SOURCE."counter.php";
+    include_once _SOURCE."allpage.php";
+
+    /* Include template */
+    if($deviceType!='computer') include "mobile.php";
+    else include "desktop.php";
+?>
