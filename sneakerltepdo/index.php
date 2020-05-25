@@ -1,4 +1,5 @@
 <?php
+    echo "AA";
     session_start();
     @define('_LIB','./libraries/');
     @define('_SOURCE','./sources/');
