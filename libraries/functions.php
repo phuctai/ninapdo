@@ -378,13 +378,6 @@ function checkLogin()
 	        $_SESSION[$login_name]['diachi'] = $row['diachi'];
 	        $_SESSION[$login_name]['email'] = $row['email'];
 	        $_SESSION[$login_name]['ten'] = $row['ten'];
-
-	        if($_COOKIE['iduser'])
-	        {
-		        $time_expiry = time()+3600*24;
-		        $iduser = $row['id'];
-		        setcookie('iduser',$iduser,$time_expiry,'/');
-	        }
 	    }
 	    else
 	    {
