@@ -441,6 +441,7 @@ function save_item_admin()
 		if($row['id']) transfer("Tên đăng nhập nay đã tồn tại. Xin chọn tên khác", "index.php?com=user&act=man_admin&p=".$curPage,0);
 		
 		if($data['password']=="") transfer("Chưa nhập mật khẩu", "index.php?com=user&act=add_admin&p=".$curPage,0);
+		$data['password'] = md5($config['website']['secret'].$data['password'].$config['website']['salt']);
 		
 		if($d->insert('user',$data)) transfer("Lưu dữ liệu thành công", "index.php?com=user&act=man_admin&p=".$curPage);
 		else transfer("Lưu dữ liệu bị lỗi", "index.php?com=user&act=man_admin",0);
