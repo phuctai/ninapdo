@@ -363,7 +363,7 @@ function checkLogin()
 {
 	global $d, $config_base;
 
-	$iduser = $_COOKIE['iduser'];
+	$iduser = ($_COOKIE['iduser']) ? $_COOKIE['iduser'] : $_SESSION[$login_name]['id'];
 
 	if($iduser)
 	{
@@ -378,9 +378,6 @@ function checkLogin()
 	        $_SESSION[$login_name]['diachi'] = $row['diachi'];
 	        $_SESSION[$login_name]['email'] = $row['email'];
 	        $_SESSION[$login_name]['ten'] = $row['ten'];
-	        $time_expiry = time()+3600*24;
-	        $iduser = $row['id'];
-	        setcookie('iduser',$iduser,$time_expiry,'/');
 	    }
 	    else
 	    {

@@ -1,8 +1,8 @@
 <?php
-	if(!defined('_SOURCE')) die("Error");
+    if(!defined('_SOURCE')) die("Error");
 
     /* Check login */
-    if($_COOKIE['iduser']) checkLogin();
+    checkLogin();
 
     /* Session watermark product */
     $dongdau = $d->rawQueryOne("SELECT photo, hienthi FROM table_photo WHERE type = ? AND act = ?",array('watermark','photo_static'));

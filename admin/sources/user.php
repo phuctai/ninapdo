@@ -572,6 +572,7 @@ function save_item()
 		if($row['id']) transfer("Tên đăng nhập nay đã tồn tại. Xin chọn tên khác", "index.php?com=user&act=edit&id=".$id."&p=".$curPage,0);
 		
 		if($data['password'] == "") transfer("Chưa nhập mật khẩu", "index.php?com=user&act=add&p=".$curPage,0);
+		$data['password'] = md5($data['password']);
 		
 		if($d->insert('user',$data)) transfer("Lưu dữ liệu thành công", "index.php?com=user&act=man&p=".$curPage);
 		else transfer("Lưu dữ liệu bị lỗi", "index.php?com=user&act=man&p=".$curPage,0);

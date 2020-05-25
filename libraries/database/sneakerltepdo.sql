@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.6.5.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 25, 2020 at 08:38 AM
--- Server version: 10.1.36-MariaDB
--- PHP Version: 5.6.38
+-- Generation Time: May 25, 2020 at 02:04 PM
+-- Server version: 10.1.21-MariaDB
+-- PHP Version: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -2747,7 +2745,8 @@ INSERT INTO `table_counter` (`id`, `tm`, `ip`) VALUES
 (9346, 1590384172, '::1'),
 (9347, 1590385177, '::1'),
 (9348, 1590386406, '::1'),
-(9349, 1590388670, '::1');
+(9349, 1590388670, '::1'),
+(9350, 1590407596, '::1');
 
 -- --------------------------------------------------------
 
@@ -4572,7 +4571,7 @@ INSERT INTO `table_photo` (`id`, `noibat`, `photo`, `thumb`, `tenkhongdau`, `noi
 (11, 0, 'watermark_18592725032020.png', 'watermark_18592725032020_135x135.png', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'watermark', 'photo_static', 0, 1, 0, 1585137567, 0),
 (12, 0, 'watermark-detail_18593025032020.png', 'watermark-detail_18593025032020_135x135.png', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'watermark-chitiet', 'photo_static', 0, 1, 0, 1585137570, 0),
 (13, 0, 'logo_17055729032020.jpg', 'logo_17055729032020_25x25.jpg', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'favicon', 'photo_static', 0, 1, 0, 1585137591, 1585476357),
-(14, 0, 'popup_19025925032020.jpg', 'popup_19025925032020_800x530.jpg', 'sneaker-shoes', '', '', '', '', 'Sneaker Shoes', 'Sneaker Shoes', 'https://www.google.com/', '', '', '', '', '', '', 'popup', 'photo_static', 0, 0, 0, 1585137779, 1590382403),
+(14, 0, 'popup_19025925032020.jpg', 'popup_19025925032020_800x530.jpg', 'sneaker-shoes', '', '', '', '', 'Sneaker Shoes', 'Sneaker Shoes', 'https://www.google.com/', '', '', '', '', '', '', 'popup', 'photo_static', 0, 1, 0, 1585137779, 1590408152),
 (46, 0, '22841725780.jpg', '22841725780_1366x600.jpg', '', '', '', '', '', '', '', '', '', 'B5AFFF', '', '', '', '', 'slide', '', 3, 1, 0, 0, 0),
 (16, 0, '3969298230.jpg', '3969298230_1366x600.jpg', '', '', '', '', '', '', '', '', '', '9BFFC1', '', '', '', '', 'slide', '', 2, 1, 0, 0, 0),
 (38, 0, '87419518192.png', '87419518192_30x30.png', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'mangxahoi1', '', 4, 1, 0, 0, 0),
@@ -4657,7 +4656,7 @@ CREATE TABLE `table_product` (
 --
 
 INSERT INTO `table_product` (`id`, `id_list`, `id_item`, `id_cat`, `id_sub`, `id_brand`, `id_size`, `id_mau`, `id_tags`, `noibat`, `moi`, `photo`, `thumb`, `tenkhongdauvi`, `tenkhongdauen`, `noidungen`, `noidungvi`, `motaen`, `motavi`, `khuyenmaivi`, `khuyenmaien`, `tenen`, `tenvi`, `taptin`, `link`, `masp`, `gia`, `giakm`, `giamoi`, `tinhtrang`, `link_video`, `stt`, `hienthi`, `type`, `ngaytao`, `ngaysua`, `luotxem`) VALUES
-(5, 6, 2, 3, 2, 2, '7,6', '9,8', '4,6,8,10', 1, 1, 'poduct-1-4374.jpeg', 'poduct-1-4374_135x135.jpeg', 'giay-the-thao-tot-nhat-hien-nay-nam-2020', 'modern-fashion-sport-shoes-years-2020', '&lt;p&gt;The screen is sharp, true colors even under the sun. Features always turn on the screen to see the convenient time even while driving. Besides, the screen automatically reduces brightness when not needed to maximize battery life.&lt;/p&gt;\r\n\r\n&lt;p&gt;\\r\\n\\r\\n&lt;/p&gt;\r\n\r\n&lt;p&gt;Accurate positioning with GPS and compass&lt;br /&gt;\r\n\\r\\n&lt;br /&gt;\r\n\\r\\nGPS positioning with high accuracy of your location, makes it easy to calculate the training route.&lt;br /&gt;\r\n\\r\\n&lt;br /&gt;\r\n\\r\\nIn addition, the Apple Watch S5 smart watch also has a magnetic compass that helps determine the direction in places that cannot be located with GPS.This feature is useful for those who are interested in hiking, picnic in the forest. , ...&lt;/p&gt;\r\n\r\n&lt;p&gt;\\r\\n&lt;/p&gt;\r\n', '&lt;p&gt;M&amp;agrave;n h&amp;igrave;nh hiển thị sắc n&amp;eacute;t, m&amp;agrave;u sắc ch&amp;acirc;n thực ngay cả dưới trời nắng gắt. T&amp;iacute;nh năng&amp;nbsp;lu&amp;ocirc;n bật s&amp;aacute;ng m&amp;agrave;n h&amp;igrave;nh&amp;nbsp;xem giờ tiện lợi ngay cả khi đang l&amp;aacute;i xe. B&amp;ecirc;n cạnh đ&amp;oacute;, m&amp;agrave;n h&amp;igrave;nh sẽ tự động giảm độ s&amp;aacute;ng khi kh&amp;ocirc;ng cần thiết để tăng&amp;nbsp;tối đa thời lượng pin.&lt;/p&gt;\r\n\r\n&lt;p&gt;Định vị ch&amp;iacute;nh x&amp;aacute;c bằng GPS v&amp;agrave; la b&amp;agrave;n&lt;/p&gt;\r\n\r\n&lt;p&gt;Định vị GPS&amp;nbsp;định vị với độ ch&amp;iacute;nh x&amp;aacute;c cao vị tr&amp;iacute; của bạn, gi&amp;uacute;p dễ d&amp;agrave;ng t&amp;iacute;nh to&amp;aacute;n lộ tr&amp;igrave;nh luyện tập.&lt;/p&gt;\r\n\r\n&lt;p&gt;B&amp;ecirc;n cạnh đ&amp;oacute;,&amp;nbsp;đồng hồ th&amp;ocirc;ng minh&amp;nbsp;Apple Watch S5 c&amp;ograve;n c&amp;oacute; la b&amp;agrave;n từ t&amp;iacute;nh gi&amp;uacute;p x&amp;aacute;c định phương hướng ở những nơi kh&amp;ocirc;ng định vị được bằng GPS t&amp;iacute;nh năng n&amp;agrave;y gi&amp;uacute;p &amp;iacute;ch cho những ai c&amp;oacute; sở th&amp;iacute;ch đi leo n&amp;uacute;i, d&amp;atilde; ngoại trong rừng,...&lt;/p&gt;\r\n\r\n&lt;p&gt;T&amp;iacute;nh năng&amp;nbsp;gọi SOS&lt;/p&gt;\r\n\r\n&lt;p&gt;Khi gặp nguy hiểm hay trường hợp khẩn cấp, nếu bạn nhấn gọi SOS, đồng hồ sẽ gọi cứu hộ v&amp;agrave; gửi định vị của bạn đến số điện thoại khẩn cấp. T&amp;iacute;nh năng n&amp;agrave;y đ&amp;atilde; được hỗ trợ ở Việt Nam. Tham khảo một số nơi kh&amp;ocirc;ng được hỗ trợ gọi khẩn gấp&amp;nbsp;tại đ&amp;acirc;y.&lt;/p&gt;\r\n\r\n&lt;p&gt;Nghe nhạc ngay tr&amp;ecirc;n đồng hồ&lt;/p&gt;\r\n\r\n&lt;p&gt;Đồng hồ c&amp;oacute; trang bị loa ngo&amp;agrave;i để bạn c&amp;oacute; thể đồng bộ nhạc từ iPhone v&amp;agrave; nghe trực tiếp tr&amp;ecirc;n đồng hồ bất k&amp;igrave; l&amp;uacute;c n&amp;agrave;o với dung lượng lưu trữ l&amp;ecirc;n đến 50 triệu b&amp;agrave;i h&amp;aacute;t.&lt;/p&gt;\r\n\r\n&lt;p&gt;Mỏng nhẹ, sang trọng&lt;/p&gt;\r\n\r\n&lt;p&gt;Đồng hồ Apple Watch k&amp;iacute;ch thước 40mm viền nh&amp;ocirc;m d&amp;acirc;y cao su mỏng nhẹ chỉ 10.7 mm - 30 gam dễ d&amp;agrave;ng đeo tr&amp;ecirc;n tay cả ng&amp;agrave;y m&amp;agrave; kh&amp;ocirc;ng g&amp;acirc;y kh&amp;oacute; chịu. Thiết kế của đồng hồ kh&amp;ocirc;ng c&amp;oacute; nhiều thay đổi ngoại trừ d&amp;ograve;ng chữ Apple Watch S5 được khắc b&amp;ecirc;n dưới mặt đồng hồ, đường n&amp;eacute;t được ho&amp;agrave;n thiện tinh xảo l&amp;agrave;m n&amp;ecirc;n sự đẳng cấp của&amp;nbsp;Apple Watch.&lt;/p&gt;\r\n', 'Heart rate, Calories consumed, Count your steps, Count your distance, Training mode, Detect falls, Alarm, Listen to music with Bluetooth headset, Call on watch, Reject call , Weather forecast, Compass, Control to play music, On behalf of the clock', '', 'Lên đời tuyệt tác tương lai chỉ từ 15.000.000đ\r\nƯu đãi phòng chờ thương gia', 'To master a future masterpiece only 15,000,000 VND\\r\\nBusiness lounge privileges', 'Modern fashion sport shoes years 2020', 'Giày thể thao thời trang hiện đại', '652235015432-taptin.rar', 'https://www.google.com/', 'ALOXX1', 450000, 33, 300000, 1, 'https://www.youtube.com/watch?v=HSsqzzuGTPo', 1, 1, 'san-pham', 1585058022, 1590370722, 276),
+(5, 6, 2, 3, 2, 2, '7,6', '9,8', '4,6,8,10', 1, 1, 'poduct-1-4374.jpeg', 'poduct-1-4374_135x135.jpeg', 'giay-the-thao-tot-nhat-hien-nay-nam-2020', 'modern-fashion-sport-shoes-years-2020', '&lt;p&gt;The screen is sharp, true colors even under the sun. Features always turn on the screen to see the convenient time even while driving. Besides, the screen automatically reduces brightness when not needed to maximize battery life.&lt;/p&gt;\r\n\r\n&lt;p&gt;\\r\\n\\r\\n&lt;/p&gt;\r\n\r\n&lt;p&gt;Accurate positioning with GPS and compass&lt;br /&gt;\r\n\\r\\n&lt;br /&gt;\r\n\\r\\nGPS positioning with high accuracy of your location, makes it easy to calculate the training route.&lt;br /&gt;\r\n\\r\\n&lt;br /&gt;\r\n\\r\\nIn addition, the Apple Watch S5 smart watch also has a magnetic compass that helps determine the direction in places that cannot be located with GPS.This feature is useful for those who are interested in hiking, picnic in the forest. , ...&lt;/p&gt;\r\n\r\n&lt;p&gt;\\r\\n&lt;/p&gt;\r\n', '&lt;p&gt;M&amp;agrave;n h&amp;igrave;nh hiển thị sắc n&amp;eacute;t, m&amp;agrave;u sắc ch&amp;acirc;n thực ngay cả dưới trời nắng gắt. T&amp;iacute;nh năng&amp;nbsp;lu&amp;ocirc;n bật s&amp;aacute;ng m&amp;agrave;n h&amp;igrave;nh&amp;nbsp;xem giờ tiện lợi ngay cả khi đang l&amp;aacute;i xe. B&amp;ecirc;n cạnh đ&amp;oacute;, m&amp;agrave;n h&amp;igrave;nh sẽ tự động giảm độ s&amp;aacute;ng khi kh&amp;ocirc;ng cần thiết để tăng&amp;nbsp;tối đa thời lượng pin.&lt;/p&gt;\r\n\r\n&lt;p&gt;Định vị ch&amp;iacute;nh x&amp;aacute;c bằng GPS v&amp;agrave; la b&amp;agrave;n&lt;/p&gt;\r\n\r\n&lt;p&gt;Định vị GPS&amp;nbsp;định vị với độ ch&amp;iacute;nh x&amp;aacute;c cao vị tr&amp;iacute; của bạn, gi&amp;uacute;p dễ d&amp;agrave;ng t&amp;iacute;nh to&amp;aacute;n lộ tr&amp;igrave;nh luyện tập.&lt;/p&gt;\r\n\r\n&lt;p&gt;B&amp;ecirc;n cạnh đ&amp;oacute;,&amp;nbsp;đồng hồ th&amp;ocirc;ng minh&amp;nbsp;Apple Watch S5 c&amp;ograve;n c&amp;oacute; la b&amp;agrave;n từ t&amp;iacute;nh gi&amp;uacute;p x&amp;aacute;c định phương hướng ở những nơi kh&amp;ocirc;ng định vị được bằng GPS t&amp;iacute;nh năng n&amp;agrave;y gi&amp;uacute;p &amp;iacute;ch cho những ai c&amp;oacute; sở th&amp;iacute;ch đi leo n&amp;uacute;i, d&amp;atilde; ngoại trong rừng,...&lt;/p&gt;\r\n\r\n&lt;p&gt;T&amp;iacute;nh năng&amp;nbsp;gọi SOS&lt;/p&gt;\r\n\r\n&lt;p&gt;Khi gặp nguy hiểm hay trường hợp khẩn cấp, nếu bạn nhấn gọi SOS, đồng hồ sẽ gọi cứu hộ v&amp;agrave; gửi định vị của bạn đến số điện thoại khẩn cấp. T&amp;iacute;nh năng n&amp;agrave;y đ&amp;atilde; được hỗ trợ ở Việt Nam. Tham khảo một số nơi kh&amp;ocirc;ng được hỗ trợ gọi khẩn gấp&amp;nbsp;tại đ&amp;acirc;y.&lt;/p&gt;\r\n\r\n&lt;p&gt;Nghe nhạc ngay tr&amp;ecirc;n đồng hồ&lt;/p&gt;\r\n\r\n&lt;p&gt;Đồng hồ c&amp;oacute; trang bị loa ngo&amp;agrave;i để bạn c&amp;oacute; thể đồng bộ nhạc từ iPhone v&amp;agrave; nghe trực tiếp tr&amp;ecirc;n đồng hồ bất k&amp;igrave; l&amp;uacute;c n&amp;agrave;o với dung lượng lưu trữ l&amp;ecirc;n đến 50 triệu b&amp;agrave;i h&amp;aacute;t.&lt;/p&gt;\r\n\r\n&lt;p&gt;Mỏng nhẹ, sang trọng&lt;/p&gt;\r\n\r\n&lt;p&gt;Đồng hồ Apple Watch k&amp;iacute;ch thước 40mm viền nh&amp;ocirc;m d&amp;acirc;y cao su mỏng nhẹ chỉ 10.7 mm - 30 gam dễ d&amp;agrave;ng đeo tr&amp;ecirc;n tay cả ng&amp;agrave;y m&amp;agrave; kh&amp;ocirc;ng g&amp;acirc;y kh&amp;oacute; chịu. Thiết kế của đồng hồ kh&amp;ocirc;ng c&amp;oacute; nhiều thay đổi ngoại trừ d&amp;ograve;ng chữ Apple Watch S5 được khắc b&amp;ecirc;n dưới mặt đồng hồ, đường n&amp;eacute;t được ho&amp;agrave;n thiện tinh xảo l&amp;agrave;m n&amp;ecirc;n sự đẳng cấp của&amp;nbsp;Apple Watch.&lt;/p&gt;\r\n', 'Heart rate, Calories consumed, Count your steps, Count your distance, Training mode, Detect falls, Alarm, Listen to music with Bluetooth headset, Call on watch, Reject call , Weather forecast, Compass, Control to play music, On behalf of the clock', '', 'Lên đời tuyệt tác tương lai chỉ từ 15.000.000đ\r\nƯu đãi phòng chờ thương gia', 'To master a future masterpiece only 15,000,000 VND\\r\\nBusiness lounge privileges', 'Modern fashion sport shoes years 2020', 'Giày thể thao thời trang hiện đại', '652235015432-taptin.rar', 'https://www.google.com/', 'ALOXX1', 450000, 33, 300000, 1, 'https://www.youtube.com/watch?v=HSsqzzuGTPo', 1, 1, 'san-pham', 1585058022, 1590407628, 277),
 (6, 7, 0, 8, 0, 2, '9,8,5,4,10', '8,10,11', NULL, 1, 1, '865327247584.jpg', '865327247584_150x150.jpg', 'giay-the-thao-thoi-trang-hien-dai', '', '', '<p>M&agrave;n h&igrave;nh hiển thị sắc n&eacute;t, m&agrave;u sắc ch&acirc;n thực ngay cả dưới trời nắng gắt. T&iacute;nh năng&nbsp;lu&ocirc;n bật s&aacute;ng m&agrave;n h&igrave;nh&nbsp;xem giờ tiện lợi ngay cả khi đang l&aacute;i xe. B&ecirc;n cạnh đ&oacute;, m&agrave;n h&igrave;nh sẽ tự động giảm độ s&aacute;ng khi kh&ocirc;ng cần thiết để tăng&nbsp;tối đa thời lượng pin.</p>\r\n\r\n<p>Định vị ch&iacute;nh x&aacute;c bằng GPS v&agrave; la b&agrave;n</p>\r\n\r\n<p>Định vị GPS&nbsp;định vị với độ ch&iacute;nh x&aacute;c cao vị tr&iacute; của bạn, gi&uacute;p dễ d&agrave;ng t&iacute;nh to&aacute;n lộ tr&igrave;nh luyện tập.</p>\r\n\r\n<p>B&ecirc;n cạnh đ&oacute;,&nbsp;đồng hồ th&ocirc;ng minh&nbsp;Apple Watch S5 c&ograve;n c&oacute; la b&agrave;n từ t&iacute;nh gi&uacute;p x&aacute;c định phương hướng ở những nơi kh&ocirc;ng định vị được bằng GPS t&iacute;nh năng n&agrave;y gi&uacute;p &iacute;ch cho những ai c&oacute; sở th&iacute;ch đi leo n&uacute;i, d&atilde; ngoại trong rừng,...</p>\r\n\r\n<p><img src=\"https://bizweb.dktcdn.net/thumb/large/100/372/447/products/15-62edaeca-bd4c-439b-bc0a-4c14d8e7cf93-6ac61e94-275a-4d32-9532-b25460139854-c8669753-1b5d-42d1-872b-7596e8c113c4-9d8c3f24-6d87-4b70-bf8e-6262ea9ad499-837f80dd-5ae9-4d80-a5d8-c72e5179e140.jpg?v=1574692956403\" /></p>\r\n\r\n<p>T&iacute;nh năng&nbsp;gọi SOS</p>\r\n\r\n<p>Khi gặp nguy hiểm hay trường hợp khẩn cấp, nếu bạn nhấn gọi SOS, đồng hồ sẽ gọi cứu hộ v&agrave; gửi định vị của bạn đến số điện thoại khẩn cấp. T&iacute;nh năng n&agrave;y đ&atilde; được hỗ trợ ở Việt Nam. Tham khảo một số nơi kh&ocirc;ng được hỗ trợ gọi khẩn gấp&nbsp;tại đ&acirc;y.</p>\r\n\r\n<p>Nghe nhạc ngay tr&ecirc;n đồng hồ</p>\r\n\r\n<p>Đồng hồ c&oacute; trang bị loa ngo&agrave;i để bạn c&oacute; thể đồng bộ nhạc từ iPhone v&agrave; nghe trực tiếp tr&ecirc;n đồng hồ bất k&igrave; l&uacute;c n&agrave;o với dung lượng lưu trữ l&ecirc;n đến 50 triệu b&agrave;i h&aacute;t.</p>\r\n\r\n<p>Mỏng nhẹ, sang trọng</p>\r\n\r\n<p>Đồng hồ Apple Watch k&iacute;ch thước 40mm viền nh&ocirc;m d&acirc;y cao su mỏng nhẹ chỉ 10.7 mm - 30 gam dễ d&agrave;ng đeo tr&ecirc;n tay cả ng&agrave;y m&agrave; kh&ocirc;ng g&acirc;y kh&oacute; chịu. Thiết kế của đồng hồ kh&ocirc;ng c&oacute; nhiều thay đổi ngoại trừ d&ograve;ng chữ Apple Watch S5 được khắc b&ecirc;n dưới mặt đồng hồ, đường n&eacute;t được ho&agrave;n thiện tinh xảo l&agrave;m n&ecirc;n sự đẳng cấp của&nbsp;Apple Watch.</p>\r\n', '', 'Đo nhịp tim, Tính lượng Calories tiêu thụ, Đếm số bước chân, Tính quãng đường chạy, Chế độ luyện tập, Phát hiện té ngã, Báo thức, Nghe nhạc với tai nghe Bluetooth, Gọi điện trên đồng hồ, Từ chối cuộc gọi, Dự báo thời tiết, La bàn, Điều khiển chơi nhạc, Thay mặt đồng hồ', 'Trả góp 0% thẻ tín dụng\r\n4Bảo hiểm thay màn hình lần đầu trong vòng 1 năm', '', '', 'Giày thể thao thời trang hiện đại', '', '', 'ALOXX2', 500000, 0, 0, 1, '', 2, 1, 'san-pham', 1585058022, 1585383513, 28),
 (7, 8, 0, 13, 0, 3, '6,5,4,10', '9,8,10', NULL, 1, 1, '717878650287.jpg', '717878650287_150x150.jpg', 'giay-the-thao-thoi-trang-hien-dai', '', '', '<p>M&agrave;n h&igrave;nh hiển thị sắc n&eacute;t, m&agrave;u sắc ch&acirc;n thực ngay cả dưới trời nắng gắt. T&iacute;nh năng&nbsp;lu&ocirc;n bật s&aacute;ng m&agrave;n h&igrave;nh&nbsp;xem giờ tiện lợi ngay cả khi đang l&aacute;i xe. B&ecirc;n cạnh đ&oacute;, m&agrave;n h&igrave;nh sẽ tự động giảm độ s&aacute;ng khi kh&ocirc;ng cần thiết để tăng&nbsp;tối đa thời lượng pin.</p>\r\n\r\n<p>Định vị ch&iacute;nh x&aacute;c bằng GPS v&agrave; la b&agrave;n</p>\r\n\r\n<p>Định vị GPS&nbsp;định vị với độ ch&iacute;nh x&aacute;c cao vị tr&iacute; của bạn, gi&uacute;p dễ d&agrave;ng t&iacute;nh to&aacute;n lộ tr&igrave;nh luyện tập.</p>\r\n\r\n<p>B&ecirc;n cạnh đ&oacute;,&nbsp;đồng hồ th&ocirc;ng minh&nbsp;Apple Watch S5 c&ograve;n c&oacute; la b&agrave;n từ t&iacute;nh gi&uacute;p x&aacute;c định phương hướng ở những nơi kh&ocirc;ng định vị được bằng GPS t&iacute;nh năng n&agrave;y gi&uacute;p &iacute;ch cho những ai c&oacute; sở th&iacute;ch đi leo n&uacute;i, d&atilde; ngoại trong rừng,...</p>\r\n\r\n<p><img src=\"https://bizweb.dktcdn.net/thumb/large/100/372/447/products/15-62edaeca-bd4c-439b-bc0a-4c14d8e7cf93-6ac61e94-275a-4d32-9532-b25460139854-c8669753-1b5d-42d1-872b-7596e8c113c4-9d8c3f24-6d87-4b70-bf8e-6262ea9ad499-837f80dd-5ae9-4d80-a5d8-c72e5179e140.jpg?v=1574692956403\" /></p>\r\n\r\n<p>T&iacute;nh năng&nbsp;gọi SOS</p>\r\n\r\n<p>Khi gặp nguy hiểm hay trường hợp khẩn cấp, nếu bạn nhấn gọi SOS, đồng hồ sẽ gọi cứu hộ v&agrave; gửi định vị của bạn đến số điện thoại khẩn cấp. T&iacute;nh năng n&agrave;y đ&atilde; được hỗ trợ ở Việt Nam. Tham khảo một số nơi kh&ocirc;ng được hỗ trợ gọi khẩn gấp&nbsp;tại đ&acirc;y.</p>\r\n\r\n<p>Nghe nhạc ngay tr&ecirc;n đồng hồ</p>\r\n\r\n<p>Đồng hồ c&oacute; trang bị loa ngo&agrave;i để bạn c&oacute; thể đồng bộ nhạc từ iPhone v&agrave; nghe trực tiếp tr&ecirc;n đồng hồ bất k&igrave; l&uacute;c n&agrave;o với dung lượng lưu trữ l&ecirc;n đến 50 triệu b&agrave;i h&aacute;t.</p>\r\n\r\n<p>Mỏng nhẹ, sang trọng</p>\r\n\r\n<p>Đồng hồ Apple Watch k&iacute;ch thước 40mm viền nh&ocirc;m d&acirc;y cao su mỏng nhẹ chỉ 10.7 mm - 30 gam dễ d&agrave;ng đeo tr&ecirc;n tay cả ng&agrave;y m&agrave; kh&ocirc;ng g&acirc;y kh&oacute; chịu. Thiết kế của đồng hồ kh&ocirc;ng c&oacute; nhiều thay đổi ngoại trừ d&ograve;ng chữ Apple Watch S5 được khắc b&ecirc;n dưới mặt đồng hồ, đường n&eacute;t được ho&agrave;n thiện tinh xảo l&agrave;m n&ecirc;n sự đẳng cấp của&nbsp;Apple Watch.</p>\r\n', '', 'Đo nhịp tim, Tính lượng Calories tiêu thụ, Đếm số bước chân, Tính quãng đường chạy, Chế độ luyện tập, Phát hiện té ngã, Báo thức, Nghe nhạc với tai nghe Bluetooth, Gọi điện trên đồng hồ, Từ chối cuộc gọi, Dự báo thời tiết, La bàn, Điều khiển chơi nhạc, Thay mặt đồng hồ', 'Lên đời tuyệt tác tương lai chỉ từ 15.000.000đ\r\nƯu đãi phòng chờ thương gia', '', '', 'Giày thể thao thời trang hiện đại', '', '', 'ALOXX3', 600000, 67, 200000, 1, '', 3, 1, 'san-pham', 1585058022, 1585058498, 7),
 (8, 9, 0, 18, 0, 4, '7,6,5,4', '10,11,12', NULL, 1, 1, '832839713704.jpg', '832839713704_150x150.jpg', 'giay-the-thao-thoi-trang-hien-dai', '', '', '<p>M&agrave;n h&igrave;nh hiển thị sắc n&eacute;t, m&agrave;u sắc ch&acirc;n thực ngay cả dưới trời nắng gắt. T&iacute;nh năng&nbsp;lu&ocirc;n bật s&aacute;ng m&agrave;n h&igrave;nh&nbsp;xem giờ tiện lợi ngay cả khi đang l&aacute;i xe. B&ecirc;n cạnh đ&oacute;, m&agrave;n h&igrave;nh sẽ tự động giảm độ s&aacute;ng khi kh&ocirc;ng cần thiết để tăng&nbsp;tối đa thời lượng pin.</p>\r\n\r\n<p>Định vị ch&iacute;nh x&aacute;c bằng GPS v&agrave; la b&agrave;n</p>\r\n\r\n<p>Định vị GPS&nbsp;định vị với độ ch&iacute;nh x&aacute;c cao vị tr&iacute; của bạn, gi&uacute;p dễ d&agrave;ng t&iacute;nh to&aacute;n lộ tr&igrave;nh luyện tập.</p>\r\n\r\n<p>B&ecirc;n cạnh đ&oacute;,&nbsp;đồng hồ th&ocirc;ng minh&nbsp;Apple Watch S5 c&ograve;n c&oacute; la b&agrave;n từ t&iacute;nh gi&uacute;p x&aacute;c định phương hướng ở những nơi kh&ocirc;ng định vị được bằng GPS t&iacute;nh năng n&agrave;y gi&uacute;p &iacute;ch cho những ai c&oacute; sở th&iacute;ch đi leo n&uacute;i, d&atilde; ngoại trong rừng,...</p>\r\n\r\n<p><img src=\"https://bizweb.dktcdn.net/thumb/large/100/372/447/products/15-62edaeca-bd4c-439b-bc0a-4c14d8e7cf93-6ac61e94-275a-4d32-9532-b25460139854-c8669753-1b5d-42d1-872b-7596e8c113c4-9d8c3f24-6d87-4b70-bf8e-6262ea9ad499-837f80dd-5ae9-4d80-a5d8-c72e5179e140.jpg?v=1574692956403\" /></p>\r\n\r\n<p>T&iacute;nh năng&nbsp;gọi SOS</p>\r\n\r\n<p>Khi gặp nguy hiểm hay trường hợp khẩn cấp, nếu bạn nhấn gọi SOS, đồng hồ sẽ gọi cứu hộ v&agrave; gửi định vị của bạn đến số điện thoại khẩn cấp. T&iacute;nh năng n&agrave;y đ&atilde; được hỗ trợ ở Việt Nam. Tham khảo một số nơi kh&ocirc;ng được hỗ trợ gọi khẩn gấp&nbsp;tại đ&acirc;y.</p>\r\n\r\n<p>Nghe nhạc ngay tr&ecirc;n đồng hồ</p>\r\n\r\n<p>Đồng hồ c&oacute; trang bị loa ngo&agrave;i để bạn c&oacute; thể đồng bộ nhạc từ iPhone v&agrave; nghe trực tiếp tr&ecirc;n đồng hồ bất k&igrave; l&uacute;c n&agrave;o với dung lượng lưu trữ l&ecirc;n đến 50 triệu b&agrave;i h&aacute;t.</p>\r\n\r\n<p>Mỏng nhẹ, sang trọng</p>\r\n\r\n<p>Đồng hồ Apple Watch k&iacute;ch thước 40mm viền nh&ocirc;m d&acirc;y cao su mỏng nhẹ chỉ 10.7 mm - 30 gam dễ d&agrave;ng đeo tr&ecirc;n tay cả ng&agrave;y m&agrave; kh&ocirc;ng g&acirc;y kh&oacute; chịu. Thiết kế của đồng hồ kh&ocirc;ng c&oacute; nhiều thay đổi ngoại trừ d&ograve;ng chữ Apple Watch S5 được khắc b&ecirc;n dưới mặt đồng hồ, đường n&eacute;t được ho&agrave;n thiện tinh xảo l&agrave;m n&ecirc;n sự đẳng cấp của&nbsp;Apple Watch.</p>\r\n', '', 'Đo nhịp tim, Tính lượng Calories tiêu thụ, Đếm số bước chân, Tính quãng đường chạy, Chế độ luyện tập, Phát hiện té ngã, Báo thức, Nghe nhạc với tai nghe Bluetooth, Gọi điện trên đồng hồ, Từ chối cuộc gọi, Dự báo thời tiết, La bàn, Điều khiển chơi nhạc, Thay mặt đồng hồ', 'Lên đời tuyệt tác tương lai chỉ từ 15.000.000đ\r\nƯu đãi phòng chờ thương gia', '', '', 'Giày thể thao thời trang hiện đại', '', '', 'ALOXX4', 400000, 38, 250000, 1, '', 4, 1, 'san-pham', 1585058022, 1585058576, 4),
@@ -5077,7 +5076,7 @@ INSERT INTO `table_seo` (`id`, `idmuc`, `com`, `act`, `type`, `titlevi`, `keywor
 (63, 10, 'tags', 'man', 'san-pham', '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL),
 (573, 11, 'tags', 'man', 'san-pham', '', '', '', '', '', '', '', '', '', '', '', ''),
 (65, 12, 'tags', 'man', 'san-pham', '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL),
-(657, 5, 'product', 'man', 'san-pham', 'Giày thể thao thời trang hiện đại', 'Giày thể thao thời trang hiện đại', 'Màn hình hiển thị sắc nét, màu sắc chân thực ngay cả dưới trời nắng gắt. Tính năng luôn bật sáng màn hình xem giờ tiện lợi ngay cả khi đang lái xe. Bên cạnh đó,', 'Modern fashion sport shoes years 2020', 'Modern fashion sport shoes years 2020', 'Heart rate, Calories consumed, Count your steps, Count your distance, Training mode, Detect falls, Alarm, Listen to music with Bluetooth headset, Call on watch,', '', '', '', '', '', ''),
+(658, 5, 'product', 'man', 'san-pham', 'Giày thể thao thời trang hiện đại', 'Giày thể thao thời trang hiện đại', 'Màn hình hiển thị sắc nét, màu sắc chân thực ngay cả dưới trời nắng gắt. Tính năng luôn bật sáng màn hình xem giờ tiện lợi ngay cả khi đang lái xe. Bên cạnh đó,', 'Modern fashion sport shoes years 2020', 'Modern fashion sport shoes years 2020', 'Heart rate, Calories consumed, Count your steps, Count your distance, Training mode, Detect falls, Alarm, Listen to music with Bluetooth headset, Call on watch,', '', '', '', '', '', ''),
 (122, 6, 'product', 'man', 'san-pham', '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL),
 (71, 7, 'product', 'man', 'san-pham', '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL),
 (72, 8, 'product', 'man', 'san-pham', '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL),
@@ -25221,7 +25220,7 @@ CREATE TABLE `table_user` (
 
 INSERT INTO `table_user` (`id`, `id_social`, `id_nhomquyen`, `username`, `password`, `maxacnhan`, `avatar`, `ten`, `dienthoai`, `email`, `diachi`, `gioitinh`, `role`, `login_session`, `user_token`, `lastlogin`, `hienthi`, `last_login`, `quyen`, `token`, `ngaysinh`, `com`, `stt`) VALUES
 (1, 0, 0, 'admin', '6cc6484ae704b9cc4d730abe66dfc556', '', '', 'ADMIN', '', '', '', 0, 3, '671324a3340835e15035ac6463594165', 'c097b03fedd7c38e8722666625169a18', '1589446361', 1, 1582266217, '', '', 0, 'user', 0),
-(59, 0, 0, 'coder', '4d82cf22472b6767cfa4c852c967016c', '', '', 'Diệp Phúc Tài', '0939 584 506', 'phuctai.nina@gmail.com', 'Đường huỳnh thị na, xã đông thạnh, huyện hóc môn', 1, 3, '63b3cc71a5199a0bf35ecaa73431d78f', '0e752f0cfeaab92c8210de3c3ae7e479', '1590388668', 1, 1585477264, '63b3cc71a5199a0bf35ecaa73431d78f', '', 774205200, 'user', 0);
+(59, 0, 0, 'coder', '4d82cf22472b6767cfa4c852c967016c', '', '', 'Diệp Phúc Tài', '0939 584 506', 'phuctai.nina@gmail.com', 'Đường huỳnh thị na, xã đông thạnh, huyện hóc môn', 1, 3, '63b3cc71a5199a0bf35ecaa73431d78f', '93ad02a7b6c4e2998e6ed05e27870afc', '1590408230', 1, 1585477264, '63b3cc71a5199a0bf35ecaa73431d78f', '', 774205200, 'user', 0);
 
 -- --------------------------------------------------------
 
@@ -25344,7 +25343,9 @@ INSERT INTO `table_user_log` (`id`, `id_user`, `ip`, `timelog`, `user_agent`) VA
 (79, 59, '::1', 1590388228, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36'),
 (80, 59, '::1', 1590388247, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36'),
 (81, 59, '::1', 1590388262, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36'),
-(82, 59, '::1', 1590388330, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36');
+(82, 59, '::1', 1590388330, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36'),
+(83, 59, '::1', 1590407611, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36'),
+(84, 59, '::1', 1590408144, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36');
 
 -- --------------------------------------------------------
 
@@ -25363,7 +25364,10 @@ CREATE TABLE `table_user_online` (
 --
 
 INSERT INTO `table_user_online` (`session`, `time`, `ip`) VALUES
-('5gajg9o6iulvhefejpjdmtcc00', 1590388670, '::1');
+('vsn5oj0gm5f92n5so75pj4k463', 1590408075, '::1'),
+('j3jqts12pr3qqthmjkdaikgn91', 1590408056, '::1'),
+('qq0fg29vm79s62boinqa9tau25', 1590408130, '::1'),
+('ipvne0me27en67rhcmffs2mfn4', 1590408178, '::1');
 
 -- --------------------------------------------------------
 
@@ -36510,242 +36514,201 @@ ALTER TABLE `table_wards`
 --
 ALTER TABLE `table_attribute`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=187;
-
 --
 -- AUTO_INCREMENT for table `table_city`
 --
 ALTER TABLE `table_city`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
-
 --
 -- AUTO_INCREMENT for table `table_contact`
 --
 ALTER TABLE `table_contact`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
-
 --
 -- AUTO_INCREMENT for table `table_counter`
 --
 ALTER TABLE `table_counter`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9350;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9351;
 --
 -- AUTO_INCREMENT for table `table_coupon`
 --
 ALTER TABLE `table_coupon`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=121;
-
 --
 -- AUTO_INCREMENT for table `table_district`
 --
 ALTER TABLE `table_district`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=706;
-
 --
 -- AUTO_INCREMENT for table `table_excel`
 --
 ALTER TABLE `table_excel`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=184;
-
 --
 -- AUTO_INCREMENT for table `table_gallery`
 --
 ALTER TABLE `table_gallery`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=560;
-
 --
 -- AUTO_INCREMENT for table `table_lang`
 --
 ALTER TABLE `table_lang`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=321;
-
 --
 -- AUTO_INCREMENT for table `table_news`
 --
 ALTER TABLE `table_news`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
-
 --
 -- AUTO_INCREMENT for table `table_newsletter`
 --
 ALTER TABLE `table_newsletter`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
-
 --
 -- AUTO_INCREMENT for table `table_news_cat`
 --
 ALTER TABLE `table_news_cat`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
 --
 -- AUTO_INCREMENT for table `table_news_item`
 --
 ALTER TABLE `table_news_item`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
 --
 -- AUTO_INCREMENT for table `table_news_list`
 --
 ALTER TABLE `table_news_list`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
 --
 -- AUTO_INCREMENT for table `table_news_sub`
 --
 ALTER TABLE `table_news_sub`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
 --
 -- AUTO_INCREMENT for table `table_order`
 --
 ALTER TABLE `table_order`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
-
 --
 -- AUTO_INCREMENT for table `table_order_detail`
 --
 ALTER TABLE `table_order_detail`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
-
 --
 -- AUTO_INCREMENT for table `table_permission`
 --
 ALTER TABLE `table_permission`
   MODIFY `ma` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7181;
-
 --
 -- AUTO_INCREMENT for table `table_permission_group`
 --
 ALTER TABLE `table_permission_group`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
-
 --
 -- AUTO_INCREMENT for table `table_photo`
 --
 ALTER TABLE `table_photo`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
-
 --
 -- AUTO_INCREMENT for table `table_product`
 --
 ALTER TABLE `table_product`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=136;
-
 --
 -- AUTO_INCREMENT for table `table_product_brand`
 --
 ALTER TABLE `table_product_brand`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
 --
 -- AUTO_INCREMENT for table `table_product_cat`
 --
 ALTER TABLE `table_product_cat`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
-
 --
 -- AUTO_INCREMENT for table `table_product_item`
 --
 ALTER TABLE `table_product_item`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
 --
 -- AUTO_INCREMENT for table `table_product_list`
 --
 ALTER TABLE `table_product_list`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
-
 --
 -- AUTO_INCREMENT for table `table_product_mau`
 --
 ALTER TABLE `table_product_mau`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
-
 --
 -- AUTO_INCREMENT for table `table_product_size`
 --
 ALTER TABLE `table_product_size`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
-
 --
 -- AUTO_INCREMENT for table `table_product_sub`
 --
 ALTER TABLE `table_product_sub`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
 --
 -- AUTO_INCREMENT for table `table_pushonesignal`
 --
 ALTER TABLE `table_pushonesignal`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
-
 --
 -- AUTO_INCREMENT for table `table_seo`
 --
 ALTER TABLE `table_seo`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=658;
-
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=659;
 --
 -- AUTO_INCREMENT for table `table_seopage`
 --
 ALTER TABLE `table_seopage`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
 --
 -- AUTO_INCREMENT for table `table_setting`
 --
 ALTER TABLE `table_setting`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
-
 --
 -- AUTO_INCREMENT for table `table_static`
 --
 ALTER TABLE `table_static`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
 --
 -- AUTO_INCREMENT for table `table_status`
 --
 ALTER TABLE `table_status`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
 --
 -- AUTO_INCREMENT for table `table_street`
 --
 ALTER TABLE `table_street`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19808;
-
 --
 -- AUTO_INCREMENT for table `table_tags`
 --
 ALTER TABLE `table_tags`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
-
 --
 -- AUTO_INCREMENT for table `table_user`
 --
 ALTER TABLE `table_user`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
-
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
 --
 -- AUTO_INCREMENT for table `table_user_limit`
 --
 ALTER TABLE `table_user_limit`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
 -- AUTO_INCREMENT for table `table_user_log`
 --
 ALTER TABLE `table_user_log`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
-
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
 --
 -- AUTO_INCREMENT for table `table_wards`
 --
 ALTER TABLE `table_wards`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10856;
-COMMIT;
-
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
