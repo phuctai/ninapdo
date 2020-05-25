@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="<?=$config['website']['langHtml']?>">
 <head>
+    ABC
     <?php include _SOURCE."head.php"; ?>
     <?php include _SOURCE."css.php"; ?>
 </head>
