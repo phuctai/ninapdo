@@ -6,6 +6,7 @@
 </head>
 <body>
     <?php
+        /* Đây là đoạn inlucde php */
         include _SOURCE."seo.php";
         include _TEMPLATE._LAYOUT."header.php";
         include _TEMPLATE._LAYOUT."menu.php";
