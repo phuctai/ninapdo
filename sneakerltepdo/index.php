@@ -3,9 +3,6 @@
     @define('_LIB','./libraries/');
     @define('_SOURCE','./sources/');
     @define('_LAYOUT','layout/');
-    @define('_LAYOUT2','layout2/');
-    
-    
 
     /* Config */
     include_once _LIB."AntiSQLInjection.php";
