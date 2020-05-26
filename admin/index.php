@@ -162,22 +162,7 @@
 	</script>
 </head>
 <body class="sidebar-mini hold-transition text-sm <?=(!isset($_SESSION[$login_name]) || $_SESSION[$login_name]==false)?'login-page':''?>">
-	<!-- Loader -->
-	<div class="loader-wrapper">
-        <div class="loader">
-            <div class="preloader">
-                <div class="spinner-layer">
-                    <div class="circle-clipper float-left">
-                        <div class="circle"></div>
-                    </div>
-                    <div class="circle-clipper float-right">
-                        <div class="circle"></div>
-                    </div>
-                </div>
-            </div>
-            <p>Please wait...</p>
-        </div>
-    </div>
+	<?php include _TEMPLATE."loader.php"; ?>
     <!-- Wrapper -->
 	<?php if(isset($_SESSION[$login_name]) && ($_SESSION[$login_name] == true)) { ?>
 		<div class="wrapper">
@@ -202,13 +187,5 @@
 			<?php include "assets/js/myscript.php"; ?>
 		</div>
 	<?php } else { include _TEMPLATE.$template."_tpl.php" ; } ?>
-	<!-- Hidding loader -->
-	<script type="text/javascript">
-		$(document).ready(function(){
-			setTimeout(function(){
-				$(".loader-wrapper").fadeOut("medium");
-			},500)
-		})
-	</script>
 </body>
 </html>
