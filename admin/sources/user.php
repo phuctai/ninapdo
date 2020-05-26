@@ -412,22 +412,22 @@ function save_item_admin()
 		if($row['id']) transfer("Bạn không có quyền trên tài khoản này. Mọi thắc mắc xin liên hệ quản trị website", "index.php?com=user&act=man_admin&p=".$curPage,0);
 		
 		if($data['password'] != '')
-        {
-            $password = $data['password'];
-            $confirm_password = $_POST['confirm_password'];
+		{
+			$password = $data['password'];
+			$confirm_password = $_POST['confirm_password'];
 
-            if($confirm_password=='')
-            {
-                transfer("Chưa xác nhận mật khẩu mới","index.php?com=user&act=edit_admin&id=".$id."&p=".$curPage,0);
-            }
+			if($confirm_password=='')
+			{
+				transfer("Chưa xác nhận mật khẩu mới","index.php?com=user&act=edit_admin&id=".$id."&p=".$curPage,0);
+			}
 
-            if($password!=$confirm_password)
-            {
-                transfer("Xác nhận mật khẩu mới không chính xác","index.php?com=user&act=edit_admin&id=".$id."&p=".$curPage,0);
-            }
+			if($password!=$confirm_password)
+			{
+				transfer("Xác nhận mật khẩu mới không chính xác","index.php?com=user&act=edit_admin&id=".$id."&p=".$curPage,0);
+			}
 
-            $data['password'] = md5($config['website']['secret'].$password.$config['website']['salt']);
-        }
+			$data['password'] = md5($config['website']['secret'].$password.$config['website']['salt']);
+		}
 		
 		$d->where('id', $id);
 		$d->where('role', 3);
