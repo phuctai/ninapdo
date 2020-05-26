@@ -6,7 +6,7 @@
 	$folder = htmlspecialchars($_POST['folder']);
 	$info = htmlspecialchars($_POST['info']);
 	$value = htmlspecialchars($_POST['value']);
-	$listid = htmlspecialchars($_POST['listid']);
+	$listid = sanitize($_POST['listid']);
 	$com = htmlspecialchars($_POST['com']);
 	$kind = htmlspecialchars($_POST['kind']);
 	$type = htmlspecialchars($_POST['type']);
