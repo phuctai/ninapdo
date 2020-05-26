@@ -1,5 +1,40 @@
 <?php if(!defined('_LIB')) die("Error");
 
+/* Kiểm tra dữ liệu nhập vào */
+function cleanInput($input)
+{
+	$search = array(
+		'@<script[^>]*?>.*?</script>@si',   // Loại bỏ javascript
+		'@<[\/\!]*?[^<>]*?>@si',            // Loại bỏ HTML tags
+		'@<style[^>]*?>.*?</style>@siU',    // Loại bỏ style tags
+		'@<![\s\S]*?--[ \t\n\r]*>@'         // Loại bỏ multi-line comments
+	);
+	$output = preg_replace($search, '', $input);
+	return $output;
+}
+
+/* Kiểm tra dữ liệu nhập vào */
+function sanitize($input)
+{
+	if(is_array($input))
+	{
+		foreach($input as $var=>$val)
+		{
+			$output[$var] = sanitize($val);
+		}
+	}
+	else
+	{
+		if(get_magic_quotes_gpc())
+		{
+			$input = stripslashes($input);
+		}
+		$input  = cleanInput($input);
+		$output = addslashes($input);
+	}
+	return $output;
+}
+
 /* Kiểm tra đăng nhập */
 function check_login()
 {
