@@ -1,2 +1,0 @@
-1/ Thêm 2 hàm cleanInput() và sanitize() vào functions.php
-2/ Sửa lỗi htmlspecialchars ở phần dữ liệu mảng
