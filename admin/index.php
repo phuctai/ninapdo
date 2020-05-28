@@ -162,7 +162,7 @@
 	</script>
 </head>
 <body class="sidebar-mini hold-transition text-sm <?=(!isset($_SESSION[$login_name]) || $_SESSION[$login_name]==false)?'login-page':''?>">
-	<?php include _TEMPLATE."loader.php"; ?>
+	<?php if($template == 'index' || $template == 'user/login') include _TEMPLATE."loader.php"; ?>
     <!-- Wrapper -->
 	<?php if(isset($_SESSION[$login_name]) && ($_SESSION[$login_name] == true)) { ?>
 		<div class="wrapper">
