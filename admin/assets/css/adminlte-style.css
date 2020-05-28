@@ -277,6 +277,10 @@
 .SumoSelect label{margin-bottom:0px;font-weight:normal!important;display:block;}
 .form-group-category .SumoSelect{width:100%;}
 
+/* Select */
+.was-validated select.form-control:invalid{background-position:right calc(.375em + 0.55rem) center;}
+.was-validated select.form-control:valid{background-position:right calc(.375em + 0.6rem) center;}
+
 /* Select2 */
 .form-group-category .select2-container{width:100%!important;}
 .select2-container--default .select2-selection--single{height:calc(2.25rem + 2px)!important;}
