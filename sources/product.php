@@ -11,7 +11,7 @@
 	if($id!='')
 	{
 		/* Lấy sản phẩm detail */
-		$row_detail = $d->rawQueryOne("select type, id, ten$lang, mota$lang, noidung$lang, masp, luotxem, id_brand, id_mau, id_size, id_list, id_cat, id_item, id_sub, id_tags, photo from #_product where hienthi=1 and id = ? and type = ?",array($id,$type));
+		$row_detail = $d->rawQueryOne("select type, id, ten$lang, mota$lang, noidung$lang, masp, luotxem, id_brand, id_mau, id_size, id_list, id_cat, id_item, id_sub, id_tags, photo, giakm, giamoi, gia from #_product where hienthi=1 and id = ? and type = ?",array($id,$type));
 
 		if($row_detail['id']=='')
 		{
