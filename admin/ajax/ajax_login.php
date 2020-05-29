@@ -92,7 +92,7 @@
 
 				   	/* Tạo Session login */
 					$_SESSION[$login_name] = true;
-					$_SESSION['login']['username'] = $username;
+					$_SESSION['login']['username'] = $row['username'];
 					$_SESSION['login']['id'] = $row['id'];
 					$_SESSION['login']['quyen'] = $row['quyen'];
 					$_SESSION['login']['token'] = $sessionhash;
