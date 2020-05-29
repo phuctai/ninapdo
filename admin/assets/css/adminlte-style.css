@@ -278,7 +278,7 @@
 .form-group-category .SumoSelect{width:100%;}
 
 /* Select */
-.was-validated select.form-control:invalid{background-position:right calc(.375em + 0.55rem) center;}
+.was-validated select.form-control:invalid{background-position:right calc(.375em + 0.6rem) center;}
 .was-validated select.form-control:valid{background-position:right calc(.375em + 0.6rem) center;}
 
 /* Select2 */
