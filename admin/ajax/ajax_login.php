@@ -7,7 +7,7 @@
     $d = new PDODb($config['database']);
     include_once _LIB."functions.php";
 
-    $username = htmlspecialchars($_POST['username']);
+    $username = strtolower(htmlspecialchars($_POST['username']));
 	$password = htmlspecialchars($_POST['password']);
 	$error = "";
 	$success = "";
