@@ -269,7 +269,7 @@ function save_permission_group()
 			$data_permission['quyen'] = $dataQuyen[$i];
 			$d->insert('permission',$data_permission);
 		}
-		transfer("Tạo nhóm quyền thành công", "index.php?com=user&act=permission_group&p=".$curPage);
+		transfer("Cập nhật nhóm quyền thành công", "index.php?com=user&act=permission_group&p=".$curPage);
 	}
 	else
 	{
@@ -428,6 +428,7 @@ function save_item_admin()
 
 			$data['password'] = md5($config['website']['secret'].$password.$config['website']['salt']);
 		}
+		else unset($data['password']);
 		
 		$d->where('id', $id);
 		$d->where('role', 3);
@@ -560,6 +561,7 @@ function save_item()
 
             $data['password'] = md5($password);
         }
+        else unset($data['password']);
 		
 		$d->where('id', $id);
 		$d->where('role', 1);
