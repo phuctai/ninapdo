@@ -29,7 +29,7 @@
 			'timefinish' => '04/2020'
 		),
 		'website' => array(
-			'error-reporting' => true,
+			'error-reporting' => false,
 			'secret' => '$nina@',
 			'salt' => 'swKJjeS!t',
 			'debug-developer' => true,
