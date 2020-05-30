@@ -1,11 +1,11 @@
 <?php
     session_start();
-    @define('_LIB' ,'./libraries/');
+    @define('LIBRARIES' ,'./libraries/');
 
     /* Config */
-    include_once _LIB."AntiSQLInjection.php";
-    include_once _LIB."config.php";
-    include_once _LIB."PDODb.php";
+    include_once LIBRARIES."AntiSQLInjection.php";
+    include_once LIBRARIES."config.php";
+    include_once LIBRARIES."PDODb.php";
     $d = new PDODb($config['database']);
 
     /* Setting */
@@ -16,7 +16,7 @@
     else if(!isset($_SESSION['lang']) && !isset($_REQUEST['lang'])) $_SESSION['lang'] = $setting['lang_default'];
     $lang = $_SESSION['lang'];
 
-    require_once _LIB."lang$lang.php";
+    require_once LIBRARIES."lang$lang.php";
 ?>
 <!DOCTYPE html>
 <html lang="vi">

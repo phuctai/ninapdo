@@ -1,5 +1,5 @@
 <?php 
-	if(!defined('_SOURCE')) die("Error");
+	if(!defined('SOURCES')) die("Error");
 
 	if(isset($_POST['submit-contact']))
 	{
@@ -9,7 +9,7 @@
 		if($scopeRecaptcha >= 0.5)
 		{
 			$file_name = upload_name($_FILES["file"]["name"]);
-			if($file = uploadImage("file", 'doc|docx|pdf|rar|zip|ppt|pptx|DOC|DOCX|PDF|RAR|ZIP|PPT|PPTX|xls|xlsx|jpg|png|gif|JPG|PNG|GIF', _upload_file_l,$file_name))
+			if($file = uploadImage("file", 'doc|docx|pdf|rar|zip|ppt|pptx|DOC|DOCX|PDF|RAR|ZIP|PPT|PPTX|xls|xlsx|jpg|png|gif|JPG|PNG|GIF', UPLOAD_FILE_L,$file_name))
 			{
 				$data['taptin'] = $file;
 			}
@@ -25,7 +25,7 @@
 		    $d->insert('contact',$data);
 
 		    // Cấu hình chung gửi email
-			include_once _LIB."mailsetting.php";
+			include_once LIBRARIES."mailsetting.php";
 			
 		    // Gán giá trị cho biến gửi email
 		    $tennguoigui = $data['ten'];
@@ -299,12 +299,12 @@
 	else $title_bar = $title_crumb;
 	$keywords_bar = $seopage['keywords'.$seolangkey];
 	$description_bar = $seopage['description'.$seolangkey];
-	$img_bar = $config_base._upload_seopage_l."300x200x2/".$seopage['photo'];
+	$img_bar = $config_base.UPLOAD_SEOPAGE_L."300x200x2/".$seopage['photo'];
 	$url_bar = getPageURL();
 	
     $lienhe = $d->rawQueryOne("select noidung$lang from #_static where type = ?",array('lienhe'));
 
 	/* breadCrumbs */
 	if($title_crumb) $data['breadcrumbs'][] = array('slug'=>get_comlang('lien-he',$lang),'name'=>$title_crumb);
-	$breadcrumbs = $bc->getUrl(_trangchu, $data['breadcrumbs']);
+	$breadcrumbs = $bc->getUrl(trangchu, $data['breadcrumbs']);
 ?>

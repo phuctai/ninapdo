@@ -434,7 +434,7 @@
         
         if(keyword=='')
         {
-            modalNotify("<?=_chuanhaptukhoatimkiem?>");
+            modalNotify("<?=chuanhaptukhoatimkiem?>");
             return false;
         }
         else

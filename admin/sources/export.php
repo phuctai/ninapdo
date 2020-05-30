@@ -1,5 +1,5 @@
 <?php	
-	if(!defined('_SOURCE')) die("Error");
+	if(!defined('SOURCES')) die("Error");
 
 	$act = htmlspecialchars($_REQUEST['act']);
 	$type = htmlspecialchars($_REQUEST['type']);
@@ -30,10 +30,10 @@
 		if(isset($_POST['exportExcel']))
 		{
 			/** PHPExcel */
-			include _LIB.'PHPExcel.php';
+			include LIBRARIES.'PHPExcel.php';
 
 			/** PHPExcel_Writer_Excel */
-			include _LIB.'PHPExcel/Writer/Excel5.php';
+			include LIBRARIES.'PHPExcel/Writer/Excel5.php';
 			
 			// Create new PHPExcel object
 			$objPHPExcel = new PHPExcel();

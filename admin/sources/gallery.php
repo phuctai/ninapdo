@@ -1,5 +1,5 @@
 <?php
-if(!defined('_SOURCE')) die("Error");
+if(!defined('SOURCES')) die("Error");
 
 switch($act)
 {
@@ -94,13 +94,13 @@ function save_photo()
 		}
 
 		$file_name = upload_name($_FILES["file-taptin"]["name"]);
-		if($taptin = uploadImage("file-taptin", $config[$com][$type][$dfgallery][$val]['file_type_photo'],_upload_file,$file_name."-taptin"))
+		if($taptin = uploadImage("file-taptin", $config[$com][$type][$dfgallery][$val]['file_type_photo'],UPLOAD_FILE,$file_name."-taptin"))
 		{
 			$data['taptin'] = $taptin;
 
 			$row = $d->rawQueryOne("select id, taptin from #_gallery where id_photo = ? and com = ? and type = ? and kind = ? and val = ? and id = ? order by stt,id desc",array($idc,$com,$type,$kind,$val,$id));
 			
-			if($row['id']) delete_file(_upload_file.$row['taptin']);
+			if($row['id']) delete_file(UPLOAD_FILE.$row['taptin']);
 		}
 		
 		$data['hienthi'] = ($data['hienthi']) ? 1 : 0;
@@ -133,7 +133,7 @@ function save_photo()
 				if($config[$com][$type][$dfgallery][$val]['file_photo'])
 				{
 					$file_name = upload_name($_FILES["file-taptin".$i]["name"]);
-					if($taptin = uploadImage("file-taptin".$i, $config[$com][$type][$dfgallery][$val]['file_type_photo'],_upload_file,$file_name."-taptin".$i))
+					if($taptin = uploadImage("file-taptin".$i, $config[$com][$type][$dfgallery][$val]['file_type_photo'],UPLOAD_FILE,$file_name."-taptin".$i))
 					{
 						$dataMulti['taptin'] = $taptin;		
 					}
@@ -183,7 +183,7 @@ function delete_photo()
 		{
 			delete_file("../upload/".$com."/".$row['photo']);
 			delete_file("../upload/".$com."/".$row['thumb']);
-			delete_file(_upload_file.$row['taptin']);
+			delete_file(UPLOAD_FILE.$row['taptin']);
 
 			$d->rawQuery("delete from #_gallery where id = ?",array($id));
 
@@ -204,7 +204,7 @@ function delete_photo()
 			{
 				delete_file("../upload/".$com."/".$row['photo']);
 				delete_file("../upload/".$com."/".$row['thumb']);
-				delete_file(_upload_file.$row['taptin']);
+				delete_file(UPLOAD_FILE.$row['taptin']);
 
 				$d->rawQuery("delete from #_gallery where id = ? and com = ? and type = ? and kind = ? and val = ?",array($id,$com,$type,$kind,$val));
 			}

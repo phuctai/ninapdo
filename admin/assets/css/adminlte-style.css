@@ -280,6 +280,7 @@
 /* Select */
 .was-validated select.form-control:invalid{background-position:right calc(.375em + 0.6rem) center;}
 .was-validated select.form-control:valid{background-position:right calc(.375em + 0.6rem) center;}
+select.form-control option:disabled{color:#b8babb;font-style:italic;}
 
 /* Select2 */
 .form-group-category .select2-container{width:100%!important;}

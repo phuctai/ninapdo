@@ -1,5 +1,5 @@
 <?php  
-	if(!defined('_SOURCE')) die("Error");
+	if(!defined('SOURCES')) die("Error");
 	
 	/* Lấy bài viết tĩnh */
 	$static = $d->rawQueryOne("select type, ten$lang, noidung$lang, photo from #_static where type = ?",array($type));
@@ -20,10 +20,10 @@
 	else $title_bar = $static['ten'.$lang];
 	$keywords_bar = $seo['keywords'.$seolangkey];
 	$description_bar = $seo['description'.$seolangkey];
-	$img_bar = $config_base._upload_news_l."300x200x2/".$static['photo'];
+	$img_bar = $config_base.UPLOAD_NEWS_L."300x200x2/".$static['photo'];
 	$url_bar = getPageURL();
 
 	/* breadCrumbs */
 	if($title_crumb) $data['breadcrumbs'][] = array('slug'=>get_comlang($type,$lang),'name'=>$title_crumb);
-	$breadcrumbs = $bc->getUrl(_trangchu, $data['breadcrumbs']);
+	$breadcrumbs = $bc->getUrl(trangchu, $data['breadcrumbs']);
 ?>

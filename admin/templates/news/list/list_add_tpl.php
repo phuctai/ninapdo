@@ -49,7 +49,7 @@
                     if($config['news'][$type]['slug_list'])
                     {
                         $slugchange = ($act=='edit_list') ? 1 : 0;
-                        include _TEMPLATE."slug.php";
+                        include TEMPLATE."slug.php";
                     }
                 ?>
                 <div class="card card-primary card-outline text-sm">
@@ -120,9 +120,9 @@
                         </div>
                         <div class="card-body">
                             <?php
-                                $photoDetail = _upload_news.$item['photo'];
+                                $photoDetail = UPLOAD_NEWS.$item['photo'];
                                 $dimension = "Width: ".$config['news'][$type]['width_list']." px - Height: ".$config['news'][$type]['height_list']." px (".$config['news'][$type]['img_type_list'].")";
-                                include _TEMPLATE."image.php";
+                                include TEMPLATE."image.php";
                             ?>
                         </div>
                     </div>
@@ -172,7 +172,7 @@
                 <div class="card-body">
                     <?php
                         $seo = get_seo($id,$com,'man_list',$type);
-                        include _TEMPLATE."seo.php";
+                        include TEMPLATE."seo.php";
                     ?>
                 </div>
             </div>

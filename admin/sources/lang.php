@@ -1,5 +1,5 @@
 <?php
-if(!defined('_SOURCE')) die("Error");
+if(!defined('SOURCES')) die("Error");
 
 $act = htmlspecialchars($_REQUEST['act']);
 $id = htmlspecialchars($_REQUEST['id']);
@@ -52,7 +52,7 @@ function get_create()
 	foreach($config['website']['lang'] as $k => $v)
 	{
 		$lang = $d->rawQuery("select giatri, lang$k from #_lang");
-		$langfile = fopen(_LIB."lang".$k.".php", "w") or transfer("Không thể tạo tập tin.","index.php?com=lang&act=man&p=".$curPage,0);
+		$langfile = fopen(LIBRARIES."lang".$k.".php", "w") or transfer("Không thể tạo tập tin.","index.php?com=lang&act=man&p=".$curPage,0);
 
 		$str = '<?php';
 		for($i=0;$i<count($lang);$i++) $str .= PHP_EOL.'define("'.$lang[$i]['giatri'].'","'.$lang[$i]['lang'.$k].'");';

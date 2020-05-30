@@ -7,12 +7,12 @@
 	$row_detail = $d->rawQueryOne("SELECT ten$lang, photo FROM table_product WHERE id = ? AND type = ?",array($idpro,'san-pham'));
 ?>
 <?php if(count($hinhanhsp)) { ?>
-	<a id="Zoom-1" class="MagicZoom" data-options="zoomMode: off; hint: off; rightClick: true; selectorTrigger: hover; expandCaption: false; history: false;" href="detail/540x540x1/<?=_upload_product_l.$hinhanhsp[0]['photo']?>" title="<?=$row_detail['ten'.$lang]?>"><img onerror="this.src='//placehold.it/540x540';" src="detail/540x540x1/<?=_upload_product_l.$hinhanhsp[0]['photo']?>" alt="<?=$row_detail['ten'.$lang]?>"></a>
+	<a id="Zoom-1" class="MagicZoom" data-options="zoomMode: off; hint: off; rightClick: true; selectorTrigger: hover; expandCaption: false; history: false;" href="detail/540x540x1/<?=UPLOAD_PRODUCT_L.$hinhanhsp[0]['photo']?>" title="<?=$row_detail['ten'.$lang]?>"><img onerror="this.src='//placehold.it/540x540';" src="detail/540x540x1/<?=UPLOAD_PRODUCT_L.$hinhanhsp[0]['photo']?>" alt="<?=$row_detail['ten'.$lang]?>"></a>
     <div class="gallery-thumb-pro">
         <p class="control-thumb-pro prev-thumb-pro"><i class="fas fa-chevron-left"></i></p>
         <div class="slick-thumb-pro">
             <?php for($i=0;$i<count($hinhanhsp);$i++) { ?>
-                <div><a class="thumb-pro-detail" data-zoom-id="Zoom-1" href="detail/540x540x1/<?=_upload_product_l.$hinhanhsp[$i]['photo']?>" title="<?=$row_detail['ten'.$lang]?>"><img onerror="this.src='//placehold.it/540x540';" src="detail/540x540x1/<?=_upload_product_l.$hinhanhsp[$i]['photo']?>" alt="<?=$row_detail['ten'.$lang]?>"></a></div>
+                <div><a class="thumb-pro-detail" data-zoom-id="Zoom-1" href="detail/540x540x1/<?=UPLOAD_PRODUCT_L.$hinhanhsp[$i]['photo']?>" title="<?=$row_detail['ten'.$lang]?>"><img onerror="this.src='//placehold.it/540x540';" src="detail/540x540x1/<?=UPLOAD_PRODUCT_L.$hinhanhsp[$i]['photo']?>" alt="<?=$row_detail['ten'.$lang]?>"></a></div>
             <?php } ?>
         </div>
         <p class="control-thumb-pro next-thumb-pro"><i class="fas fa-chevron-right"></i></p>
@@ -35,5 +35,5 @@
 	    });
 	</script>
 <?php } else { ?>
-	<img onerror="this.src='//placehold.it/540x540';" src="" alt="<?=_khongtimthayketqua?>"/>
+	<img onerror="this.src='//placehold.it/540x540';" src="" alt="<?=khongtimthayketqua?>"/>
 <?php } ?>

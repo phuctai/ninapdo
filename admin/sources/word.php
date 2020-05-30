@@ -1,11 +1,11 @@
 <?php
 	session_start();
-	@define('_LIB','./libraries/');
+	@define('LIBRARIES','./libraries/');
 
-	include_once _LIB."config.php";
-	include_once _LIB."PDODb.php";
+	include_once LIBRARIES."config.php";
+	include_once LIBRARIES."PDODb.php";
     $d = new PDODb($config['database']);
-    include_once _LIB."functions.php";
+    include_once LIBRARIES."functions.php";
 	
 	/* Kiểm tra có đăng nhập chưa */
 	if(check_login()==false && $act!="login")
@@ -52,9 +52,9 @@
 	$trangthai = $d->rawQueryOne("select trangthai from #_status where id = ?",array($tinhtrang));
 
 	/* Khởi tạo PHPWord */
-	require_once _LIB.'PHPWord.php';
+	require_once LIBRARIES.'PHPWord.php';
 	$PHPWord = new PHPWord();
-	$filemau = _LIB.'sample/order.docx';
+	$filemau = LIBRARIES.'sample/order.docx';
 
 	/* Load file Word mẫu */
 	$document = $PHPWord->loadTemplate($filemau);

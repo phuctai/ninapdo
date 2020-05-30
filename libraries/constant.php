@@ -1,33 +1,31 @@
 <?php
-	if(!@defined('_LIB')) die("Error");
+	if(!@defined('LIBRARIES')) die("Error");
 
-	@define(_upload_file,'../upload/download/');
-	@define(_upload_file_l,'upload/download/');
+	@define(UPLOAD_FILE,'../upload/download/');
+	@define(UPLOAD_FILE_L,'upload/download/');
 
-	@define(_upload_sync,'../upload/sync/');
-	@define(_upload_sync_l,'upload/sync/');
+	@define(UPLOAD_SYNC,'../upload/sync/');
+	@define(UPLOAD_SYNC_L,'upload/sync/');
 
-	@define(_upload_excel,'../upload/excel/');
-	@define(_upload_excel_l,'upload/excel/');
+	@define(UPLOAD_EXCEL,'../upload/excel/');
 
-	@define(_upload_seopage,'../upload/seopage/');
-	@define(_upload_seopage_l,'upload/seopage/');
+	@define(UPLOAD_SEOPAGE,'../upload/seopage/');
+	@define(UPLOAD_SEOPAGE_L,'upload/seopage/');
 	
-	@define(_upload_photo,'../upload/photo/');
-	@define(_upload_photo_l,'upload/photo/');
+	@define(UPLOAD_PHOTO,'../upload/photo/');
+	@define(UPLOAD_PHOTO_L,'upload/photo/');
 
-	@define(_upload_user,'../upload/user/');
-	@define(_upload_user_l,'upload/user/');
+	@define(UPLOAD_USER,'../upload/user/');
 	
-	@define(_upload_product,'../upload/product/');
-	@define(_upload_product_l,'upload/product/');
+	@define(UPLOAD_PRODUCT,'../upload/product/');
+	@define(UPLOAD_PRODUCT_L,'upload/product/');
 
-	@define(_upload_mau,'../upload/mau/');
-	@define(_upload_mau_l,'upload/mau/');
+	@define(UPLOAD_COLOR,'../upload/mau/');
+	@define(UPLOAD_COLOR_L,'upload/mau/');
 	
-	@define(_upload_news,'../upload/news/');
-	@define(_upload_news_l,'upload/news/');
+	@define(UPLOAD_NEWS,'../upload/news/');
+	@define(UPLOAD_NEWS_L,'upload/news/');
 
-	@define(_upload_tags,'../upload/tags/');
-	@define(_upload_tags_l,'upload/tags/');
+	@define(UPLOAD_TAGS,'../upload/tags/');
+	@define(UPLOAD_TAGS_L,'upload/tags/');
 ?>

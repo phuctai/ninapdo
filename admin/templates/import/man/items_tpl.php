@@ -78,7 +78,7 @@
 	                                    <input type="number" class="form-control form-control-mini m-auto update-stt" min="0" value="<?=$items[$i]['stt']?>" data-id="<?=$items[$i]['id']?>" data-table="excel">
 	                                </td>
 	                                <td class="align-middle">
-                                    	<a href="<?=$linkEditImg?>&id=<?=$items[$i]['id']?>" title="<?=$items[$i]['photo']?>"><img class="rounded img-preview" onerror="src='assets/images/noimage.png'" src="<?=_upload_excel.$items[$i]['photo']?>" alt="<?=$items[$i]['photo']?>"></a>
+                                    	<a href="<?=$linkEditImg?>&id=<?=$items[$i]['id']?>" title="<?=$items[$i]['photo']?>"><img class="rounded img-preview" onerror="src='assets/images/noimage.png'" src="<?=UPLOAD_EXCEL.$items[$i]['photo']?>" alt="<?=$items[$i]['photo']?>"></a>
                                     </td>
 	                                <td class="align-middle">
 	                                    <a class="text-dark" href="<?=$linkEditImg?>&id=<?=$items[$i]['id']?>" title="<?=$items[$i]['photo']?>"><?=$items[$i]['photo']?></a>

@@ -7,7 +7,7 @@
         </a>
     <?php } } else { ?>
         <div class="alert alert-warning" role="alert">
-            <strong><?=_khongtimthayketqua?></strong>
+            <strong><?=khongtimthayketqua?></strong>
         </div>
     <?php } ?>
     <div class="clear"></div>

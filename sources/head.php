@@ -13,7 +13,7 @@
 <meta name="robots" content="index,follow" />
 
 <!-- Favicon -->
-<link href="<?=_upload_photo_l.$favicon['photo']?>" rel="shortcut icon" type="image/x-icon" />
+<link href="<?=UPLOAD_PHOTO_L.$favicon['photo']?>" rel="shortcut icon" type="image/x-icon" />
 
 <!-- Webmaster Tool -->
 <?=$setting['mastertool']?>
@@ -55,3 +55,6 @@
 
 <!-- Chống đổi màu trên IOS -->
 <meta name="format-detection" content="telephone=no">
+
+<!-- Theme color -->
+<meta name="theme-color" content="#ec2d3f">

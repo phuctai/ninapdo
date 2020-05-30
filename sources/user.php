@@ -1,5 +1,5 @@
 <?php
-	if(!defined('_SOURCE')) die("Error");
+	if(!defined('SOURCES')) die("Error");
 
 	$kind = htmlspecialchars($_GET['kind']);
 
@@ -53,7 +53,7 @@
 
 	/* breadCrumbs */
 	if($title_crumb) $data['breadcrumbs'][] = array('slug'=>"",'name'=>$title_crumb);
-	$breadcrumbs = $bc->getUrl(_trangchu, $data['breadcrumbs']);
+	$breadcrumbs = $bc->getUrl(trangchu, $data['breadcrumbs']);
 
 	function info_user()
 	{
@@ -243,7 +243,7 @@
 		$row = $d->rawQueryOne("select id, maxacnhan, username, password, ten, email, dienthoai, diachi from #_user where username = ?",array($username));
 
 		// Cấu hình chung gửi email
-		include_once _LIB."mailsetting.php";
+		include_once LIBRARIES."mailsetting.php";
 
 		// Gán giá trị cho biến gửi email
 		$iduser = $row['id'];
@@ -419,7 +419,7 @@
 		$row = $d->rawQueryOne("select id, username, password, ten, email, dienthoai, diachi from #_user where username = ?",array($username));
 
 		// Cấu hình chung gửi email
-		include_once _LIB."mailsetting.php";
+		include_once LIBRARIES."mailsetting.php";
 
 		// Gán giá trị cho biến gửi email
 		$iduser = $row['id'];

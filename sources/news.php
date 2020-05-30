@@ -1,5 +1,5 @@
 <?php  
-	if(!defined('_SOURCE')) die("Error");
+	if(!defined('SOURCES')) die("Error");
 
 	@$id = htmlspecialchars($_GET['id']);
 	@$idl = htmlspecialchars($_GET['idl']);
@@ -70,7 +70,7 @@
 		else $title_bar = $row_detail['ten'.$lang];
 		$keywords_bar = $seo['keywords'.$seolangkey];
 		$description_bar = $seo['description'.$seolangkey];
-		$img_bar = $config_base._upload_news_l."300x200x2/".$row_detail['photo'];
+		$img_bar = $config_base.UPLOAD_NEWS_L."300x200x2/".$row_detail['photo'];
 		$url_bar = getPageURL();
 
 		/* breadCrumbs */
@@ -80,7 +80,7 @@
 		$data['breadcrumbs'][] = array('slug'=>get_slug($lang,$news_item['id'],'news_item'),'name'=>$news_item['ten'.$lang]);
 		$data['breadcrumbs'][] = array('slug'=>get_slug($lang,$news_sub['id'],'news_sub'),'name'=>$news_sub['ten'.$lang]);
 		$data['breadcrumbs'][] = array('slug'=>get_slug($lang,$row_detail['id'],'news'),'name'=>$row_detail['ten'.$lang]);
-		$breadcrumbs = $bc->getUrl(_trangchu, $data['breadcrumbs']);
+		$breadcrumbs = $bc->getUrl(trangchu, $data['breadcrumbs']);
 	}
 	else if($idl!='')
 	{
@@ -109,7 +109,7 @@
 		else $title_bar = $news_list['ten'.$lang];
 		$keywords_bar = $seo['keywords'.$seolangkey];
 		$description_bar = $seo['description'.$seolangkey];
-		$img_bar = $config_base._upload_news_l."300x200x2/".$news_list['photo'];
+		$img_bar = $config_base.UPLOAD_NEWS_L."300x200x2/".$news_list['photo'];
 		$url_bar = getPageURL();
 
 		/* Lấy bài viết */
@@ -132,7 +132,7 @@
 		/* breadCrumbs */
 		if($title_crumb) $data['breadcrumbs'][] = array('slug'=>get_comlang($type,$lang),'name'=>$title_crumb);
 		$data['breadcrumbs'][] = array('slug'=>get_slug($lang,$news_list['id'],'news_list'),'name'=>$news_list['ten'.$lang]);
-		$breadcrumbs = $bc->getUrl(_trangchu, $data['breadcrumbs']);
+		$breadcrumbs = $bc->getUrl(trangchu, $data['breadcrumbs']);
 	}
 	else if($idc!='')
 	{
@@ -181,14 +181,14 @@
 		else $title_bar = $news_cat['ten'.$lang];
 		$keywords_bar = $seo['keywords'.$seolangkey];
 		$description_bar = $seo['description'.$seolangkey];
-		$img_bar = $config_base._upload_news_l."300x200x2/".$news_cat['photo'];
+		$img_bar = $config_base.UPLOAD_NEWS_L."300x200x2/".$news_cat['photo'];
 		$url_bar = getPageURL();
 
 		/* breadCrumbs */
 		if($title_crumb) $data['breadcrumbs'][] = array('slug'=>get_comlang($type,$lang),'name'=>$title_crumb);
 		$data['breadcrumbs'][] = array('slug'=>get_slug($lang,$news_list['id'],'news_list'),'name'=>$news_list['ten'.$lang]);
 		$data['breadcrumbs'][] = array('slug'=>get_slug($lang,$news_cat['id'],'news_cat'),'name'=>$news_cat['ten'.$lang]);
-		$breadcrumbs = $bc->getUrl(_trangchu, $data['breadcrumbs']);
+		$breadcrumbs = $bc->getUrl(trangchu, $data['breadcrumbs']);
 	}
 	else if($idi!='')
 	{
@@ -240,7 +240,7 @@
 		else $title_bar = $news_item['ten'.$lang];
 		$keywords_bar = $seo['keywords'.$seolangkey];
 		$description_bar = $seo['description'.$seolangkey];
-		$img_bar = $config_base._upload_news_l."300x200x2/".$news_item['photo'];
+		$img_bar = $config_base.UPLOAD_NEWS_L."300x200x2/".$news_item['photo'];
 		$url_bar = getPageURL();
 
 		/* breadCrumbs */
@@ -248,7 +248,7 @@
 		$data['breadcrumbs'][] = array('slug'=>get_slug($lang,$news_list['id'],'news_list'),'name'=>$news_list['ten'.$lang]);
 		$data['breadcrumbs'][] = array('slug'=>get_slug($lang,$news_cat['id'],'news_cat'),'name'=>$news_cat['ten'.$lang]);
 		$data['breadcrumbs'][] = array('slug'=>get_slug($lang,$news_item['id'],'news_item'),'name'=>$news_item['ten'.$lang]);
-		$breadcrumbs = $bc->getUrl(_trangchu, $data['breadcrumbs']);
+		$breadcrumbs = $bc->getUrl(trangchu, $data['breadcrumbs']);
 	}
 	else if($ids!='')
 	{
@@ -303,7 +303,7 @@
 		else $title_bar = $news_sub['ten'.$lang];
 		$keywords_bar = $seo['keywords'.$seolangkey];
 		$description_bar = $seo['description'.$seolangkey];
-		$img_bar = $config_base._upload_news_l."300x200x2/".$news_sub['photo'];
+		$img_bar = $config_base.UPLOAD_NEWS_L."300x200x2/".$news_sub['photo'];
 		$url_bar = getPageURL();
 
 		/* breadCrumbs */
@@ -312,7 +312,7 @@
 		$data['breadcrumbs'][] = array('slug'=>get_slug($lang,$news_cat['id'],'news_cat'),'name'=>$news_cat['ten'.$lang]);
 		$data['breadcrumbs'][] = array('slug'=>get_slug($lang,$news_item['id'],'news_item'),'name'=>$news_item['ten'.$lang]);
 		$data['breadcrumbs'][] = array('slug'=>get_slug($lang,$news_sub['id'],'news_sub'),'name'=>$news_sub['ten'.$lang]);
-		$breadcrumbs = $bc->getUrl(_trangchu, $data['breadcrumbs']);
+		$breadcrumbs = $bc->getUrl(trangchu, $data['breadcrumbs']);
 	}
 	else
 	{
@@ -332,7 +332,7 @@
 		else $title_bar = $title_crumb;
 		$keywords_bar = $seopage['keywords'.$seolangkey];
 		$description_bar = $seopage['description'.$seolangkey];
-		$img_bar = $config_base._upload_seopage_l."300x200x2/".$seopage['photo'];
+		$img_bar = $config_base.UPLOAD_SEOPAGE_L."300x200x2/".$seopage['photo'];
 		$url_bar = getPageURL();
 
 		/* Lấy tất cả bài viết */
@@ -354,6 +354,6 @@
 
 		/* breadCrumbs */
 		$data['breadcrumbs'][] = array('slug'=>get_comlang($type,$lang),'name'=>$title_crumb);
-		$breadcrumbs = $bc->getUrl(_trangchu, $data['breadcrumbs']);
+		$breadcrumbs = $bc->getUrl(trangchu, $data['breadcrumbs']);
 	}
 ?>

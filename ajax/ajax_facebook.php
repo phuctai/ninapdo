@@ -40,7 +40,7 @@
 		$data['ten']=$fb_name;
 		$data['username']='Login by Facebook';
 		$data['email']=$fb_email;
-		$data['avatar']=uploadUrl($fb_img,_upload_user,"jpg,bmp,jpeg,png,gif","20000000");
+		$data['avatar']=uploadUrl($fb_img,UPLOAD_USER,"jpg,bmp,jpeg,png,gif","20000000");
 		$data['role']=1;
 		$data['hienthi']=1;
 		$data['id_social']=1;

@@ -75,7 +75,7 @@
                                 </td>
                                 <?php if($config['tags'][$type]['show_images']) { ?>
 	                                <td class="align-middle text-center">
-	                                    <a href="<?=$linkEdit?>&id=<?=$items[$i]['id']?>" title="<?=$items[$i]['tenvi']?>"><img class="rounded img-preview" onerror="src='assets/images/noimage.png'" src="<?=_upload_tags.$items[$i]['photo']?>" alt="<?=$items[$i]['tenvi']?>"></a>
+	                                    <a href="<?=$linkEdit?>&id=<?=$items[$i]['id']?>" title="<?=$items[$i]['tenvi']?>"><img class="rounded img-preview" onerror="src='assets/images/noimage.png'" src="<?=UPLOAD_TAGS.$items[$i]['photo']?>" alt="<?=$items[$i]['tenvi']?>"></a>
 	                                </td>
 	                            <?php } ?>
                                 <td class="align-middle">

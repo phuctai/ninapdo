@@ -83,7 +83,7 @@
                         <label class="change-photo" for="file">
                             <p>Upload hình ảnh:</p>
                             <div class="rounded">
-                                <img class="rounded img-upload" src="<?=_upload_news.$item['photo']?>" onerror="src='assets/images/noimage.png'" alt="Alt Photo"/>
+                                <img class="rounded img-upload" src="<?=UPLOAD_NEWS.$item['photo']?>" onerror="src='assets/images/noimage.png'" alt="Alt Photo"/>
                                 <strong>
                                     <b class="text-sm text-split"></b>
                                     <span class="btn btn-sm bg-gradient-success"><i class="fas fa-camera mr-2"></i>Chọn hình</span>
@@ -112,7 +112,7 @@
                     if($config['news'][$type]['slug_item'])
                     {
                         $slugchange = ($act=='edit_item') ? 1 : 0;
-                        include _TEMPLATE."slug.php";
+                        include TEMPLATE."slug.php";
                     }
                 ?>
                 <div class="card card-primary card-outline card-outline-tabs">
@@ -161,7 +161,7 @@
                 <div class="card-body">
                     <?php
                         $seo = get_seo($id,$com,'man_item',$type);
-                        include _TEMPLATE."seo.php";
+                        include TEMPLATE."seo.php";
                     ?>
                 </div>
             </div>

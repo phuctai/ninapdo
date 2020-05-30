@@ -178,5 +178,5 @@
 		redirect("index.php?com=user&act=login");
 	}
 	
-	if($source!="") include _SOURCE.$source.".php";
+	if($source!="") include SOURCES.$source.".php";
 ?>

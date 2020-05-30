@@ -105,7 +105,7 @@
                                 <?php if($config['newsletter'][$type]['file']) { ?>
                                     <td class="align-middle">
                                         <?php if($items[$i]['taptin']!='') { ?>
-                                            <a class="btn btn-sm bg-gradient-primary text-white d-inline-block p-1 rounded" href="<?=_upload_file.$items[$i]['taptin']?>" title="Download tập tin"><i class="fas fa-download mr-2"></i>Download tập tin</a>
+                                            <a class="btn btn-sm bg-gradient-primary text-white d-inline-block p-1 rounded" href="<?=UPLOAD_FILE.$items[$i]['taptin']?>" title="Download tập tin"><i class="fas fa-download mr-2"></i>Download tập tin</a>
                                         <?php } else { ?>
                                             <a class="bg-gradient-secondary text-white d-inline-block p-1 rounded" href="#" title="Tập tin trống"><i class="fas fa-download mr-2"></i>Tập tin trống</a>
                                         <?php } ?>

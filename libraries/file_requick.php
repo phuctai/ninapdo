@@ -85,7 +85,7 @@
 			$source = "contact";
 			$template = "contact";
 			$type_og = "object";
-			$title_crumb = _lienhe;
+			$title_crumb = lienhe;
 			break;
 
 		case 'gioi-thieu':
@@ -93,7 +93,7 @@
 			$template = "static";
 			$type = $com;
 			$type_og = "article";
-			$title_crumb = _gioithieu;
+			$title_crumb = gioithieu;
 			break;
 
 		case 'tin-tuc':
@@ -101,7 +101,7 @@
 			$template = isset($_GET['id']) ? "news_detail" : "news";
 			$type_og = isset($_GET['id']) ? "article" : "object";
 			$type = $com;
-			$title_crumb = _tintuc;
+			$title_crumb = tintuc;
 			break;
 
 		case 'tuyen-dung':
@@ -131,7 +131,7 @@
 			$template = isset($_GET['id']) ? "product_detail" : "product";
 			$type_og = isset($_GET['id']) ? "article" : "object";
 			$type = $com;
-			$title_crumb = _sanpham;
+			$title_crumb = sanpham;
 			break;
 
 		case 'tim-kiem':
@@ -222,6 +222,6 @@
 		}
 	}
 
-	if($source!="") include _SOURCE.$source.".php";
+	if($source!="") include SOURCES.$source.".php";
 	if($template=="") redirect($config_base."404.php");
 ?>

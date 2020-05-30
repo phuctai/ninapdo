@@ -1,5 +1,5 @@
 <?php  
-	if(!defined('_SOURCE')) die("Error");
+	if(!defined('SOURCES')) die("Error");
 
 	$popup = $d->rawQueryOne("SELECT ten$lang, photo, link, hienthi from table_photo where type = ? and act = ?",array('popup','photo_static'));
     $slider = $d->rawQuery("SELECT ten$lang, photo, link FROM table_photo WHERE hienthi=1 AND type = ? ORDER BY stt,id DESC",array('slide'));
@@ -24,6 +24,6 @@
 	$title_bar = $setting['title'.$seolangkey];
 	$keywords_bar = $setting['keywords'.$seolangkey];
 	$description_bar = $setting['description'.$seolangkey];
-	$img_bar = $config_base._upload_photo_l.$seologo['photo'];
+	$img_bar = $config_base.UPLOAD_PHOTO_L.$seologo['photo'];
 	$url_bar = getPageURL();
 ?>

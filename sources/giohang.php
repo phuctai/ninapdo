@@ -1,11 +1,11 @@
 <?php
-	if(!defined('_SOURCE')) die("Error");		
+	if(!defined('SOURCES')) die("Error");		
 
 	$title_bar = _giohang;
 
 	/* breadCrumbs */
 	if($title_crumb) $data['breadcrumbs'][] = array('slug'=>get_comlang('gio-hang',$lang),'name'=>$title_crumb);
-	$breadcrumbs = $bc->getUrl(_trangchu, $data['breadcrumbs']);
+	$breadcrumbs = $bc->getUrl(trangchu, $data['breadcrumbs']);
 
 	/* Tỉnh thành */
 	$city = $d->rawQuery("select ten, id from #_city order by id asc");
@@ -16,7 +16,7 @@
 	if(isset($_POST['thanhtoan']))
 	{
 		// Cấu hình chung gửi email
-		include_once _LIB."mailsetting.php";
+		include_once LIBRARIES."mailsetting.php";
 
 		// Gán giá trị cho biến gửi email
 		$madonhang = strtoupper(stringRandom(6));

@@ -5,7 +5,7 @@
                 <div id="slider-main" class="nivoSlider">
                     <?php for($i=0;$i<count($slider);$i++) { ?>
                         <?php $captionSlide = ($slider[$i]['ten'.$lang]!='' || $slider[$i]['mota'.$lang]!='') ? "title='#slide-caption".$i."'" : "" ; ?>
-                        <a href="<?=$slider[$i]['link']?>" title="<?=$slider[$i]['ten'.$lang]?>"><img src="<?=_upload_photo_l?>1366x600x1/<?=$slider[$i]['photo']?>" alt="<?=$slider[$i]['ten'.$lang]?>" <?=$captionSlide?>/></a>
+                        <a href="<?=$slider[$i]['link']?>" title="<?=$slider[$i]['ten'.$lang]?>"><img src="<?=UPLOAD_PHOTO_L?>1366x600x1/<?=$slider[$i]['photo']?>" alt="<?=$slider[$i]['ten'.$lang]?>" <?=$captionSlide?>/></a>
                     <?php } ?>
                 </div>
                 <?php /* for($i=0;$i<count($slider);$i++) { if($slider[$i]['ten'.$lang] || $slider[$i]['mota'.$lang]) { ?>

@@ -1,7 +1,7 @@
 <script type="text/javascript">
     $(document).ready(function(){
         $(".del-procart").click(function(){
-            if(confirm('<?=_banmuonxoasanphamnay?>'))
+            if(confirm('<?=banmuonxoasanphamnay?>'))
             {
                 var code = $(this).data("code");
                 var ship = $(".price-ship").val();
@@ -23,7 +23,7 @@
                         }
                         else
                         {
-                            $(".wrap-cart").html('<a href="" class="empty-cart text-decoration-none"><i class="fa fa-cart-arrow-down"></i><p><?=_khongtontaisanphamtronggiohang?></p><span><?=_vetrangchu?></span></a>');
+                            $(".wrap-cart").html('<a href="" class="empty-cart text-decoration-none"><i class="fa fa-cart-arrow-down"></i><p><?=khongtontaisanphamtronggiohang?></p><span><?=vetrangchu?></span></a>');
                         }
                     }
                 });
@@ -50,7 +50,7 @@
 
         	if(coupon=='')
         	{
-        		modalNotify("<?=_chuanhapmauudai?>")
+        		modalNotify("<?=chuanhapmauudai?>")
         		return false;
         	}
 
@@ -121,7 +121,7 @@
             success: function (result){
             	load_giaship(0);
                 $(".select-district").html(result);
-                $(".select-wards").html('<option value=""><?=_phuongxa?></option>');
+                $(".select-wards").html('<option value=""><?=phuongxa?></option>');
             }
         });
     }
@@ -164,16 +164,16 @@
 	<div class="wrap-cart d-flex align-items-stretch justify-content-between">
 		<?php if(count($_SESSION['cart'])) { ?>
 			<div class="top-cart">
-				<p class="title-cart"><?=_giohangcuaban?>:</p>
+				<p class="title-cart"><?=giohangcuaban?>:</p>
 				<div class="list-procart">
 					<div class="procart procart-label d-flex align-items-start justify-content-between">
-						<div class="pic-procart"><?=_hinhanh?></div>
-						<div class="info-procart"><?=_tensanpham?></div>
+						<div class="pic-procart"><?=hinhanh?></div>
+						<div class="info-procart"><?=tensanpham?></div>
 						<div class="quantity-procart">
-							<p><?=_soluong?></p>
-							<p><?=_thanhtien?></p>
+							<p><?=soluong?></p>
+							<p><?=thanhtien?></p>
 						</div>
-						<div class="price-procart"><?=_thanhtien?></div>
+						<div class="price-procart"><?=thanhtien?></div>
 					</div>
 					<?php $max = count($_SESSION['cart']); for($i=0;$i<$max;$i++) {
 						$pid = $_SESSION['cart'][$i]['productid'];
@@ -184,10 +184,10 @@
 						$proinfo = get_product_info($pid); ?>
 						<div class="procart procart-<?=$code?> d-flex align-items-start justify-content-between">
 							<div class="pic-procart">
-								<a class="text-decoration-none" href="<?=get_slug($lang,$proinfo['id'],'product')?>" target="_blank" title="<?=$proinfo['ten'.$lang]?>"><img onerror="this.src='//placehold.it/85x85';" src="<?=_upload_product_l.$proinfo['photo']?>" alt="<?=$proinfo['ten'.$lang]?>"></a>
+								<a class="text-decoration-none" href="<?=get_slug($lang,$proinfo['id'],'product')?>" target="_blank" title="<?=$proinfo['ten'.$lang]?>"><img onerror="this.src='//placehold.it/85x85';" src="<?=UPLOAD_PRODUCT_L.$proinfo['photo']?>" alt="<?=$proinfo['ten'.$lang]?>"></a>
 								<a class="del-procart text-decoration-none" data-code="<?=$code?>">
 									<i class="fa fa-times-circle"></i>
-									<span><?=_xoa?></span>
+									<span><?=xoa?></span>
 								</a>
 							</div>
 							<div class="info-procart">
@@ -223,10 +223,10 @@
 			                        <span class="counter-procart-plus counter-procart">+</span>
 			                    </div>
 				                <div class="pic-procart pic-procart-rp">
-									<a class="text-decoration-none" href="<?=get_slug($lang,$proinfo['id'],'product')?>" target="_blank" title="<?=$proinfo['ten'.$lang]?>"><img onerror="this.src='//placehold.it/85x85';" src="<?=_upload_product_l.$proinfo['photo']?>" alt="<?=$proinfo['ten'.$lang]?>"></a>
+									<a class="text-decoration-none" href="<?=get_slug($lang,$proinfo['id'],'product')?>" target="_blank" title="<?=$proinfo['ten'.$lang]?>"><img onerror="this.src='//placehold.it/85x85';" src="<?=UPLOAD_PRODUCT_L.$proinfo['photo']?>" alt="<?=$proinfo['ten'.$lang]?>"></a>
 									<a class="del-procart text-decoration-none" data-code="<?=$code?>">
 										<i class="fa fa-times-circle"></i>
-										<span><?=_xoa?></span>
+										<span><?=xoa?></span>
 									</a>
 								</div>
 				                <script type="text/javascript">
@@ -252,23 +252,23 @@
 				</div>
 		        <div class="money-procart">
 		        	<div class="total-procart coupon-procart d-flex align-items-center justify-content-between">
-		        		<input type="text" class="form-control code-coupon" placeholder="<?=_nhapmauudai?>" />
-						<input type="button" class="btn-cart btn btn-primary apply-coupon" value="<?=_apdung?>">
+		        		<input type="text" class="form-control code-coupon" placeholder="<?=nhapmauudai?>" />
+						<input type="button" class="btn-cart btn btn-primary apply-coupon" value="<?=apdung?>">
 			        </div>
 			        <div class="total-procart d-flex align-items-center justify-content-between">
-			        	<p><?=_tamtinh?>:</p>
+			        	<p><?=tamtinh?>:</p>
 			        	<p class="total-price load-price-temp"><?=number_format(get_order_total(),0, ',', '.')?>đ</p>
 			        </div>
 		        	<div class="total-procart d-flex align-items-center justify-content-between">
-			        	<p><?=_phivanchuyen?>:</p>
+			        	<p><?=phivanchuyen?>:</p>
 			        	<p class="total-price load-price-ship">0đ</p>
 			        </div>
 			        <div class="total-procart d-flex align-items-center justify-content-between">
-			        	<p><?=_uudai?>:</p>
-			        	<p class="total-price load-price-endow"><?=_chuacouudai?></p>
+			        	<p><?=uudai?>:</p>
+			        	<p class="total-price load-price-endow"><?=chuacouudai?></p>
 			        </div>
 			        <div class="total-procart d-flex align-items-center justify-content-between">
-			        	<p><?=_tongtien?>:</p>
+			        	<p><?=tongtien?>:</p>
 			        	<p class="total-price load-price-total"><?=number_format(get_order_total(),0, ',', '.')?>đ</p>
 			        </div>
 			        <input type="hidden" class="price-temp" name="price-temp" value="<?=get_order_total()?>">
@@ -281,7 +281,7 @@
 		    </div>
 		    <div class="bottom-cart">
 			    <div class="section-cart">
-		    		<p class="title-cart"><?=_hinhthucthanhtoan?>:</p>
+		    		<p class="title-cart"><?=hinhthucthanhtoan?>:</p>
 			    	<div class="information-cart">
 			    		<?php foreach($httt as $key => $value) { ?>
 			    			<div class="payments-cart custom-control custom-radio">
@@ -291,61 +291,61 @@
 							</div>
 			    		<?php } ?>
 			    	</div>
-			    	<p class="title-cart"><?=_thongtingiaohang?>:</p>
+			    	<p class="title-cart"><?=thongtingiaohang?>:</p>
 			    	<div class="information-cart">
 			    		<div class="input-double-cart w-clear">
 			    			<div class="input-cart">
-				                <input type="text" class="form-control" id="ten" name="ten" placeholder="<?=_hoten?>" required />
-				                <div class="invalid-feedback"><?=_vuilongnhaphoten?></div>
+				                <input type="text" class="form-control" id="ten" name="ten" placeholder="<?=hoten?>" required />
+				                <div class="invalid-feedback"><?=vuilongnhaphoten?></div>
 				            </div>
 				            <div class="input-cart">
-				                <input type="number" class="form-control" id="dienthoai" name="dienthoai" placeholder="<?=_sodienthoai?>" required />
-				                <div class="invalid-feedback"><?=_vuilongnhapsodienthoai?></div>
+				                <input type="number" class="form-control" id="dienthoai" name="dienthoai" placeholder="<?=sodienthoai?>" required />
+				                <div class="invalid-feedback"><?=vuilongnhapsodienthoai?></div>
 				            </div>
 			    		</div>
 			            <div class="input-cart">
 			                <input type="email" class="form-control" id="email" name="email" placeholder="Email" required />
-			                <div class="invalid-feedback"><?=_vuilongnhapdiachiemail?></div>
+			                <div class="invalid-feedback"><?=vuilongnhapdiachiemail?></div>
 			            </div>
 			            <div class="input-triple-cart w-clear">
 			            	<div class="input-cart">
 								<select class="select-cart select-city custom-select" required id="city" name="city" onchange="load_district(this.value);">
-									<option value=""><?=_tinhthanh?></option>
+									<option value=""><?=tinhthanh?></option>
 									<?php for($i=0;$i<count($city);$i++) { ?>
 										<option value="<?=$city[$i]['id']?>"><?=$city[$i]['ten']?></option>
 									<?php } ?>
 								</select>
-								<div class="invalid-feedback"><?=_vuilongchontinhthanh?></div>
+								<div class="invalid-feedback"><?=vuilongchontinhthanh?></div>
 			            	</div>
 			            	<div class="input-cart">
 								<select class="select-cart select-district custom-select" required id="district" name="district" onchange="load_wards(this.value);">
-									<option value=""><?=_quanhuyen?></option>
+									<option value=""><?=quanhuyen?></option>
 								</select>
-								<div class="invalid-feedback"><?=_vuilongchonquanhuyen?></div>
+								<div class="invalid-feedback"><?=vuilongchonquanhuyen?></div>
 							</div>
 							<div class="input-cart">
 								<select class="select-cart select-wards custom-select" required id="wards" name="wards" onchange="load_giaship(this.value);">
-									<option value=""><?=_phuongxa?></option>
+									<option value=""><?=phuongxa?></option>
 								</select>
-								<div class="invalid-feedback"><?=_vuilongchonphuongxa?></div>
+								<div class="invalid-feedback"><?=vuilongchonphuongxa?></div>
 							</div>
 						</div>
 						<div class="input-cart">
-			                <input type="text" class="form-control" id="diachi" name="diachi" placeholder="<?=_diachi?>" required />
-			                <div class="invalid-feedback"><?=_vuilongnhapdiachi?></div>
+			                <input type="text" class="form-control" id="diachi" name="diachi" placeholder="<?=diachi?>" required />
+			                <div class="invalid-feedback"><?=vuilongnhapdiachi?></div>
 			            </div>
 						<div class="input-cart">
-			                <textarea class="form-control" id="yeucaukhac" name="yeucaukhac" placeholder="<?=_yeucaukhac?>" /></textarea>
+			                <textarea class="form-control" id="yeucaukhac" name="yeucaukhac" placeholder="<?=yeucaukhac?>" /></textarea>
 			            </div>
 			    	</div>
-		    		<input type="submit" class="btn-cart btn btn-primary btn-lg btn-block" name="thanhtoan" value="<?=_thanhtoan?>" disabled>
+		    		<input type="submit" class="btn-cart btn btn-primary btn-lg btn-block" name="thanhtoan" value="<?=thanhtoan?>" disabled>
 			    </div>
 		    </div>
 		<?php } else { ?>
 			<a href="" class="empty-cart text-decoration-none">
 				<i class="fa fa-cart-arrow-down"></i>
-				<p><?=_khongtontaisanphamtronggiohang?></p>
-				<span><?=_vetrangchu?></span>
+				<p><?=khongtontaisanphamtronggiohang?></p>
+				<span><?=vetrangchu?></span>
 			</a>
 		<?php } ?>
 	</div>

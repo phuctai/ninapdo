@@ -1,5 +1,5 @@
 <?php
-if(!defined('_SOURCE')) die("Error");
+if(!defined('SOURCES')) die("Error");
 
 /* Kiểm tra active one signal */
 if(!$config['onesignal']) transfer("Trang không tồn tại", "index.php",0);
@@ -95,17 +95,17 @@ function save_man()
 
 	if($id)
 	{
-		if($photo = uploadImage("file",'.jpg|.gif|.png|.jpeg|.gif|.JPG|.PNG|.JPEG|.Png|.GIF',_upload_sync,$file_name))
+		if($photo = uploadImage("file",'.jpg|.gif|.png|.jpeg|.gif|.JPG|.PNG|.JPEG|.Png|.GIF',UPLOAD_SYNC,$file_name))
 		{
 			$data['photo'] = $photo;	
-			$data['thumb'] = createThumb($data['photo'], 100, 100, _upload_sync,$file_name,1);		
+			$data['thumb'] = createThumb($data['photo'], 100, 100, UPLOAD_SYNC,$file_name,1);		
 
 			$row = $d->rawQueryOne("select id, photo, thumb from #_pushonesignal where id = ?",array($id));
 
 			if($row['id'])
 			{
-				delete_file(_upload_sync.$row['photo']);
-				delete_file(_upload_sync.$row['thumb']);
+				delete_file(UPLOAD_SYNC.$row['photo']);
+				delete_file(UPLOAD_SYNC.$row['thumb']);
 			}
 		}
 	
@@ -115,10 +115,10 @@ function save_man()
 	}
 	else
 	{
-		if($photo = uploadImage("file", 'jpg|png|gif|JPG|jpeg|JPEG', _upload_sync,$file_name))
+		if($photo = uploadImage("file", 'jpg|png|gif|JPG|jpeg|JPEG', UPLOAD_SYNC,$file_name))
 		{
 			$data['photo'] = $photo;		
-			$data['thumb'] = createThumb($data['photo'], 100, 100, _upload_sync,$file_name,1);
+			$data['thumb'] = createThumb($data['photo'], 100, 100, UPLOAD_SYNC,$file_name,1);
 		}
 
 		if($d->insert('pushonesignal',$data)) transfer("Lưu dữ liệu thành công", "index.php?com=pushOnesignal&act=man&p=".$curPage);
@@ -139,8 +139,8 @@ function delete_man()
 
 		if($row['id'])
 		{
-			delete_file(_upload_sync.$row['photo']);
-			delete_file(_upload_sync.$row['thumb']);
+			delete_file(UPLOAD_SYNC.$row['photo']);
+			delete_file(UPLOAD_SYNC.$row['thumb']);
 			$d->rawQuery("delete from #_pushonesignal where id = ?",array($id));
 			transfer("Xóa dữ liệu thành công","index.php?com=pushOnesignal&act=man&p=".$curPage);
 		}
@@ -157,8 +157,8 @@ function delete_man()
 
 			if($row['id'])
 			{
-				delete_file(_upload_sync.$row['photo']);
-				delete_file(_upload_sync.$row['thumb']);
+				delete_file(UPLOAD_SYNC.$row['photo']);
+				delete_file(UPLOAD_SYNC.$row['thumb']);
 				$d->rawQuery("delete from #_pushonesignal where id = ?",array($id));
 			}
 		}
@@ -178,7 +178,7 @@ function sendMessage_onesignal($heading,$content,$url='https://www.google.com/',
 	$headings = array(
 		"en" => $heading
 	);
-	$uphoto = $config_base._upload_sync_l.$photo;
+	$uphoto = $config_base.UPLOAD_SYNC_L.$photo;
 	
 	$fields = array(
 		'app_id' => $config['oneSignal']['id'],

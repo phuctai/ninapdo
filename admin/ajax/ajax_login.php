@@ -1,11 +1,11 @@
 <?php
 	session_start();
-	@define('_LIB','../../libraries/');
+	@define('LIBRARIES','../../libraries/');
 
-    include_once _LIB."config.php";
-    include_once _LIB."PDODb.php";
+    include_once LIBRARIES."config.php";
+    include_once LIBRARIES."PDODb.php";
     $d = new PDODb($config['database']);
-    include_once _LIB."functions.php";
+    include_once LIBRARIES."functions.php";
 
     $username = strtolower(htmlspecialchars($_POST['username']));
 	$password = htmlspecialchars($_POST['password']);

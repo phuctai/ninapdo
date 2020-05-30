@@ -1,18 +1,18 @@
 <?php
 	session_start();
-	@define('_LIB','../libraries/');
-	@define('_SOURCE','./sources/');
-	@define('_TEMPLATE','./templates/');
+	@define('LIBRARIES','../libraries/');
+	@define('SOURCES','./sources/');
+	@define('TEMPLATE','./templates/');
 	@define(_trangdau,'Trang đầu');
 	@define(_trangcuoi,'Trang cuối');
 
-	include_once _LIB."AntiSQLInjection.php";
-	include_once _LIB."config.php";
-	include_once _LIB."PDODb.php";
+	include_once LIBRARIES."AntiSQLInjection.php";
+	include_once LIBRARIES."config.php";
+	include_once LIBRARIES."PDODb.php";
 	$d = new PDODb($config['database']);
-	include_once _LIB."constant.php";
-	include_once _LIB."config-type.php";
-	include_once _LIB."functions.php";
+	include_once LIBRARIES."constant.php";
+	include_once LIBRARIES."config-type.php";
+	include_once LIBRARIES."functions.php";
 
 	$com = (isset($_REQUEST['com'])) ? htmlspecialchars($_REQUEST['com']) : "";
 	$act = (isset($_REQUEST['act'])) ? htmlspecialchars($_REQUEST['act']) : "";
@@ -20,13 +20,13 @@
 	$login_name = $config_base;
 
 	/* Lang Init */
-	// include_once _LIB."langinit.php";
+	// include_once LIBRARIES."langinit.php";
 
 	/* Setting */
 	$setting = $d->rawQueryOne("select * from table_setting");
 
 	/* File Requick Admin */
-	include_once _LIB."file_requick_admin.php";
+	include_once LIBRARIES."file_requick_admin.php";
 ?>
 <!DOCTYPE html>
 <html lang="vi">
@@ -162,13 +162,13 @@
 	</script>
 </head>
 <body class="sidebar-mini hold-transition text-sm <?=(!isset($_SESSION[$login_name]) || $_SESSION[$login_name]==false)?'login-page':''?>">
-	<?php if($template == 'index' || $template == 'user/login') include _TEMPLATE."loader.php"; ?>
+	<?php if($template == 'index' || $template == 'user/login') include TEMPLATE."loader.php"; ?>
     <!-- Wrapper -->
 	<?php if(isset($_SESSION[$login_name]) && ($_SESSION[$login_name] == true)) { ?>
 		<div class="wrapper">
 			<?php
-				include _TEMPLATE."header.php";
-				include _TEMPLATE."menu.php";
+				include TEMPLATE."header.php";
+				include TEMPLATE."menu.php";
 			?>
 			<div class="content-wrapper">
 				<?php if($alertlogin) { ?>
@@ -181,11 +181,11 @@
 						</div>
 					</section>
 				<?php } ?>
-				<?php include _TEMPLATE.$template."_tpl.php"; ?>
+				<?php include TEMPLATE.$template."_tpl.php"; ?>
 			</div>
-			<?php include _TEMPLATE."footer.php"; ?>
+			<?php include TEMPLATE."footer.php"; ?>
 			<?php include "assets/js/myscript.php"; ?>
 		</div>
-	<?php } else { include _TEMPLATE.$template."_tpl.php" ; } ?>
+	<?php } else { include TEMPLATE.$template."_tpl.php" ; } ?>
 </body>
 </html>

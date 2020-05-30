@@ -1,5 +1,5 @@
 <?php	
-if(!defined('_SOURCE')) die("Error");
+if(!defined('SOURCES')) die("Error");
 
 $act = htmlspecialchars($_REQUEST['act']);
 $type = htmlspecialchars($_REQUEST['type']);
@@ -85,13 +85,13 @@ function saveImages()
 	if($id)
 	{
 		$file_name = upload_name($_FILES['file']["name"]);
-		if($photo = uploadImage("file", $config['import']['img_type'], _upload_excel, $file_name))
+		if($photo = uploadImage("file", $config['import']['img_type'], UPLOAD_EXCEL, $file_name))
 		{
 			$data['photo'] = $photo;
 
 			$row = $d->rawQueryOne("select id, photo from #_excel where id = ? and type = ?",array($id,$type));
 
-			if($row['id']) delete_file(_upload_excel.$row['photo']);
+			if($row['id']) delete_file(UPLOAD_EXCEL.$row['photo']);
 			
 			$d->where('id', $id);
 			$d->where('type', $type);
@@ -139,7 +139,7 @@ function uploadImages()
 					if($_POST['ten-filer'][$dem]) $photo = $random."_".$_POST['ten-filer'][$dem].".".$file_name[1];
 					else $photo = $random."_".$file_name[0].".".$file_name[1];
 
-					if(move_uploaded_file($myFile["tmp_name"][$i], _upload_excel."/".$photo))
+					if(move_uploaded_file($myFile["tmp_name"][$i], UPLOAD_EXCEL."/".$photo))
 		            {
 		            	$data['photo'] = $photo;
 						$data['stt'] = (int)$_POST['stt-filer'][$dem];
@@ -171,7 +171,7 @@ function deleteImages()
 
 		if($row['id'])
 		{
-			delete_file(_upload_excel.$row['photo']);
+			delete_file(UPLOAD_EXCEL.$row['photo']);
 			$d->rawQuery("delete from #_excel where id = ? and type = ?",array($id,$type));
 			transfer("Xóa dữ liệu thành công", "index.php?com=import&act=man&type=".$type."&p=".$curPage);
 		}
@@ -188,7 +188,7 @@ function deleteImages()
 
 			if($row['id'])
 			{
-				delete_file(_upload_excel.$row['photo']);
+				delete_file(UPLOAD_EXCEL.$row['photo']);
 				$d->rawQuery("delete from #_excel where id = ? and type = ?",array($id,$type));
 			}
 		}
@@ -203,8 +203,8 @@ function transferphoto($photo)
 {
 	global $d;
 
-	$oldpath = _upload_excel.$photo;
-	$newpath = _upload_product.$photo;
+	$oldpath = UPLOAD_EXCEL.$photo;
+	$newpath = UPLOAD_PRODUCT.$photo;
 
 	if(rename($oldpath,$newpath)) $d->rawQuery("delete from #_excel where photo = ?",array($photo));
 }
@@ -224,8 +224,8 @@ function uploadExcel()
 			$filename = changeTitle($_FILES["file-excel"]["name"]);
 			move_uploaded_file($_FILES["file-excel"]["tmp_name"],$filename);			
 			
-			require _LIB.'PHPExcel.php';
-			require_once _LIB.'PHPExcel/IOFactory.php';
+			require LIBRARIES.'PHPExcel.php';
+			require_once LIBRARIES.'PHPExcel/IOFactory.php';
 
 			$objPHPExcel = PHPExcel_IOFactory::load($filename);
 
@@ -317,7 +317,7 @@ function uploadExcel()
 									$name = $random."_online_img.".$ext;
 
 									$pathOnlineImg = $photo;
-									$pathSaveImg = _upload_excel.$name;
+									$pathSaveImg = UPLOAD_EXCEL.$name;
 									$ch = curl_init($pathOnlineImg);
 									$fp = fopen($pathSaveImg, 'wb');
 									curl_setopt($ch, CURLOPT_FILE, $fp);
@@ -358,7 +358,7 @@ function uploadExcel()
 									if(($photo!="") && ($photo!=$oldphoto))
 									{
 										/* Xóa hình cũ */
-										$oldpathphoto = _upload_product.$oldphoto;
+										$oldpathphoto = UPLOAD_PRODUCT.$oldphoto;
 										if(file_exists($oldpathphoto)) unlink($oldpathphoto);
 
 										/* Chuyển hình mới từ thư mục excel sang thư mục cần chuyển */

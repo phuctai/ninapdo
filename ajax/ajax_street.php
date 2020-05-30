@@ -6,13 +6,13 @@
 
 	if(count($street)>0)
 	{ ?>  
-		<option value=""><?=_duong?></option>
+		<option value=""><?=duong?></option>
 		<?php for($i=0;$i<count($street);$i++) { ?>
 			<option value="<?=$street[$i]['id']?>"><?=$street[$i]['ten']?></option>
 		<?php }
 	}
 	else
 	{ ?>
-		<option value=""><?=_duong?></option>
+		<option value=""><?=duong?></option>
 	<?php }
 ?>

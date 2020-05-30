@@ -1,14 +1,14 @@
 <?php
     session_start();
-    @define('_LIB','./libraries/');
-    @define('_SOURCE','./sources/');
-    @define('_LAYOUT','layout/');
+    @define('LIBRARIES','./libraries/');
+    @define('SOURCES','./sources/');
+    @define('LAYOUT','layout/');
 
     /* Config */
-    include_once _LIB."AntiSQLInjection.php";
-    include_once _LIB."config.php";
-    include_once _LIB."PDODb.php";
-    include_once _LIB."breadCrumbs.php";
+    include_once LIBRARIES."AntiSQLInjection.php";
+    include_once LIBRARIES."config.php";
+    include_once LIBRARIES."PDODb.php";
+    include_once LIBRARIES."breadCrumbs.php";
     $d = new PDODb($config['database']);
     $bc = new breadCrumbs($d);
 
@@ -25,20 +25,20 @@
     else $seolangkey = "vi";
 
     /* Mobile detect */
-    include_once _LIB."Mobile_Detect.php";
+    include_once LIBRARIES."Mobile_Detect.php";
     $detect = new Mobile_Detect;
     $deviceType = ($detect->isMobile() ? ($detect->isTablet() ? 'tablet' : 'phone') : 'computer');
-    if($deviceType != 'computer') @define('_TEMPLATE','./templates-mobile/');
-    else @define('_TEMPLATE','./templates/');
+    if($deviceType != 'computer') @define('TEMPLATE','./templates-mobile/');
+    else @define('TEMPLATE','./templates/');
 
     /* Libraries */
-    include_once _LIB."constant.php";
-    require_once _LIB."lang$lang.php";
-    include_once _LIB."functions.php";
-    include_once _LIB."functionsCart.php";
-    include_once _LIB."file_requick.php";
-    include_once _SOURCE."counter.php";
-    include_once _SOURCE."allpage.php";
+    include_once LIBRARIES."constant.php";
+    require_once LIBRARIES."lang$lang.php";
+    include_once LIBRARIES."functions.php";
+    include_once LIBRARIES."functionsCart.php";
+    include_once LIBRARIES."file_requick.php";
+    include_once SOURCES."counter.php";
+    include_once SOURCES."allpage.php";
 
     /* Include template */
     if($deviceType!='computer') include "mobile.php";

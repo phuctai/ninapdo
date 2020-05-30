@@ -7,7 +7,7 @@
             "name": "<?=$row_detail['ten'.$lang]?>",
             "image":
             [
-                "<?=$config_base._upload_product_l.$row_detail['photo']?>"
+                "<?=$config_base.UPLOAD_PRODUCT_L.$row_detail['photo']?>"
             ],
             "description": "<?=$description_bar?>",
             "sku":"SP0<?=$row_detail['id']?>",
@@ -69,7 +69,7 @@
             "headline": "<?=$row_detail['ten'.$lang]?>",
             "image":
             [
-                "<?=$config_base._upload_news_l.$row_detail['photo']?>"
+                "<?=$config_base.UPLOAD_NEWS_L.$row_detail['photo']?>"
             ],
             "datePublished": "<?=date('Y-m-d',$row_detail['ngaytao'])?>",
             "dateModified": "<?=date('Y-m-d',$row_detail['ngaytao'])?>",
@@ -85,7 +85,7 @@
                 "logo":
                 {
                     "@type": "ImageObject",
-                    "url": "<?=$config_base._upload_photo_l.$logo['photo']?>"
+                    "url": "<?=$config_base.UPLOAD_PHOTO_L.$logo['photo']?>"
                 }
             },
             "description": "<?=$description_bar?>"
@@ -105,7 +105,7 @@
             "headline": "<?=$static['ten'.$lang]?>",
             "image":
             [
-                "<?=$config_base._upload_photo_l.$static['photo']?>"
+                "<?=$config_base.UPLOAD_PHOTO_L.$static['photo']?>"
             ],
             "datePublished": "<?=date('Y-m-d',$static['ngaytao'])?>",
             "dateModified": "<?=date('Y-m-d',$static['ngaytao'])?>",
@@ -121,7 +121,7 @@
                 "logo":
                 {
                     "@type": "ImageObject",
-                    "url": "<?=$config_base._upload_photo_l.$logo['photo']?>"
+                    "url": "<?=$config_base.UPLOAD_PHOTO_L.$logo['photo']?>"
                 }
             },
             "description": "<?=$description_bar?>"

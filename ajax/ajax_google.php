@@ -39,7 +39,7 @@
 		$data['ten']=$gg_name;
 		$data['username']='Login by Google';
 		$data['email']=$gg_email;
-		$data['avatar']=uploadUrl($gg_img,_upload_user,"jpg,bmp,jpeg,png,gif","20000000");
+		$data['avatar']=uploadUrl($gg_img,UPLOAD_USER,"jpg,bmp,jpeg,png,gif","20000000");
 		$data['role']=1;
 		$data['hienthi']=1;
 		$data['id_social']=1;

@@ -1,5 +1,5 @@
 <?php
-if(!defined('_SOURCE')) die("Error");
+if(!defined('SOURCES')) die("Error");
 
 $act = htmlspecialchars($_REQUEST['act']);
 $type = htmlspecialchars($_REQUEST['type']);
@@ -56,28 +56,28 @@ function save_static()
 	}
 
 	$file_name = upload_name($_FILES['file']["name"]);
-	if($photo = uploadImage("file", $config['static'][$type]['img_type'],_upload_news,$file_name))
+	if($photo = uploadImage("file", $config['static'][$type]['img_type'],UPLOAD_NEWS,$file_name))
 	{
 		$data['photo'] = $photo;
-		$data['thumb'] = createThumb($data['photo'], $config['static'][$type]['thumb_width'], $config['static'][$type]['thumb_height'], _upload_news,$file_name,$config['static'][$type]['thumb_ratio']);
+		$data['thumb'] = createThumb($data['photo'], $config['static'][$type]['thumb_width'], $config['static'][$type]['thumb_height'], UPLOAD_NEWS,$file_name,$config['static'][$type]['thumb_ratio']);
 
 		$row = $d->rawQueryOne("select id, photo, thumb from #_static where type = ?",array($type));
 
 		if($row['id'])
 		{
-			delete_file(_upload_news.$row['photo']);
-			delete_file(_upload_news.$row['thumb']);
+			delete_file(UPLOAD_NEWS.$row['photo']);
+			delete_file(UPLOAD_NEWS.$row['thumb']);
 		}
 	}
 
 	$file_name = upload_name($_FILES['file-taptin']["name"]);
-	if($taptin = uploadImage("file-taptin", $config['static'][$type]['file_type'],_upload_file,$file_name))
+	if($taptin = uploadImage("file-taptin", $config['static'][$type]['file_type'],UPLOAD_FILE,$file_name))
 	{
 		$data['taptin'] = $taptin;			
 		
 		$row = $d->rawQueryOne("select id, taptin from #_static where type = ?",array($type));
 
-		if($row['id']) delete_file(_upload_file.$row['taptin']);
+		if($row['id']) delete_file(UPLOAD_FILE.$row['taptin']);
 	}
 
 	if($static['id'])

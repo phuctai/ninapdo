@@ -1,5 +1,5 @@
 <?php
-if(!defined('_SOURCE')) die("Error");
+if(!defined('SOURCES')) die("Error");
 
 $act = htmlspecialchars($_REQUEST['act']);
 $type = htmlspecialchars($_REQUEST['type']);
@@ -46,17 +46,17 @@ function save_seopage()
 	$dataSeo['type'] = $type;
 
 	$file_name = upload_name($_FILES['file']["name"]);
-	if($photo = uploadImage("file", $config['seopage']['img_type'],_upload_seopage,$file_name))
+	if($photo = uploadImage("file", $config['seopage']['img_type'],UPLOAD_SEOPAGE,$file_name))
 	{
 		$dataSeo['photo'] = $photo;
-		$dataSeo['thumb'] = createThumb($dataSeo['photo'], $config['seopage']['thumb_width'], $config['seopage']['thumb_height'], _upload_seopage,$file_name,$config['seopage']['thumb_ratio']);
+		$dataSeo['thumb'] = createThumb($dataSeo['photo'], $config['seopage']['thumb_width'], $config['seopage']['thumb_height'], UPLOAD_SEOPAGE,$file_name,$config['seopage']['thumb_ratio']);
 		
 		$row = $d->rawQueryOne("select id, photo, thumb from #_seopage where type = ?",array($type));
 
 		if($row['id'])
 		{
-			delete_file(_upload_seopage.$row['photo']);
-			delete_file(_upload_seopage.$row['thumb']);
+			delete_file(UPLOAD_SEOPAGE.$row['photo']);
+			delete_file(UPLOAD_SEOPAGE.$row['thumb']);
 		}
 	}
 

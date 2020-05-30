@@ -10,7 +10,7 @@
 					</button>
 				</div>
 				<div class="modal-body">
-					<a href="<?=$popup['link']?>"><img src="<?=_upload_photo_l?>800x530x1/<?=$popup['photo']?>" alt="Popup"></a>
+					<a href="<?=$popup['link']?>"><img src="<?=UPLOAD_PHOTO_L?>800x530x1/<?=$popup['photo']?>" alt="Popup"></a>
 				</div>
 			</div>
 		</div>
@@ -22,14 +22,14 @@
 	<div class="modal-dialog modal-dialog-top modal-md" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h6 class="modal-title" id="popup-notify-label"><?=_thongbao?></h6>
+				<h6 class="modal-title" id="popup-notify-label"><?=thongbao?></h6>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
 			</div>
 			<div class="modal-body"></div>
 			<div class="modal-footer justify-content-center">
-				<button type="button" class="btn btn-danger" data-dismiss="modal"><?=_thoat?></button>
+				<button type="button" class="btn btn-danger" data-dismiss="modal"><?=thoat?></button>
 			</div>
 		</div>
 	</div>
@@ -40,7 +40,7 @@
 	<div class="modal-dialog modal-dialog-top modal-lg" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h6 class="modal-title" id="popup-cart-label"><?=_giohangcuaban?></h6>
+				<h6 class="modal-title" id="popup-cart-label"><?=giohangcuaban?></h6>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>

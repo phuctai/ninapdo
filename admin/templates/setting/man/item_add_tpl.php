@@ -233,7 +233,7 @@
 	        <div class="card-body">
 	            <?php
 	                $seo = $item;
-	                include _TEMPLATE."seo.php";
+	                include TEMPLATE."seo.php";
 	            ?>
 	        </div>
 	    </div>

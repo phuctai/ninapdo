@@ -6,7 +6,7 @@
                 <div class="info-footer"><?=htmlspecialchars_decode($footer['noidung'.$lang])?></div>
             </div>
             <div class="footer-news">
-                <h2 class="title-footer"><?=_chinhsach?></h2>
+                <h2 class="title-footer"><?=chinhsach?></h2>
                 <ul class="footer-ul">
                     <?php foreach($cs as $v) { ?>
                         <li><a class="text-decoration-none" href="<?=get_slug($lang,$v['id'],'news')?>" title="<?=$v['ten'.$lang]?>">- <?=$v['ten'.$lang]?></a></li>
@@ -14,15 +14,15 @@
                 </ul>
             </div>
             <div class="footer-news">
-                <h2 class="title-footer"><?=_dangkynhantin?></h2>
-                <p class="slogan-newsletter"><?=_slogandangkynhantin?></p>
+                <h2 class="title-footer"><?=dangkynhantin?></h2>
+                <p class="slogan-newsletter"><?=slogandangkynhantin?></p>
                 <form class="form-newsletter validation-newsletter" novalidate method="post" action="" enctype="multipart/form-data">
                     <div class="newsletter-input">
-                        <input type="email" class="form-control" id="email-newsletter" name="email-newsletter" placeholder="<?=_nhapemail?>" required />
-                        <div class="invalid-feedback"><?=_vuilongnhapdiachiemail?></div>
+                        <input type="email" class="form-control" id="email-newsletter" name="email-newsletter" placeholder="<?=nhapemail?>" required />
+                        <div class="invalid-feedback"><?=vuilongnhapdiachiemail?></div>
                     </div>
                     <div class="newsletter-button">
-                        <input type="submit" name="submit-newsletter" value="<?=_gui?>" disabled>
+                        <input type="submit" name="submit-newsletter" value="<?=gui?>" disabled>
                         <input type="hidden" name="recaptcha_response_newsletter" id="recaptchaResponseNewsletter">
                     </div>
                 </form>
@@ -57,12 +57,12 @@
         <div class="wrap-content d-flex align-items-center justify-content-between">
             <p class="copyright"><?=$setting['copyright']?>. Design by Nina.vn</p>
             <p class="statistic">
-                <span><?=_dangonline?>: <?=$user_online?></span>
-                <span><?=_homnay?>: <?=$today_visitors?></span>
-                <span><?=_homqua?>: <?=$yesterday_visitors?></span>
-                <span><?=_trongtuan?>: <?=$week_visitors?></span>
-                <span><?=_trongthang?>: <?=$month_visitors?></span>
-                <span><?=_tongtruycap?>: <?=$all_visitors?></span>
+                <span><?=dangonline?>: <?=$user_online?></span>
+                <span><?=homnay?>: <?=$today_visitors?></span>
+                <span><?=homqua?>: <?=$yesterday_visitors?></span>
+                <span><?=trongtuan?>: <?=$week_visitors?></span>
+                <span><?=trongthang?>: <?=$month_visitors?></span>
+                <span><?=tongtruycap?>: <?=$all_visitors?></span>
             </p>
         </div>
     </div>

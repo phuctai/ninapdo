@@ -1,5 +1,5 @@
 <?php
-    if(!defined('_SOURCE')) die("Error");
+    if(!defined('SOURCES')) die("Error");
 
     /* Check login */
     checkLogin();
@@ -7,13 +7,13 @@
     /* Session watermark product */
     $dongdau = $d->rawQueryOne("SELECT photo, hienthi FROM table_photo WHERE type = ? AND act = ?",array('watermark','photo_static'));
     unset($_SESSION["dongdau-product"]);
-    $_SESSION["dongdau-product"]["hinh"]=_upload_photo_l.$dongdau["photo"];
+    $_SESSION["dongdau-product"]["hinh"]=UPLOAD_PHOTO_L.$dongdau["photo"];
     $_SESSION["dongdau-product"]["hienthi"]=$dongdau["hienthi"];
 
     /* Session watermark product detail */
     $dongdau_chitiet = $d->rawQueryOne("SELECT photo, hienthi FROM table_photo WHERE type = ? AND act = ?",array('watermark-chitiet','photo_static'));
     unset($_SESSION["dongdau-product-detail"]);
-    $_SESSION["dongdau-product-detail"]["hinh"]=_upload_photo_l.$dongdau_chitiet["photo"];
+    $_SESSION["dongdau-product-detail"]["hinh"]=UPLOAD_PHOTO_L.$dongdau_chitiet["photo"];
     $_SESSION["dongdau-product-detail"]["hienthi"]=$dongdau_chitiet["hienthi"];
 
     /* Query allpage */

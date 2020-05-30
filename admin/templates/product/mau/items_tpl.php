@@ -72,7 +72,7 @@
                                 </td>
                                 <?php if($config['product'][$type]['mau_images']) { ?>
                                     <td class="align-middle">
-                                        <a href="<?=$linkEdit?>&id=<?=$items[$i]['id']?>" title="<?=$items[$i]['tenvi']?>"><img class="rounded img-preview" onerror="src='assets/images/noimage.png'" src="<?=_upload_mau.$items[$i]['photo']?>" alt="<?=$items[$i]['tenvi']?>"></a>
+                                        <a href="<?=$linkEdit?>&id=<?=$items[$i]['id']?>" title="<?=$items[$i]['tenvi']?>"><img class="rounded img-preview" onerror="src='assets/images/noimage.png'" src="<?=UPLOAD_COLOR.$items[$i]['photo']?>" alt="<?=$items[$i]['tenvi']?>"></a>
                                     </td>
                                 <?php } ?>
                                 <td class="align-middle">

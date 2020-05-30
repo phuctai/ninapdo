@@ -76,7 +76,7 @@
                                 </td>
                                 <?php if($config['photo']['man_photo'][$type]['avatar_photo']) { ?>
 	                                <td class="align-middle text-center">
-	                                    <a href="<?=$linkEdit?>&id=<?=$items[$i]['id']?>" title="<?=$items[$i]['tenvi']?>"><img class="rounded img-preview" onerror="src='assets/images/noimage.png'" src="<?=_upload_photo.$items[$i]['photo']?>" alt="<?=$items[$i]['tenvi']?>"></a>
+	                                    <a href="<?=$linkEdit?>&id=<?=$items[$i]['id']?>" title="<?=$items[$i]['tenvi']?>"><img class="rounded img-preview" onerror="src='assets/images/noimage.png'" src="<?=UPLOAD_PHOTO.$items[$i]['photo']?>" alt="<?=$items[$i]['tenvi']?>"></a>
 	                                </td>
 	                            <?php } ?>
                                 <?php if($config['photo']['man_photo'][$type]['tieude_photo']) { ?>

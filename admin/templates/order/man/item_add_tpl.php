@@ -144,7 +144,7 @@
 	                            <tr>
 	                                <td class="align-middle text-center"><?=($k+1)?></td>
 	                                <td class="align-middle">
-	                                    <a title="<?=$v['ten']?>"><img class="rounded img-preview" onerror="src='assets/images/noimage.png'" src="<?=_upload_product.$v['photo']?>" alt="<?=$v['ten']?>"></a>
+	                                    <a title="<?=$v['ten']?>"><img class="rounded img-preview" onerror="src='assets/images/noimage.png'" src="<?=UPLOAD_PRODUCT.$v['photo']?>" alt="<?=$v['ten']?>"></a>
 	                                </td>
 	                                <td class="align-middle">
 	                                	<p class="text-primary mb-1"><?=$v['ten']?></p>

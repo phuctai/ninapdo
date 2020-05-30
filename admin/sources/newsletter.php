@@ -1,5 +1,5 @@
 <?php
-if(!defined('_SOURCE')) die("Error");
+if(!defined('SOURCES')) die("Error");
 
 $act = htmlspecialchars($_REQUEST['act']);
 $type = htmlspecialchars($_REQUEST['type']);
@@ -14,7 +14,7 @@ if(!count($arrCheck) || !in_array($type,$arrCheck)) transfer("Trang không tồn
 if(isset($_POST["listemail"]))
 {
 	$file_name = upload_name($_FILES['file-taptin']["name"]);
-	if($file = uploadImage("file-taptin", $config['newsletter'][$type]['file_type'], _upload_file,$file_name))
+	if($file = uploadImage("file-taptin", $config['newsletter'][$type]['file_type'], UPLOAD_FILE,$file_name))
 	{
 		$data['taptin'] = $file;
 	}
@@ -24,7 +24,7 @@ if(isset($_POST["listemail"]))
     $noidungthongtin = htmlspecialchars_decode($_POST['noidung']);
 
 	// Cấu hình chung gửi email
-	include_once _LIB."mailsetting.php";
+	include_once LIBRARIES."mailsetting.php";
 
 	$noidung='
 	<table align="center" bgcolor="#dcf0f8" border="0" cellpadding="0" cellspacing="0" style="margin:0;padding:0;background-color:#f2f2f2;width:100%!important;font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#444;line-height:18px" width="100%">
@@ -133,12 +133,12 @@ if(isset($_POST["listemail"]))
 
 	if(sendEmail("customer", $arrayEmail, $subject, $message, $file))
 	{
-		delete_file(_upload_file.$file);
+		delete_file(UPLOAD_FILE.$file);
 		transfer("Email đã được gửi thành công.", "index.php?com=newsletter&act=man&type=".$type."&p=".$curPage);
 	}
 	else
 	{
-		delete_file(_upload_file.$file);
+		delete_file(UPLOAD_FILE.$file);
 		transfer("Email gửi bị lỗi. Vui lòng thử lại sau", "index.php?com=newsletter&act=man&type=".$type."&p=".$curPage,0);
 	}
 }
@@ -228,13 +228,13 @@ function save_item()
 
 	if($id)
 	{
-		if($taptin = uploadImage("file-taptin", $config['newsletter'][$type]['file_type'],_upload_file,$file_name))
+		if($taptin = uploadImage("file-taptin", $config['newsletter'][$type]['file_type'],UPLOAD_FILE,$file_name))
 		{
 			$data['taptin'] = $taptin;
 
 			$row = $d->rawQueryOne("select id, taptin from #_newsletter where id = ? and type = ?",array($id,$type));
 
-			if($row['id']) delete_file(_upload_file.$row['taptin']);
+			if($row['id']) delete_file(UPLOAD_FILE.$row['taptin']);
 		}
 
 		$data['ngaysua'] = time();
@@ -246,7 +246,7 @@ function save_item()
 	}
 	else
 	{
-		if($taptin = uploadImage("file-taptin", $config['newsletter'][$type]['file_type'],_upload_file,$file_name))
+		if($taptin = uploadImage("file-taptin", $config['newsletter'][$type]['file_type'],UPLOAD_FILE,$file_name))
 		{
 			$data['taptin'] = $taptin;			
 		}
@@ -271,7 +271,7 @@ function delete_item()
 
 		if($row['id'])
 		{
-			delete_file(_upload_file.$row['taptin']);
+			delete_file(UPLOAD_FILE.$row['taptin']);
 			$d->rawQuery("delete from #_newsletter where id = ? and type = ?",array($id,$type));
 			transfer("Xóa dữ liệu thành công", "index.php?com=newsletter&act=man&type=".$type."&p=".$curPage);
 		}
@@ -288,7 +288,7 @@ function delete_item()
 
 			if($row['id'])
 			{
-				delete_file(_upload_file.$row['taptin']);
+				delete_file(UPLOAD_FILE.$row['taptin']);
 				$d->rawQuery("delete from #_newsletter where id = ? and type = ?",array($id,$type));
 			}
 		}

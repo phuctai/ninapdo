@@ -1,5 +1,5 @@
 <?php  
-	if(!defined('_SOURCE')) die("Error");
+	if(!defined('SOURCES')) die("Error");
 
 	@$id = htmlspecialchars($_GET['id']);
 	@$idl = htmlspecialchars($_GET['idl']);
@@ -83,7 +83,7 @@
 		else $title_bar = $row_detail['ten'.$lang];
 		$keywords_bar = $seo['keywords'.$seolangkey];
 		$description_bar = $seo['description'.$seolangkey];
-		$img_bar = $config_base._upload_product_l."300x200x2/".$row_detail['photo'];
+		$img_bar = $config_base.UPLOAD_PRODUCT_L."300x200x2/".$row_detail['photo'];
 		$url_bar = getPageURL();
 
 		/* breadCrumbs */
@@ -93,7 +93,7 @@
 		$data['breadcrumbs'][] = array('slug'=>get_slug($lang,$pro_item['id'],'product_item'),'name'=>$pro_item['ten'.$lang]);
 		$data['breadcrumbs'][] = array('slug'=>get_slug($lang,$pro_sub['id'],'product_sub'),'name'=>$pro_sub['ten'.$lang]);
 		$data['breadcrumbs'][] = array('slug'=>get_slug($lang,$row_detail['id'],'product'),'name'=>$row_detail['ten'.$lang]);
-		$breadcrumbs = $bc->getUrl(_trangchu, $data['breadcrumbs']);
+		$breadcrumbs = $bc->getUrl(trangchu, $data['breadcrumbs']);
 	}
 	else if($idl!='')
 	{
@@ -122,7 +122,7 @@
 		else $title_bar = $pro_list['ten'.$lang];
 		$keywords_bar = $seo['keywords'.$seolangkey];
 		$description_bar = $seo['description'.$seolangkey];
-		$img_bar = $config_base._upload_product_l."300x200x2/".$pro_list['photo'];
+		$img_bar = $config_base.UPLOAD_PRODUCT_L."300x200x2/".$pro_list['photo'];
 		$url_bar = getPageURL();
 
 		/* Lấy sản phẩm */
@@ -145,7 +145,7 @@
 		/* breadCrumbs */
 		if($title_crumb) $data['breadcrumbs'][] = array('slug'=>get_comlang($type,$lang),'name'=>$title_crumb);
 		$data['breadcrumbs'][] = array('slug'=>get_slug($lang,$pro_list['id'],'product_list'),'name'=>$pro_list['ten'.$lang]);
-		$breadcrumbs = $bc->getUrl(_trangchu, $data['breadcrumbs']);	
+		$breadcrumbs = $bc->getUrl(trangchu, $data['breadcrumbs']);	
 	}
 	else if($idc!='')
 	{
@@ -194,14 +194,14 @@
 		else $title_bar = $pro_cat['ten'.$lang];
 		$keywords_bar = $seo['keywords'.$seolangkey];
 		$description_bar = $seo['description'.$seolangkey];
-		$img_bar = $config_base._upload_product_l."300x200x2/".$pro_cat['photo'];
+		$img_bar = $config_base.UPLOAD_PRODUCT_L."300x200x2/".$pro_cat['photo'];
 		$url_bar = getPageURL();
 
 		/* breadCrumbs */
 		if($title_crumb) $data['breadcrumbs'][] = array('slug'=>get_comlang($type,$lang),'name'=>$title_crumb);
 		$data['breadcrumbs'][] = array('slug'=>get_slug($lang,$pro_list['id'],'product_list'),'name'=>$pro_list['ten'.$lang]);
 		$data['breadcrumbs'][] = array('slug'=>get_slug($lang,$pro_cat['id'],'product_cat'),'name'=>$pro_cat['ten'.$lang]);
-		$breadcrumbs = $bc->getUrl(_trangchu, $data['breadcrumbs']);
+		$breadcrumbs = $bc->getUrl(trangchu, $data['breadcrumbs']);
 	}
 	else if($idi!='')
 	{
@@ -253,7 +253,7 @@
 		else $title_bar = $pro_item['ten'.$lang];
 		$keywords_bar = $seo['keywords'.$seolangkey];
 		$description_bar = $seo['description'.$seolangkey];
-		$img_bar = $config_base._upload_product_l."300x200x2/".$pro_item['photo'];
+		$img_bar = $config_base.UPLOAD_PRODUCT_L."300x200x2/".$pro_item['photo'];
 		$url_bar = getPageURL();
 
 		/* breadCrumbs */
@@ -261,7 +261,7 @@
 		$data['breadcrumbs'][] = array('slug'=>get_slug($lang,$pro_list['id'],'product_list'),'name'=>$pro_list['ten'.$lang]);
 		$data['breadcrumbs'][] = array('slug'=>get_slug($lang,$pro_cat['id'],'product_cat'),'name'=>$pro_cat['ten'.$lang]);
 		$data['breadcrumbs'][] = array('slug'=>get_slug($lang,$pro_item['id'],'product_item'),'name'=>$pro_item['ten'.$lang]);
-		$breadcrumbs = $bc->getUrl(_trangchu, $data['breadcrumbs']);
+		$breadcrumbs = $bc->getUrl(trangchu, $data['breadcrumbs']);
 	}
 	else if($ids!='')
 	{
@@ -316,7 +316,7 @@
 		else $title_bar = $pro_sub['ten'.$lang];
 		$keywords_bar = $seo['keywords'.$seolangkey];
 		$description_bar = $seo['description'.$seolangkey];
-		$img_bar = $config_base._upload_product_l."300x200x2/".$pro_sub['photo'];
+		$img_bar = $config_base.UPLOAD_PRODUCT_L."300x200x2/".$pro_sub['photo'];
 		$url_bar = getPageURL();
 
 		/* breadCrumbs */
@@ -325,7 +325,7 @@
 		$data['breadcrumbs'][] = array('slug'=>get_slug($lang,$pro_cat['id'],'product_cat'),'name'=>$pro_cat['ten'.$lang]);
 		$data['breadcrumbs'][] = array('slug'=>get_slug($lang,$pro_item['id'],'product_item'),'name'=>$pro_item['ten'.$lang]);
 		$data['breadcrumbs'][] = array('slug'=>get_slug($lang,$pro_sub['id'],'product_sub'),'name'=>$pro_sub['ten'.$lang]);
-		$breadcrumbs = $bc->getUrl(_trangchu, $data['breadcrumbs']);
+		$breadcrumbs = $bc->getUrl(trangchu, $data['breadcrumbs']);
 	}
 	else if($idb!='')
 	{
@@ -354,7 +354,7 @@
 		else $title_bar = $pro_brand['ten'.$lang];
 		$keywords_bar = $seo['keywords'.$seolangkey];
 		$description_bar = $seo['description'.$seolangkey];
-		$img_bar = $config_base._upload_product_l."300x200x2/".$pro_brand['photo'];
+		$img_bar = $config_base.UPLOAD_PRODUCT_L."300x200x2/".$pro_brand['photo'];
 		$url_bar = getPageURL();
 
 		/* Lấy sản phẩm */
@@ -376,7 +376,7 @@
 
 		/* breadCrumbs */
 		$data['breadcrumbs'][] = array('slug'=>get_slug($lang,$pro_brand['id'],'product_brand'),'name'=>$title_cat);
-		$breadcrumbs = $bc->getUrl(_trangchu, $data['breadcrumbs']);
+		$breadcrumbs = $bc->getUrl(trangchu, $data['breadcrumbs']);
 	}
 	else
 	{
@@ -396,7 +396,7 @@
 		else $title_bar = $title_crumb;
 		$keywords_bar = $seopage['keywords'.$seolangkey];
 		$description_bar = $seopage['description'.$seolangkey];
-		$img_bar = $config_base._upload_seopage_l."300x200x2/".$seopage['photo'];
+		$img_bar = $config_base.UPLOAD_SEOPAGE_L."300x200x2/".$seopage['photo'];
 		$url_bar = getPageURL();
 
 		/* Lấy tất cả sản phẩm */
@@ -418,6 +418,6 @@
 
 		/* breadCrumbs */
 		$data['breadcrumbs'][] = array('slug'=>get_comlang($type,$lang),'name'=>$title_crumb);
-		$breadcrumbs = $bc->getUrl(_trangchu, $data['breadcrumbs']);
+		$breadcrumbs = $bc->getUrl(trangchu, $data['breadcrumbs']);
 	}
 ?>

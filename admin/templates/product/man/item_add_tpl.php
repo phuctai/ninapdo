@@ -246,7 +246,7 @@
 	                {
 	                	$slugchange = ($act=='edit') ? 1 : 0;
 	                	$copy = ($act!='copy') ? 0 : 1;
-						include _TEMPLATE."slug.php";
+						include TEMPLATE."slug.php";
 				    }
 			    ?>
 	        	<div class="card card-primary card-outline text-sm">
@@ -377,9 +377,9 @@
 			            </div>
 			            <div class="card-body">
 	                    	<?php
-	                    		$photoDetail = _upload_product.$item['photo'];
+	                    		$photoDetail = UPLOAD_PRODUCT.$item['photo'];
 	                    		$dimension = "Width: ".$config['product'][$type]['width']." px - Height: ".$config['product'][$type]['height']." px (".$config['product'][$type]['img_type'].")";
-	                    		include _TEMPLATE."image.php";
+	                    		include TEMPLATE."image.php";
 	                    	?>
 			            </div>
 			        </div>
@@ -455,7 +455,7 @@
                             <label class="custom-file-label" for="file-taptin">Chọn file</label>
                         </div>
                         <?php if($item['taptin']) { ?>
-                            <a class="btn btn-sm bg-gradient-primary text-white d-inline-block align-middle p-2 rounded mb-1" href="<?=_upload_file.$item['taptin']?>" title="Download tập tin hiện tại"><i class="fas fa-download mr-2"></i>Download tập tin hiện tại</a>
+                            <a class="btn btn-sm bg-gradient-primary text-white d-inline-block align-middle p-2 rounded mb-1" href="<?=UPLOAD_FILE.$item['taptin']?>" title="Download tập tin hiện tại"><i class="fas fa-download mr-2"></i>Download tập tin hiện tại</a>
                         <?php } ?>
                     </div>
                 <?php } ?>
@@ -561,7 +561,7 @@
 	            <div class="card-body">
                     <?php
                     	$seo = get_seo($id,$com,'man',$type);
-                    	include _TEMPLATE."seo.php";
+                    	include TEMPLATE."seo.php";
                     ?>
 	            </div>
 	        </div>

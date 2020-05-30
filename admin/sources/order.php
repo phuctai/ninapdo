@@ -1,5 +1,5 @@
 <?php
-if(!defined('_SOURCE')) die("Error");
+if(!defined('SOURCES')) die("Error");
 
 /* Kiểm tra active đơn hàng */
 if(!$config['order']['active']) transfer("Trang không tồn tại", "index.php",0);

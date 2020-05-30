@@ -40,7 +40,7 @@
                     if($config['product'][$type]['slug_brand'])
                     {
                         $slugchange = ($act=='edit_brand') ? 1 : 0;
-                        include _TEMPLATE."slug.php";
+                        include TEMPLATE."slug.php";
                     }
                 ?>
                 <div class="card card-primary card-outline text-sm">
@@ -111,9 +111,9 @@
                         </div>
                         <div class="card-body">
                             <?php
-                                $photoDetail = _upload_product.$item['photo'];
+                                $photoDetail = UPLOAD_PRODUCT.$item['photo'];
                                 $dimension = "Width: ".$config['product'][$type]['width_brand']." px - Height: ".$config['product'][$type]['height_brand']." px (".$config['product'][$type]['img_type_brand'].")";
-                                include _TEMPLATE."image.php";
+                                include TEMPLATE."image.php";
                             ?>
                         </div>
                     </div>
@@ -129,7 +129,7 @@
                 <div class="card-body">
                     <?php
                         $seo = get_seo($id,$com,'man_brand',$type);
-                        include _TEMPLATE."seo.php";
+                        include TEMPLATE."seo.php";
                     ?>
                 </div>
             </div>

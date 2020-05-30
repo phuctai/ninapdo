@@ -121,7 +121,7 @@
                                 </td>
                                 <?php if($config['product'][$type]['show_images_item']) { ?>
                                     <td class="align-middle">
-                                    	<a href="<?=$linkEdit?><?=$linkID?>&id=<?=$items[$i]['id']?>" title="<?=$items[$i]['tenvi']?>"><img class="rounded img-preview" onerror="src='assets/images/noimage.png'" src="<?=_upload_product.$items[$i]['photo']?>" alt="<?=$items[$i]['tenvi']?>"></a>
+                                    	<a href="<?=$linkEdit?><?=$linkID?>&id=<?=$items[$i]['id']?>" title="<?=$items[$i]['tenvi']?>"><img class="rounded img-preview" onerror="src='assets/images/noimage.png'" src="<?=UPLOAD_PRODUCT.$items[$i]['photo']?>" alt="<?=$items[$i]['tenvi']?>"></a>
                                     </td>
                                 <?php } ?>
                                 <td class="align-middle">

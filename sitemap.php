@@ -1,15 +1,15 @@
 <?php
-	@define('_LIB','./libraries/');
+	@define('LIBRARIES','./libraries/');
 
 	if(!isset($_SESSION['lang'])) $_SESSION['lang'] = 'vi';
 	$lang = $_SESSION['lang'];
 
-	include_once _LIB."AntiSQLInjection.php";
-	include_once _LIB."config.php";
-	require_once _LIB."lang$lang.php";
-	include_once _LIB."PDODb.php";
+	include_once LIBRARIES."AntiSQLInjection.php";
+	include_once LIBRARIES."config.php";
+	require_once LIBRARIES."lang$lang.php";
+	include_once LIBRARIES."PDODb.php";
     $d = new PDODb($config['database']);
-	include_once _LIB."functions.php";
+	include_once LIBRARIES."functions.php";
 
     header("Content-Type: application/xml; charset=utf-8");
 	echo '<?xml version="1.0" encoding="UTF-8"?>';

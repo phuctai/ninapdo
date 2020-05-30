@@ -69,7 +69,7 @@
                                     <input type="number" class="form-control form-control-mini m-auto update-stt" min="0" value="<?=$items[$i]['stt']?>" data-id="<?=$items[$i]['id']?>" data-table="pushonesignal">
                                 </td>
                                 <td class="align-middle text-center">
-                                    <a href="<?=$linkEdit?>&id=<?=$items[$i]['id']?>" title="<?=$items[$i]['name']?>"><img class="rounded img-preview" onerror="src='assets/images/noimage.png'" src="<?=_upload_sync.$items[$i]['photo']?>" alt="<?=$items[$i]['name']?>"></a>
+                                    <a href="<?=$linkEdit?>&id=<?=$items[$i]['id']?>" title="<?=$items[$i]['name']?>"><img class="rounded img-preview" onerror="src='assets/images/noimage.png'" src="<?=UPLOAD_SYNC.$items[$i]['photo']?>" alt="<?=$items[$i]['name']?>"></a>
                                 </td>
                                 <td class="align-middle">
                                     <a class="text-dark" href="<?=$linkEdit?>&id=<?=$items[$i]['id']?>" title="<?=$items[$i]['name']?>"><?=$items[$i]['name']?></a>

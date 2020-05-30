@@ -47,7 +47,7 @@
                 if($config['product'][$type]['slug_cat'])
                 {
                     $slugchange = ($act=='edit_cat') ? 1 : 0;
-                    include _TEMPLATE."slug.php";
+                    include TEMPLATE."slug.php";
                 }
                 ?>
                 <div class="card card-primary card-outline text-sm">
@@ -128,9 +128,9 @@
                         </div>
                         <div class="card-body">
                             <?php
-                                $photoDetail = _upload_product.$item['photo'];
+                                $photoDetail = UPLOAD_PRODUCT.$item['photo'];
                                 $dimension = "Width: ".$config['product'][$type]['width_cat']." px - Height: ".$config['product'][$type]['height_cat']." px (".$config['product'][$type]['img_type_cat'].")";
-                                include _TEMPLATE."image.php";
+                                include TEMPLATE."image.php";
                             ?>
                         </div>
                     </div>
@@ -146,7 +146,7 @@
                 <div class="card-body">
                     <?php
                         $seo = get_seo($id,$com,'man_cat',$type);
-                        include _TEMPLATE."seo.php";
+                        include TEMPLATE."seo.php";
                     ?>
                 </div>
             </div>

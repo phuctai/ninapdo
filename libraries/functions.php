@@ -1,4 +1,4 @@
-<?php if(!defined('_LIB')) die("Error");
+<?php if(!defined('LIBRARIES')) die("Error");
 
 /* Kiểm tra dữ liệu nhập vào */
 function cleanInput($input)
@@ -320,7 +320,7 @@ function sendEmail($owner, $arrayEmail=null, $subject="", $message="", $file=fal
 {
 	global $setting;
 
-	include_once _LIB."phpmailer/class.phpmailer.php";
+	include_once LIBRARIES."phpmailer/class.phpmailer.php";
 	$mail = new PHPMailer();
 
 	if($setting['mailertype']==1)
@@ -369,7 +369,7 @@ function sendEmail($owner, $arrayEmail=null, $subject="", $message="", $file=fal
     $mail->CharSet = "utf-8";
     $mail->AltBody = "To view the message, please use an HTML compatible email viewer!";
     $mail->MsgHTML($message);
-    if($file) $mail->AddAttachment(_upload_file_l.$file);
+    if($file) $mail->AddAttachment(UPLOAD_FILE_L.$file);
 
     if($mail->Send()) return true;
     else return false;

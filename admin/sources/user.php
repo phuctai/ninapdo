@@ -1,5 +1,5 @@
 <?php
-if(!defined('_SOURCE')) die("Error");
+if(!defined('SOURCES')) die("Error");
 
 $act = htmlspecialchars($_REQUEST['act']);
 $curPage = (isset($_GET['p'])) ? htmlspecialchars($_GET['p']) : 1;

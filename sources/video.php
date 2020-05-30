@@ -1,5 +1,5 @@
 <?php  
-	if(!defined('_SOURCE')) die("Error");
+	if(!defined('SOURCES')) die("Error");
 
 	/* Lấy tất cả video */
 	$where = "";
@@ -34,10 +34,10 @@
 	else $title_bar = $title_crumb;
 	$keywords_bar = $seopage['keywords'.$seolangkey];
 	$description_bar = $seopage['description'.$seolangkey];
-	$img_bar = $config_base._upload_seopage_l."300x200x2/".$seopage['photo'];
+	$img_bar = $config_base.UPLOAD_SEOPAGE_L."300x200x2/".$seopage['photo'];
 	$url_bar = getPageURL();
 
 	/* breadCrumbs */
 	if($title_crumb) $data['breadcrumbs'][] = array('slug'=>get_comlang('video',$lang),'name'=>$title_crumb);
-	$breadcrumbs = $bc->getUrl(_trangchu, $data['breadcrumbs']);
+	$breadcrumbs = $bc->getUrl(trangchu, $data['breadcrumbs']);
 ?>

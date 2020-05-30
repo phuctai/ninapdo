@@ -1,5 +1,5 @@
 <?php  
-	if(!defined('_SOURCE')) die("Error");
+	if(!defined('SOURCES')) die("Error");
 		
 	$id = htmlspecialchars($_GET['id']);
 	
@@ -60,11 +60,11 @@
 		else $title_bar = $tags_detail['ten'.$lang];
 		$keywords_bar = $seo['keywords'.$seolangkey];
 		$description_bar = $seo['description'.$seolangkey];
-		$img_bar = $config_base._upload_tags_l."300x200x2/".$tags_detail['photo'];
+		$img_bar = $config_base.UPLOAD_TAGS_L."300x200x2/".$tags_detail['photo'];
 		$url_bar = getPageURL();
 
 		/* breadCrumbs */
 		if($title_crumb) $data['breadcrumbs'][] = array('slug'=>get_slug($lang,$tags_detail['id'],'tags'),'name'=>$title_crumb);
-		$breadcrumbs = $bc->getUrl(_trangchu, $data['breadcrumbs']);
+		$breadcrumbs = $bc->getUrl(trangchu, $data['breadcrumbs']);
 	}
 ?>

@@ -2,12 +2,12 @@
     <div class="wrap-content d-flex align-items-center justify-content-between">
         <div class="ddsmoothmenu" id="smoothmenu1">
             <ul class="d-flex align-items-center justify-content-start">
-                <li class="li-first"><a class="transition <?php if($com=='' || $com=='index') echo 'active'; ?>" href="" title="<?=_trangchu?>"><h2><?=_trangchu?></h2></a></li>
+                <li class="li-first"><a class="transition <?php if($com=='' || $com=='index') echo 'active'; ?>" href="" title="<?=trangchu?>"><h2><?=trangchu?></h2></a></li>
                 <li class="line"></li>
-                <li class="li-first"><a class="transition <?php if($com=='gioi-thieu') echo 'active'; ?>" href="<?=get_comlang('gioi-thieu',$lang)?>" title="<?=_gioithieu?>"><h2><?=_gioithieu?></h2></a></li>
+                <li class="li-first"><a class="transition <?php if($com=='gioi-thieu') echo 'active'; ?>" href="<?=get_comlang('gioi-thieu',$lang)?>" title="<?=gioithieu?>"><h2><?=gioithieu?></h2></a></li>
                 <li class="line"></li>
                 <li class="li-first">
-                    <a class="transition <?php if($com=='san-pham') echo 'active'; ?>" href="<?=get_comlang('san-pham',$lang)?>" title="<?=_sanpham?>"><h2><?=_sanpham?></h2></a>
+                    <a class="transition <?php if($com=='san-pham') echo 'active'; ?>" href="<?=get_comlang('san-pham',$lang)?>" title="<?=sanpham?>"><h2><?=sanpham?></h2></a>
                     <?php if(count($splistmenu)) { ?>
                         <ul>
                             <?php for($i=0;$i<count($splistmenu); $i++) {
@@ -50,7 +50,7 @@
                 </li>
                 <li class="line"></li>
                 <li class="li-first">
-                    <a class="transition <?php if($com=='tin-tuc') echo 'active'; ?>" href="<?=get_comlang('tin-tuc',$lang)?>" title="<?=_tintuc?>"><h2><?=_tintuc?></h2></a>
+                    <a class="transition <?php if($com=='tin-tuc') echo 'active'; ?>" href="<?=get_comlang('tin-tuc',$lang)?>" title="<?=tintuc?>"><h2><?=tintuc?></h2></a>
                     <?php if(count($ttlistmenu)) { ?>
                         <ul>
                             <?php for($i=0;$i<count($ttlistmenu); $i++) {
@@ -92,17 +92,17 @@
                     <?php } ?>
                 </li>
                 <li class="line"></li>
-                <li class="li-first"><a class="transition <?php if($com=='tuyen-dung') echo 'active'; ?>" href="<?=get_comlang('tuyen-dung',$lang)?>" title="<?=_tuyendung?>"><h2><?=_tuyendung?></h2></a></li>
+                <li class="li-first"><a class="transition <?php if($com=='tuyen-dung') echo 'active'; ?>" href="<?=get_comlang('tuyen-dung',$lang)?>" title="<?=tuyendung?>"><h2><?=tuyendung?></h2></a></li>
                 <li class="line"></li>
-                <li class="li-first"><a class="transition <?php if($com=='thu-vien-anh') echo 'active'; ?>" href="<?=get_comlang('thu-vien-anh',$lang)?>" title="<?=_thuvienanh?>"><h2><?=_thuvienanh?></h2></a></li>
+                <li class="li-first"><a class="transition <?php if($com=='thu-vien-anh') echo 'active'; ?>" href="<?=get_comlang('thu-vien-anh',$lang)?>" title="<?=thuvienanh?>"><h2><?=thuvienanh?></h2></a></li>
                 <li class="line"></li>
                 <li class="li-first"><a class="transition <?php if($com=='video') echo 'active'; ?>" href="<?=get_comlang('video',$lang)?>" title="Video"><h2>Video</h2></a></li>
                 <li class="line"></li>
-                <li class="li-first"><a class="transition <?php if($com=='lien-he') echo 'active'; ?>" href="<?=get_comlang('lien-he',$lang)?>" title="<?=_lienhe?>"><h2><?=_lienhe?></h2></a></li>
+                <li class="li-first"><a class="transition <?php if($com=='lien-he') echo 'active'; ?>" href="<?=get_comlang('lien-he',$lang)?>" title="<?=lienhe?>"><h2><?=lienhe?></h2></a></li>
             </ul>
         </div>
         <div class="search w-clear">
-            <input type="text" id="keyword" placeholder="<?=_nhaptukhoatimkiem?>" onkeypress="doEnter(event,'keyword');"/>
+            <input type="text" id="keyword" placeholder="<?=nhaptukhoatimkiem?>" onkeypress="doEnter(event,'keyword');"/>
             <p onclick="onSearch('keyword');"><i class="fas fa-search"></i></p>
         </div>
     </div>

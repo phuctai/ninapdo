@@ -43,7 +43,7 @@
                             <label class="custom-file-label" for="file-taptin">Chọn file</label>
                         </div>
                         <?php if($item['taptin']) { ?>
-                            <a class="btn btn-sm bg-gradient-primary text-white d-inline-block align-middle p-2 rounded mb-1" href="<?=_upload_file.$item['taptin']?>" title="Download tập tin hiện tại"><i class="fas fa-download mr-2"></i>Download tập tin hiện tại</a>
+                            <a class="btn btn-sm bg-gradient-primary text-white d-inline-block align-middle p-2 rounded mb-1" href="<?=UPLOAD_FILE.$item['taptin']?>" title="Download tập tin hiện tại"><i class="fas fa-download mr-2"></i>Download tập tin hiện tại</a>
                         <?php } ?>
                     </div>
                 <?php } ?>

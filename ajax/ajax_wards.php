@@ -6,13 +6,13 @@
 
 	if(count($wards)>0)
 	{ ?>  
-		<option value=""><?=_phuongxa?></option>
+		<option value=""><?=phuongxa?></option>
 		<?php for($i=0;$i<count($wards);$i++) { ?>
 			<option value="<?=$wards[$i]['id']?>"><?=$wards[$i]['ten']?></option>
 		<?php }
 	}
 	else
 	{ ?>
-		<option value=""><?=_phuongxa?></option>
+		<option value=""><?=phuongxa?></option>
 	<?php }
 ?>

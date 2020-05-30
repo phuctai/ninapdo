@@ -1,5 +1,5 @@
 <?php
-if(!defined('_SOURCE')) die("Error");
+if(!defined('SOURCES')) die("Error");
 
 $act = htmlspecialchars($_REQUEST['act']);
 $type = htmlspecialchars($_REQUEST['type']);
@@ -79,17 +79,17 @@ function save_static()
 
 	if($id)
 	{
-		if($photo = uploadImage("file", $config['photo']['photo_static'][$type]['img_type'], _upload_photo, $file_name))
+		if($photo = uploadImage("file", $config['photo']['photo_static'][$type]['img_type'], UPLOAD_PHOTO, $file_name))
 		{
 			$data['photo'] = $photo;
-			$data['thumb'] = createThumb($data['photo'], $config['photo']['photo_static'][$type]['thumb_width'], $config['photo']['photo_static'][$type]['thumb_height'], _upload_photo,$file_name,$config['photo']['photo_static'][$type]['thumb_ratio']);
+			$data['thumb'] = createThumb($data['photo'], $config['photo']['photo_static'][$type]['thumb_width'], $config['photo']['photo_static'][$type]['thumb_height'], UPLOAD_PHOTO,$file_name,$config['photo']['photo_static'][$type]['thumb_ratio']);
 
 			$row = $d->rawQueryOne("select id, photo, thumb from #_photo where id = ? and act = ? and type = ?",array($id,'photo_static',$type));
 
 			if($row['id'])
 			{
-				delete_file(_upload_photo.$row['photo']);
-				delete_file(_upload_photo.$row['thumb']);
+				delete_file(UPLOAD_PHOTO.$row['photo']);
+				delete_file(UPLOAD_PHOTO.$row['thumb']);
 			}
 		}
 
@@ -102,10 +102,10 @@ function save_static()
 	}
 	else
 	{
-		if($photo = uploadImage("file", $config['photo']['photo_static'][$type]['img_type'], _upload_photo, $file_name))
+		if($photo = uploadImage("file", $config['photo']['photo_static'][$type]['img_type'], UPLOAD_PHOTO, $file_name))
 		{
 			$data['photo'] = $photo;
-			$data['thumb'] = createThumb($data['photo'], $config['photo']['photo_static'][$type]['thumb_width'], $config['photo']['photo_static'][$type]['thumb_height'], _upload_photo,$file_name,$config['photo']['photo_static'][$type]['thumb_ratio']);
+			$data['thumb'] = createThumb($data['photo'], $config['photo']['photo_static'][$type]['thumb_width'], $config['photo']['photo_static'][$type]['thumb_height'], UPLOAD_PHOTO,$file_name,$config['photo']['photo_static'][$type]['thumb_ratio']);
 		}
 		else
 		{
@@ -175,17 +175,17 @@ function save_photo()
 	if($id)
 	{
 		$file_name = upload_name($_FILES["file"]["name"]);
-		if($photo = uploadImage("file", $config['photo']['man_photo'][$type]['img_type_photo'], _upload_photo,$file_name))
+		if($photo = uploadImage("file", $config['photo']['man_photo'][$type]['img_type_photo'], UPLOAD_PHOTO,$file_name))
 		{
 			$data['photo'] = $photo;
-			$data['thumb'] = createThumb($data['photo'], $config['photo']['man_photo'][$type]['thumb_width_photo'], $config['photo']['man_photo'][$type]['thumb_height_photo'], _upload_photo,$file_name,$config['photo']['man_photo'][$type]['thumb_ratio_photo']);
+			$data['thumb'] = createThumb($data['photo'], $config['photo']['man_photo'][$type]['thumb_width_photo'], $config['photo']['man_photo'][$type]['thumb_height_photo'], UPLOAD_PHOTO,$file_name,$config['photo']['man_photo'][$type]['thumb_ratio_photo']);
 			
 			$row = $d->rawQueryOne("select id, photo, thumb from #_photo where id = ? and type = ?",array($id,$type));
 
 			if($row['id'])
 			{
-				delete_file(_upload_photo.$row['photo']);
-				delete_file(_upload_photo.$row['thumb']);
+				delete_file(UPLOAD_PHOTO.$row['photo']);
+				delete_file(UPLOAD_PHOTO.$row['thumb']);
 			}
 		}
 		
@@ -213,10 +213,10 @@ function save_photo()
 				if($config['photo']['man_photo'][$type]['images_photo'])
 				{
 					$file_name = upload_name($_FILES["file".$i]["name"]);
-					if($photo = uploadImage("file".$i, $config['photo']['man_photo'][$type]['img_type_photo'], _upload_photo,$file_name.$i))
+					if($photo = uploadImage("file".$i, $config['photo']['man_photo'][$type]['img_type_photo'], UPLOAD_PHOTO,$file_name.$i))
 					{
 						$dataMulti['photo'] = $photo;
-						$dataMulti['thumb'] = createThumb($dataMulti['photo'], $config['photo']['man_photo'][$type]['thumb_width_photo'], $config['photo']['man_photo'][$type]['thumb_height_photo'], _upload_photo,$file_name.$i,$config['photo']['man_photo'][$type]['thumb_ratio_photo']);
+						$dataMulti['thumb'] = createThumb($dataMulti['photo'], $config['photo']['man_photo'][$type]['thumb_width_photo'], $config['photo']['man_photo'][$type]['thumb_height_photo'], UPLOAD_PHOTO,$file_name.$i,$config['photo']['man_photo'][$type]['thumb_ratio_photo']);
 
 						if(!$d->insert('photo',$dataMulti)) transfer("Lưu dữ liệu bị lỗi", "index.php?com=photo&act=man_photo&type=".$type."&p=".$curPage,0);
 					}
@@ -248,8 +248,8 @@ function delete_photo()
 
 		if($row['id'])
 		{
-			delete_file(_upload_photo.$row['photo']);
-			delete_file(_upload_photo.$row['thumb']);
+			delete_file(UPLOAD_PHOTO.$row['photo']);
+			delete_file(UPLOAD_PHOTO.$row['thumb']);
 			$d->rawQuery("delete from #_photo where id = ? and type = ?",array($id,$type));
 			transfer("Xóa dữ liệu thành công", "index.php?com=photo&act=man_photo&type=".$type."&p=".$curPage);
 		}
@@ -266,8 +266,8 @@ function delete_photo()
 
 			if($row['id'])
 			{
-				delete_file(_upload_photo.$row['photo']);
-				delete_file(_upload_photo.$row['thumb']);
+				delete_file(UPLOAD_PHOTO.$row['photo']);
+				delete_file(UPLOAD_PHOTO.$row['thumb']);
 				$d->rawQuery("delete from #_photo where id = ? and type = ?",array($id,$type));
 			}
 		}

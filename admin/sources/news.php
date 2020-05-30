@@ -1,5 +1,5 @@
 <?php
-if(!defined('_SOURCE')) die("Error");
+if(!defined('SOURCES')) die("Error");
 
 $act = htmlspecialchars($_REQUEST['act']);
 $id = htmlspecialchars($_REQUEST['id']);
@@ -242,28 +242,28 @@ function save_item()
 	if($id && $act!='save_copy')
 	{
 		$file_name = upload_name($_FILES['file']["name"]);
-		if($photo = uploadImage("file", $config['news'][$type]['img_type'], _upload_news,$file_name))
+		if($photo = uploadImage("file", $config['news'][$type]['img_type'], UPLOAD_NEWS,$file_name))
 		{
 			$data['photo'] = $photo;
-			$data['thumb'] = createThumb($data['photo'], $config['news'][$type]['thumb_width'], $config['news'][$type]['thumb_height'], _upload_news,$file_name,$config['news'][$type]['thumb_ratio']);
+			$data['thumb'] = createThumb($data['photo'], $config['news'][$type]['thumb_width'], $config['news'][$type]['thumb_height'], UPLOAD_NEWS,$file_name,$config['news'][$type]['thumb_ratio']);
 			
 			$row = $d->rawQueryOne("select id, photo, thumb from #_news where id = ? and type = ?",array($id,$type));
 
 			if($row['id'])
 			{
-				delete_file(_upload_news.$row['photo']);
-				delete_file(_upload_news.$row['thumb']);
+				delete_file(UPLOAD_NEWS.$row['photo']);
+				delete_file(UPLOAD_NEWS.$row['thumb']);
 			}
 		}
 
 		$file_name = upload_name($_FILES['file-taptin']["name"]);
-		if($taptin = uploadImage("file-taptin", $config['news'][$type]['file_type'],_upload_file,$file_name))
+		if($taptin = uploadImage("file-taptin", $config['news'][$type]['file_type'],UPLOAD_FILE,$file_name))
 		{
 			$data['taptin'] = $taptin;
 			
 			$row = $d->rawQueryOne("select id, taptin from #_news where id = ? and type = ?",array($id,$type));
 
-			if($row['id']) delete_file(_upload_file.$row['taptin']);
+			if($row['id']) delete_file(UPLOAD_FILE.$row['taptin']);
 		}	
 
 		/* Cập nhật hình ảnh con */
@@ -287,10 +287,10 @@ function save_item()
 				{
 					if(!in_array(($_FILES['files']['name'][$i]),$arr_file_del,true))
 					{
-						if(move_uploaded_file($myFile["tmp_name"][$i], _upload_news."/".$file_name."_".$myFile["name"][$i]))
+						if(move_uploaded_file($myFile["tmp_name"][$i], UPLOAD_NEWS."/".$file_name."_".$myFile["name"][$i]))
 			            {
 							$data1['photo'] = $file_name."_".$myFile["name"][$i];
-							$data1['thumb'] = createThumb($data1['photo'], $config['news'][$type]['gallery'][$type]['thumb_width_photo'], $config['news'][$type]['gallery'][$type]['thumb_height_photo'], _upload_news, $file_name."_".$myFile["name"][$i],$config['news'][$type]['gallery'][$type]['thumb_ratio_photo']);	
+							$data1['thumb'] = createThumb($data1['photo'], $config['news'][$type]['gallery'][$type]['thumb_width_photo'], $config['news'][$type]['gallery'][$type]['thumb_height_photo'], UPLOAD_NEWS, $file_name."_".$myFile["name"][$i],$config['news'][$type]['gallery'][$type]['thumb_ratio_photo']);	
 							$data1['stt'] = (int)$_POST['stt-filer'][$dem];		
 							$data1['tenvi'] = $_POST['ten-filer'][$dem];
 							$data1['id_photo'] = $id;
@@ -366,14 +366,14 @@ function save_item()
 	else
 	{
 		$file_name = upload_name($_FILES['file']["name"]);
-		if($photo = uploadImage("file", $config['news'][$type]['img_type'], _upload_news,$file_name))
+		if($photo = uploadImage("file", $config['news'][$type]['img_type'], UPLOAD_NEWS,$file_name))
 		{
 			$data['photo'] = $photo;
-			$data['thumb'] = createThumb($data['photo'], $config['news'][$type]['thumb_width'], $config['news'][$type]['thumb_height'], _upload_news,$file_name,$config['news'][$type]['thumb_ratio']);			
+			$data['thumb'] = createThumb($data['photo'], $config['news'][$type]['thumb_width'], $config['news'][$type]['thumb_height'], UPLOAD_NEWS,$file_name,$config['news'][$type]['thumb_ratio']);			
 		}
 
 		$file_name = upload_name($_FILES['file-taptin']["name"]);
-		if($taptin = uploadImage("file-taptin", $config['news'][$type]['file_type'],_upload_file,$file_name))
+		if($taptin = uploadImage("file-taptin", $config['news'][$type]['file_type'],UPLOAD_FILE,$file_name))
 		{
 			$data['taptin'] = $taptin;		
 		}
@@ -442,10 +442,10 @@ function save_item()
 			    	{
 						if(!in_array(($_FILES['files']['name'][$i]),$arr_file_del,true))
 						{
-							if(move_uploaded_file($myFile["tmp_name"][$i], _upload_news."/".$file_name."_".$myFile["name"][$i]))
+							if(move_uploaded_file($myFile["tmp_name"][$i], UPLOAD_NEWS."/".$file_name."_".$myFile["name"][$i]))
 				            {
 								$data1['photo'] = $file_name."_".$myFile["name"][$i];
-								$data1['thumb'] = createThumb($data1['photo'], $config['news'][$type]['gallery'][$type]['thumb_width_photo'], $config['news'][$type]['gallery'][$type]['thumb_height_photo'], _upload_news, $file_name."_".$myFile["name"][$i],$config['news'][$type]['gallery'][$type]['thumb_ratio_photo']);	
+								$data1['thumb'] = createThumb($data1['photo'], $config['news'][$type]['gallery'][$type]['thumb_width_photo'], $config['news'][$type]['gallery'][$type]['thumb_height_photo'], UPLOAD_NEWS, $file_name."_".$myFile["name"][$i],$config['news'][$type]['gallery'][$type]['thumb_ratio_photo']);	
 								$data1['stt'] = (int)$_POST['stt-filer'][$dem];		
 								$data1['tenvi'] = $_POST['ten-filer'][$dem];		
 								$data1['id_photo'] = $id_insert;
@@ -506,9 +506,9 @@ function delete_item()
 
 		if($row['id'])
 		{
-			delete_file(_upload_news.$row['photo']);
-			delete_file(_upload_news.$row['thumb']);
-			delete_file(_upload_file.$row['taptin']);
+			delete_file(UPLOAD_NEWS.$row['photo']);
+			delete_file(UPLOAD_NEWS.$row['thumb']);
+			delete_file(UPLOAD_FILE.$row['taptin']);
 			$d->rawQuery("delete from #_news where id = ?",array($id));
 
 			/* Xóa gallery */
@@ -518,9 +518,9 @@ function delete_item()
 			{
 				foreach($row as $v)
 				{
-					delete_file(_upload_news.$v['photo']);
-					delete_file(_upload_news.$v['thumb']);
-					delete_file(_upload_file.$v['taptin']);
+					delete_file(UPLOAD_NEWS.$v['photo']);
+					delete_file(UPLOAD_NEWS.$v['thumb']);
+					delete_file(UPLOAD_FILE.$v['taptin']);
 				}
 
 				$d->rawQuery("delete from #_gallery where id_photo = ? and kind = ? and com = ?",array($id,'man',$com));
@@ -546,9 +546,9 @@ function delete_item()
 
 			if($row['id'])
 			{
-				delete_file(_upload_news.$row['photo']);
-				delete_file(_upload_news.$row['thumb']);
-				delete_file(_upload_file.$row['taptin']);
+				delete_file(UPLOAD_NEWS.$row['photo']);
+				delete_file(UPLOAD_NEWS.$row['thumb']);
+				delete_file(UPLOAD_FILE.$row['taptin']);
 				$d->rawQuery("delete from #_news where id = ?",array($id));
 
 				/* Xóa gallery */
@@ -558,9 +558,9 @@ function delete_item()
 				{
 					foreach($row as $v)
 					{
-						delete_file(_upload_news.$v['photo']);
-						delete_file(_upload_news.$v['thumb']);
-						delete_file(_upload_file.$v['taptin']);
+						delete_file(UPLOAD_NEWS.$v['photo']);
+						delete_file(UPLOAD_NEWS.$v['thumb']);
+						delete_file(UPLOAD_FILE.$v['taptin']);
 					}
 
 					$d->rawQuery("delete from #_gallery where id_photo = ? and kind = ? and com = ?",array($id,'man',$com));
@@ -644,17 +644,17 @@ function save_list()
 
 	if($id)
 	{					
-		if($photo = uploadImage("file", $config['news'][$type]['img_type_list'], _upload_news,$file_name))
+		if($photo = uploadImage("file", $config['news'][$type]['img_type_list'], UPLOAD_NEWS,$file_name))
 		{
 			$data['photo'] = $photo;
-			$data['thumb'] = createThumb($data['photo'], $config['news'][$type]['thumb_width_list'], $config['news'][$type]['thumb_height_list'], _upload_news,$file_name,$config['news'][$type]['thumb_ratio_list']);
+			$data['thumb'] = createThumb($data['photo'], $config['news'][$type]['thumb_width_list'], $config['news'][$type]['thumb_height_list'], UPLOAD_NEWS,$file_name,$config['news'][$type]['thumb_ratio_list']);
 			
 			$row = $d->rawQueryOne("select id, photo, thumb from #_news_list where id = ? and type = ?",array($id,$type));
 
 			if($row['id'])
 			{
-				delete_file(_upload_news.$row['photo']);
-				delete_file(_upload_news.$row['thumb']);
+				delete_file(UPLOAD_NEWS.$row['photo']);
+				delete_file(UPLOAD_NEWS.$row['thumb']);
 			}
 		}
 
@@ -679,10 +679,10 @@ function save_list()
             	{
 					if(!in_array(($_FILES['files']['name'][$i]),$arr_file_del,true))
 					{
-						if(move_uploaded_file($myFile["tmp_name"][$i], _upload_news."/".$file_name."_".$myFile["name"][$i]))
+						if(move_uploaded_file($myFile["tmp_name"][$i], UPLOAD_NEWS."/".$file_name."_".$myFile["name"][$i]))
 			            {
 							$data1['photo'] = $file_name."_".$myFile["name"][$i];
-							$data1['thumb'] = createThumb($data1['photo'], $config['news'][$type]['gallery_list'][$type]['thumb_width_photo'], $config['news'][$type]['gallery_list'][$type]['thumb_height_photo'], _upload_news, $file_name."_".$myFile["name"][$i],$config['news'][$type]['gallery_list'][$type]['thumb_ratio_photo']);	
+							$data1['thumb'] = createThumb($data1['photo'], $config['news'][$type]['gallery_list'][$type]['thumb_width_photo'], $config['news'][$type]['gallery_list'][$type]['thumb_height_photo'], UPLOAD_NEWS, $file_name."_".$myFile["name"][$i],$config['news'][$type]['gallery_list'][$type]['thumb_ratio_photo']);	
 							$data1['stt'] = (int)$_POST['stt-filer'][$dem];		
 							$data1['tenvi'] = $_POST['ten-filer'][$dem];
 							$data1['id_photo'] = $id;
@@ -723,9 +723,9 @@ function save_list()
 	}
 	else
 	{				
-		if($photo = uploadImage("file", $config['news'][$type]['img_type_list'], _upload_news,$file_name)){
+		if($photo = uploadImage("file", $config['news'][$type]['img_type_list'], UPLOAD_NEWS,$file_name)){
 			$data['photo'] = $photo;
-			$data['thumb'] = createThumb($data['photo'], $config['news'][$type]['thumb_width_list'], $config['news'][$type]['thumb_height_list'], _upload_news,$file_name,$config['news'][$type]['thumb_ratio_list']);	
+			$data['thumb'] = createThumb($data['photo'], $config['news'][$type]['thumb_width_list'], $config['news'][$type]['thumb_height_list'], UPLOAD_NEWS,$file_name,$config['news'][$type]['thumb_ratio_list']);	
 		}
 		
 		$data['ngaytao'] = time();
@@ -765,10 +765,10 @@ function save_list()
 					{
 						if(!in_array(($_FILES['files']['name'][$i]),$arr_file_del,true))
 						{
-							if(move_uploaded_file($myFile["tmp_name"][$i], _upload_news."/".$file_name."_".$myFile["name"][$i]))
+							if(move_uploaded_file($myFile["tmp_name"][$i], UPLOAD_NEWS."/".$file_name."_".$myFile["name"][$i]))
 				            {
 								$data1['photo'] = $file_name."_".$myFile["name"][$i];
-								$data1['thumb'] = createThumb($data1['photo'], $config['news'][$type]['gallery_list'][$type]['thumb_width_photo'], $config['news'][$type]['gallery_list'][$type]['thumb_height_photo'], _upload_news, $file_name."_".$myFile["name"][$i],$config['news'][$type]['gallery_list'][$type]['thumb_ratio_photo']);	
+								$data1['thumb'] = createThumb($data1['photo'], $config['news'][$type]['gallery_list'][$type]['thumb_width_photo'], $config['news'][$type]['gallery_list'][$type]['thumb_height_photo'], UPLOAD_NEWS, $file_name."_".$myFile["name"][$i],$config['news'][$type]['gallery_list'][$type]['thumb_ratio_photo']);	
 								$data1['stt'] = (int)$_POST['stt-filer'][$dem];		
 								$data1['tenvi'] = $_POST['ten-filer'][$dem];
 								$data1['id_photo'] = $id_insert;
@@ -808,8 +808,8 @@ function delete_list()
 
 		if($row['id'])
 		{
-			delete_file(_upload_news.$row['photo']);
-			delete_file(_upload_news.$row['thumb']);
+			delete_file(UPLOAD_NEWS.$row['photo']);
+			delete_file(UPLOAD_NEWS.$row['thumb']);
 			$d->rawQuery("delete from #_news_list where id = ?",array($id));
 
 			/* Xóa gallery */
@@ -819,8 +819,8 @@ function delete_list()
 			{
 				foreach($row as $v)
 				{
-					delete_file(_upload_news.$v['photo']);
-					delete_file(_upload_news.$v['thumb']);
+					delete_file(UPLOAD_NEWS.$v['photo']);
+					delete_file(UPLOAD_NEWS.$v['thumb']);
 				}
 
 				$d->rawQuery("delete from #_gallery where id_photo = ? and kind = ? and com = ?",array($id,'man_list',$com));
@@ -846,8 +846,8 @@ function delete_list()
 
 			if($row['id'])
 			{
-				delete_file(_upload_news.$row['photo']);
-				delete_file(_upload_news.$row['thumb']);
+				delete_file(UPLOAD_NEWS.$row['photo']);
+				delete_file(UPLOAD_NEWS.$row['thumb']);
 				$d->rawQuery("delete from #_news_list where id = ?",array($id));
 
 				/* Xóa gallery */
@@ -857,8 +857,8 @@ function delete_list()
 				{
 					foreach($row as $v)
 					{
-						delete_file(_upload_news.$v['photo']);
-						delete_file(_upload_news.$v['thumb']);
+						delete_file(UPLOAD_NEWS.$v['photo']);
+						delete_file(UPLOAD_NEWS.$v['thumb']);
 					}
 
 					$d->rawQuery("delete from #_gallery where id_photo = ? and kind = ? and com = ?",array($id,'man_list',$com));
@@ -941,17 +941,17 @@ function save_cat()
 
 	if($id)
 	{
-		if($photo = uploadImage("file", $config['news'][$type]['img_type_cat'], _upload_news,$file_name))
+		if($photo = uploadImage("file", $config['news'][$type]['img_type_cat'], UPLOAD_NEWS,$file_name))
 		{
 			$data['photo'] = $photo;
-			$data['thumb'] = createThumb($data['photo'], $config['news'][$type]['thumb_width_cat'], $config['news'][$type]['thumb_height_cat'], _upload_news,$file_name,$config['news'][$type]['thumb_ratio_cat']);			
+			$data['thumb'] = createThumb($data['photo'], $config['news'][$type]['thumb_width_cat'], $config['news'][$type]['thumb_height_cat'], UPLOAD_NEWS,$file_name,$config['news'][$type]['thumb_ratio_cat']);			
 			
 			$row = $d->rawQueryOne("select id, photo, thumb from #_news_cat where id = ? and type = ?",array($id,$type));
 
 			if($row['id'])
 			{
-				delete_file(_upload_news.$row['photo']);
-				delete_file(_upload_news.$row['thumb']);
+				delete_file(UPLOAD_NEWS.$row['photo']);
+				delete_file(UPLOAD_NEWS.$row['thumb']);
 			}
 		}
 
@@ -979,10 +979,10 @@ function save_cat()
 	}
 	else
 	{		
-		if($photo = uploadImage("file", $config['news'][$type]['img_type_cat'], _upload_news,$file_name))
+		if($photo = uploadImage("file", $config['news'][$type]['img_type_cat'], UPLOAD_NEWS,$file_name))
 		{
 			$data['photo'] = $photo;
-			$data['thumb'] = createThumb($data['photo'], $config['news'][$type]['thumb_width_cat'], $config['news'][$type]['thumb_height_cat'], _upload_news,$file_name,$config['news'][$type]['thumb_ratio_cat']);		
+			$data['thumb'] = createThumb($data['photo'], $config['news'][$type]['thumb_width_cat'], $config['news'][$type]['thumb_height_cat'], UPLOAD_NEWS,$file_name,$config['news'][$type]['thumb_ratio_cat']);		
 		}
 
 		$data['ngaytao'] = time();
@@ -1023,8 +1023,8 @@ function delete_cat()
 
 		if($row['id'])
 		{
-			delete_file(_upload_news.$row['photo']);
-			delete_file(_upload_news.$row['thumb']);
+			delete_file(UPLOAD_NEWS.$row['photo']);
+			delete_file(UPLOAD_NEWS.$row['thumb']);
 			$d->rawQuery("delete from #_news_cat where id = ?",array($id));
 
 			transfer("Xóa dữ liệu thành công", "index.php?com=news&act=man_cat&type=".$type."&p=".$curPage.$strUrl);
@@ -1047,8 +1047,8 @@ function delete_cat()
 
 			if($row['id'])
 			{
-				delete_file(_upload_news.$row['photo']);
-				delete_file(_upload_news.$row['thumb']);
+				delete_file(UPLOAD_NEWS.$row['photo']);
+				delete_file(UPLOAD_NEWS.$row['thumb']);
 				$d->rawQuery("delete from #_news_cat where id = ?",array($id));
 			}
 		}
@@ -1130,17 +1130,17 @@ function save_loai()
 
 	if($id)
 	{
-		if($photo = uploadImage("file", $config['news'][$type]['img_type_item'], _upload_news,$file_name))
+		if($photo = uploadImage("file", $config['news'][$type]['img_type_item'], UPLOAD_NEWS,$file_name))
 		{
 			$data['photo'] = $photo;
-			$data['thumb'] = createThumb($data['photo'], $config['news'][$type]['thumb_width_item'], $config['news'][$type]['thumb_height_item'], _upload_news,$file_name,$config['news'][$type]['thumb_ratio_item']);		
+			$data['thumb'] = createThumb($data['photo'], $config['news'][$type]['thumb_width_item'], $config['news'][$type]['thumb_height_item'], UPLOAD_NEWS,$file_name,$config['news'][$type]['thumb_ratio_item']);		
 			
 			$row = $d->rawQueryOne("select id, photo, thumb from #_news_item where id = ? and type = ?",array($id,$type));
 
 			if($row['id'])
 			{
-				delete_file(_upload_news.$row['photo']);
-				delete_file(_upload_news.$row['thumb']);
+				delete_file(UPLOAD_NEWS.$row['photo']);
+				delete_file(UPLOAD_NEWS.$row['thumb']);
 			}
 		}
 
@@ -1168,10 +1168,10 @@ function save_loai()
 	}
 	else
 	{	
-		if($photo = uploadImage("file", $config['news'][$type]['img_type_item'], _upload_news,$file_name))
+		if($photo = uploadImage("file", $config['news'][$type]['img_type_item'], UPLOAD_NEWS,$file_name))
 		{
 			$data['photo'] = $photo;
-			$data['thumb'] = createThumb($data['photo'], $config['news'][$type]['thumb_width_cat'], $config['news'][$type]['thumb_height_cat'], _upload_news,$file_name,$config['news'][$type]['thumb_ratio_cat']);		
+			$data['thumb'] = createThumb($data['photo'], $config['news'][$type]['thumb_width_cat'], $config['news'][$type]['thumb_height_cat'], UPLOAD_NEWS,$file_name,$config['news'][$type]['thumb_ratio_cat']);		
 		}	
 
 		$data['ngaytao'] = time();
@@ -1213,8 +1213,8 @@ function delete_loai()
 
 		if($row['id'])
 		{
-			delete_file(_upload_news.$row['photo']);
-			delete_file(_upload_news.$row['thumb']);
+			delete_file(UPLOAD_NEWS.$row['photo']);
+			delete_file(UPLOAD_NEWS.$row['thumb']);
 			$d->rawQuery("delete from #_news_item where id = ?",array($id));
 
 			transfer("Xóa dữ liệu thành công", "index.php?com=news&act=man_item&type=".$type."&p=".$curPage.$strUrl);
@@ -1237,8 +1237,8 @@ function delete_loai()
 
 			if($row['id'])
 			{
-				delete_file(_upload_news.$row['photo']);
-				delete_file(_upload_news.$row['thumb']);
+				delete_file(UPLOAD_NEWS.$row['photo']);
+				delete_file(UPLOAD_NEWS.$row['thumb']);
 				$d->rawQuery("delete from #_news_item where id = ?",array($id));
 			}
 		}
@@ -1323,17 +1323,17 @@ function save_sub()
 
 	if($id)
 	{
-		if($photo = uploadImage("file", $config['news'][$type]['img_type_sub'], _upload_news,$file_name))
+		if($photo = uploadImage("file", $config['news'][$type]['img_type_sub'], UPLOAD_NEWS,$file_name))
 		{
 			$data['photo'] = $photo;
-			$data['thumb'] = createThumb($data['photo'], $config['news'][$type]['thumb_width_sub'], $config['news'][$type]['thumb_height_sub'], _upload_news,$file_name,$config['news'][$type]['thumb_ratio_sub']);			
+			$data['thumb'] = createThumb($data['photo'], $config['news'][$type]['thumb_width_sub'], $config['news'][$type]['thumb_height_sub'], UPLOAD_NEWS,$file_name,$config['news'][$type]['thumb_ratio_sub']);			
 			
 			$row = $d->rawQueryOne("select id, photo, thumb from #_news_sub where id = ? and type = ?",array($id,$type));
 
 			if($row['id'])
 			{
-				delete_file(_upload_news.$row['photo']);
-				delete_file(_upload_news.$row['thumb']);
+				delete_file(UPLOAD_NEWS.$row['photo']);
+				delete_file(UPLOAD_NEWS.$row['thumb']);
 			}
 		}
 
@@ -1361,10 +1361,10 @@ function save_sub()
 	}
 	else
 	{	
-		if($photo = uploadImage("file", $config['news'][$type]['img_type_sub'], _upload_news,$file_name))
+		if($photo = uploadImage("file", $config['news'][$type]['img_type_sub'], UPLOAD_NEWS,$file_name))
 		{
 			$data['photo'] = $photo;
-			$data['thumb'] = createThumb($data['photo'], $config['news'][$type]['thumb_width_sub'], $config['news'][$type]['thumb_height_sub'], _upload_news,$file_name,$config['news'][$type]['thumb_ratio_sub']);		
+			$data['thumb'] = createThumb($data['photo'], $config['news'][$type]['thumb_width_sub'], $config['news'][$type]['thumb_height_sub'], UPLOAD_NEWS,$file_name,$config['news'][$type]['thumb_ratio_sub']);		
 		}
 
 		$data['ngaytao'] = time();
@@ -1406,8 +1406,8 @@ function delete_sub()
 
 		if($row['id'])
 		{
-			delete_file(_upload_news.$row['photo']);
-			delete_file(_upload_news.$row['thumb']);
+			delete_file(UPLOAD_NEWS.$row['photo']);
+			delete_file(UPLOAD_NEWS.$row['thumb']);
 			$d->rawQuery("delete from #_news_sub where id = ?",array($id));
 
 			transfer("Xóa dữ liệu thành công", "index.php?com=news&act=man_sub&type=".$type."&p=".$curPage.$strUrl);
@@ -1430,8 +1430,8 @@ function delete_sub()
 
 			if($row['id'])
 			{
-				delete_file(_upload_news.$row['photo']);
-				delete_file(_upload_news.$row['thumb']);
+				delete_file(UPLOAD_NEWS.$row['photo']);
+				delete_file(UPLOAD_NEWS.$row['thumb']);
 				$d->rawQuery("delete from #_news_sub where id = ?",array($id));
 			}
 		}

@@ -1,11 +1,11 @@
 <?php
 	session_start();
-	@define('_LIB','./libraries/');
+	@define('LIBRARIES','./libraries/');
 	
-	include_once _LIB."config.php";
-	include_once _LIB."PDODb.php";
+	include_once LIBRARIES."config.php";
+	include_once LIBRARIES."PDODb.php";
     $d = new PDODb($config['database']);
-    include_once _LIB."functions.php";
+    include_once LIBRARIES."functions.php";
 	
 	/* Kiểm tra có đăng nhập chưa */
 	if(check_login()==false && $act!="login")
@@ -43,8 +43,8 @@
 	$trangthai = $d->rawQueryOne("select trangthai from #_status where id = ?",array($tinhtrang));
 	
 	/* PHPExcel */
-	include _LIB.'PHPExcel.php';
-	include _LIB.'PHPExcel/Writer/Excel5.php';
+	include LIBRARIES.'PHPExcel.php';
+	include LIBRARIES.'PHPExcel/Writer/Excel5.php';
 	$PHPExcel = new PHPExcel();
 
 	/* Set properties */

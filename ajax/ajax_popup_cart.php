@@ -4,7 +4,7 @@
 <form method="post" action="" enctype="multipart/form-data">
     <script type="text/javascript">
         $(".del-procart").click(function(){
-            if(confirm('<?=_banmuonxoasanphamnay?>'))
+            if(confirm('<?=banmuonxoasanphamnay?>'))
             {
                 var code = $(this).data("code");
                 var ship = $(".price-ship").val();
@@ -26,7 +26,7 @@
                         }
                         else
                         {
-                            $(".wrap-cart").html('<a href="" class="empty-cart text-decoration-none"><i class="fa fa-cart-arrow-down"></i><p><?=_khongtontaisanphamtronggiohang?></p><span><?=_vetrangchu?></span></a>');
+                            $(".wrap-cart").html('<a href="" class="empty-cart text-decoration-none"><i class="fa fa-cart-arrow-down"></i><p><?=khongtontaisanphamtronggiohang?></p><span><?=vetrangchu?></span></a>');
                         }
                     }
                 });
@@ -83,13 +83,13 @@
         <div class="top-cart">
             <div class="list-procart">
                 <div class="procart procart-label d-flex align-items-start justify-content-between">
-                    <div class="pic-procart"><?=_hinhanh?></div>
-                    <div class="info-procart"><?=_tensanpham?></div>
+                    <div class="pic-procart"><?=hinhanh?></div>
+                    <div class="info-procart"><?=tensanpham?></div>
                     <div class="quantity-procart">
-                        <p><?=_soluong?></p>
-                        <p><?=_thanhtien?></p>
+                        <p><?=soluong?></p>
+                        <p><?=thanhtien?></p>
                     </div>
-                    <div class="price-procart"><?=_thanhtien?></div>
+                    <div class="price-procart"><?=thanhtien?></div>
                 </div>
                 <?php for($i=0;$i<count($_SESSION['cart']);$i++) {
                     $pid = $_SESSION['cart'][$i]['productid'];
@@ -100,10 +100,10 @@
                     $proinfo = get_product_info($pid); ?>
                     <div class="procart procart-<?=$code?> d-flex align-items-start justify-content-between">
                         <div class="pic-procart">
-                            <a class="text-decoration-none" href="<?=get_slug($lang,$proinfo['id'],'product')?>" target="_blank" title="<?=$proinfo['ten'.$lang]?>"><img onerror="this.src='//placehold.it/85x85';" src="<?=_upload_product_l.$proinfo['photo']?>" alt="<?=$proinfo['ten'.$lang]?>"></a>
+                            <a class="text-decoration-none" href="<?=get_slug($lang,$proinfo['id'],'product')?>" target="_blank" title="<?=$proinfo['ten'.$lang]?>"><img onerror="this.src='//placehold.it/85x85';" src="<?=UPLOAD_PRODUCT_L.$proinfo['photo']?>" alt="<?=$proinfo['ten'.$lang]?>"></a>
                             <a class="del-procart text-decoration-none" data-code="<?=$code?>">
                                 <i class="fa fa-times-circle"></i>
-                                <span><?=_xoa?></span>
+                                <span><?=xoa?></span>
                             </a>
                         </div>
                         <div class="info-procart">
@@ -139,10 +139,10 @@
                                 <span class="counter-procart-plus counter-procart">+</span>
                             </div>
                             <div class="pic-procart pic-procart-rp">
-                                <a class="text-decoration-none" href="<?=get_slug($lang,$proinfo['id'],'product')?>" target="_blank" title="<?=$proinfo['ten'.$lang]?>"><img onerror="this.src='//placehold.it/85x85';" src="<?=_upload_product_l.$proinfo['photo']?>" alt="<?=$proinfo['ten'.$lang]?>"></a>
+                                <a class="text-decoration-none" href="<?=get_slug($lang,$proinfo['id'],'product')?>" target="_blank" title="<?=$proinfo['ten'.$lang]?>"><img onerror="this.src='//placehold.it/85x85';" src="<?=UPLOAD_PRODUCT_L.$proinfo['photo']?>" alt="<?=$proinfo['ten'.$lang]?>"></a>
                                 <a class="del-procart text-decoration-none" data-code="<?=$code?>">
                                     <i class="fa fa-times-circle"></i>
-                                    <span><?=_xoa?></span>
+                                    <span><?=xoa?></span>
                                 </a>
                             </div>
                             <script type="text/javascript">
@@ -168,16 +168,16 @@
             </div>
             <div class="money-procart">
                 <div class="total-procart d-flex align-items-center justify-content-between">
-                    <p><?=_tamtinh?>:</p>
+                    <p><?=tamtinh?>:</p>
                     <p class="total-price load-price-temp"><?=number_format(get_order_total(),0, ',', '.')?>đ</p>
                 </div>
             </div>
             <div class="modal-footer d-flex align-items-center justify-content-between">
-                <a href="san-pham" class="buymore-cart text-decoration-none" title="<?=_tieptucmuahang?>">
+                <a href="san-pham" class="buymore-cart text-decoration-none" title="<?=tieptucmuahang?>">
                     <i class="fa fa-angle-double-left"></i>
-                    <span><?=_tieptucmuahang?></span>
+                    <span><?=tieptucmuahang?></span>
                 </a>
-                <a class="btn-cart btn btn-primary" href="gio-hang" title="<?=_thanhtoan?>"><?=_thanhtoan?></a>
+                <a class="btn-cart btn btn-primary" href="gio-hang" title="<?=thanhtoan?>"><?=thanhtoan?></a>
             </div>
         </div>
     </div>

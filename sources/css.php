@@ -44,7 +44,7 @@
         }
         else
         {
-            echo '<style type="text/css">body{ background: url('._upload_photo_l.$bgbody['photo'].') '.$bgbody['background_repeat'].' '.$bgbody['background_position'].' '.$bgbody['background_attachment'].' ;background-size:'.$bgbody['background_size'].' } </style>';
+            echo '<style type="text/css">body{ background: url('.UPLOAD_PHOTO_L.$bgbody['photo'].') '.$bgbody['background_repeat'].' '.$bgbody['background_position'].' '.$bgbody['background_attachment'].' ;background-size:'.$bgbody['background_size'].' } </style>';
         }
     }
 ?>

@@ -100,14 +100,14 @@
 										<?php if($mauDetail['loaihienthi']==0) { ?>
                                             <span class="color-preview rounded" style="background-color:#<?=$mauDetail['mau']?>"></span>
 										<?php } else { ?>
-											<img class="rounded img-preview" onerror="src='assets/images/noimage.png'" src="<?=_upload_mau.$mauDetail['photo']?>" alt="<?=$mauDetail['tenvi']?>">
+											<img class="rounded img-preview" onerror="src='assets/images/noimage.png'" src="<?=UPLOAD_COLOR.$mauDetail['photo']?>" alt="<?=$mauDetail['tenvi']?>">
 										<?php } ?>
 						        	</td>
 						        <?php } ?>
 						        <?php if($config[$com][$type][$dfgallery][$val]['file_photo']) { ?>
 						        	<td class="align-middle">
 						        		<?php if($items[$i]['taptin']!='') { ?>
-											<a class="btn btn-sm bg-gradient-primary text-white d-inline-block p-1 rounded" href="<?=_upload_file.$items[$i]['taptin']?>" title="Download tập tin"><i class="fas fa-download mr-2"></i>Download tập tin</a>
+											<a class="btn btn-sm bg-gradient-primary text-white d-inline-block p-1 rounded" href="<?=UPLOAD_FILE.$items[$i]['taptin']?>" title="Download tập tin"><i class="fas fa-download mr-2"></i>Download tập tin</a>
 										<?php } else { ?>
 											<a class="bg-gradient-secondary text-white d-inline-block p-1 rounded" href="#" title="Tập tin trống"><i class="fas fa-download mr-2"></i>Tập tin trống</a>
 										<?php } ?>

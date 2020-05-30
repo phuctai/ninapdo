@@ -168,7 +168,7 @@
                     if($config['news'][$type]['slug'])
                     {
                         $slugchange = ($act=='edit') ? 1 : 0;
-                        include _TEMPLATE."slug.php";
+                        include TEMPLATE."slug.php";
                     }
                 ?>
                 <div class="card card-primary card-outline text-sm">
@@ -275,9 +275,9 @@
                         </div>
                         <div class="card-body">
                             <?php
-                                $photoDetail = _upload_news.$item['photo'];
+                                $photoDetail = UPLOAD_NEWS.$item['photo'];
                                 $dimension = "Width: ".$config['news'][$type]['width']." px - Height: ".$config['news'][$type]['height']." px (".$config['news'][$type]['img_type'].")";
-                                include _TEMPLATE."image.php";
+                                include TEMPLATE."image.php";
                             ?>
                         </div>
                     </div>
@@ -353,7 +353,7 @@
                             <label class="custom-file-label" for="file-taptin">Chọn file</label>
                         </div>
                         <?php if($item['taptin']) { ?>
-                            <a class="btn btn-sm bg-gradient-primary text-white d-inline-block align-middle p-2 rounded mb-1" href="<?=_upload_file.$item['taptin']?>" title="Download tập tin hiện tại"><i class="fas fa-download mr-2"></i>Download tập tin hiện tại</a>
+                            <a class="btn btn-sm bg-gradient-primary text-white d-inline-block align-middle p-2 rounded mb-1" href="<?=UPLOAD_FILE.$item['taptin']?>" title="Download tập tin hiện tại"><i class="fas fa-download mr-2"></i>Download tập tin hiện tại</a>
                         <?php } ?>
                     </div>
                 <?php } ?>
@@ -410,7 +410,7 @@
                 <div class="card-body">
                     <?php
                         $seo = get_seo($id,$com,'man',$type);
-                        include _TEMPLATE."seo.php";
+                        include TEMPLATE."seo.php";
                     ?>
                 </div>
             </div>

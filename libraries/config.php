@@ -1,5 +1,5 @@
 <?php
-	if(!defined('_LIB')) die("Error");
+	if(!defined('LIBRARIES')) die("Error");
 	
 	/* Timezone */
 	date_default_timezone_set('Asia/Ho_Chi_Minh');
@@ -29,7 +29,7 @@
 			'timefinish' => '04/2020'
 		),
 		'website' => array(
-			'error-reporting' => false,
+			'error-reporting' => true,
 			'secret' => '$nina@',
 			'salt' => 'swKJjeS!t',
 			'debug-developer' => true,
@@ -102,7 +102,7 @@
 	$config['website']['slug']['preview'] = rtrim($config['website']['slug']['preview'],",");
 
 	/* Cấu hình base */
-	if($config['arrayDomainSSL']) include_once _LIB."checkSSL.php";
+	if($config['arrayDomainSSL']) include_once LIBRARIES."checkSSL.php";
 	$http = 'http';
     if($_SERVER["HTTPS"] == "on") $http .= "s";
     $http .= "://";

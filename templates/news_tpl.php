@@ -2,16 +2,16 @@
 <div class="content-main w-clear">
     <?php if(count($news)>0) { for($i=0;$i<count($news);$i++) { ?>
         <a class="news text-decoration-none w-clear" href="<?=get_slug($lang,$news[$i]['id'],'news')?>" title="<?=$news[$i]['ten'.$lang]?>">
-            <p class="pic-news scale-img"><img onerror="this.src='//placehold.it/160x120';" src="<?=_upload_news_l?>160x120x1/<?=$news[$i]['photo']?>" alt="<?=$news[$i]['ten'.$lang]?>"></p>
+            <p class="pic-news scale-img"><img onerror="this.src='//placehold.it/160x120';" src="<?=UPLOAD_NEWS_L?>160x120x1/<?=$news[$i]['photo']?>" alt="<?=$news[$i]['ten'.$lang]?>"></p>
             <div class="info-news">
                 <h3 class="name-news"><?=$news[$i]['ten'.$lang]?></h3>
-                <p class="time-news"><?=_ngaydang?>: <?=date("d/m/Y h:i A",$news[$i]['ngaytao'])?></p>
+                <p class="time-news"><?=ngaydang?>: <?=date("d/m/Y h:i A",$news[$i]['ngaytao'])?></p>
                 <div class="desc-news text-split"><?=$news[$i]['mota'.$lang]?></div>
             </div>
         </a>
     <?php } } else { ?>
         <div class="alert alert-warning" role="alert">
-            <strong><?=_khongtimthayketqua?></strong>
+            <strong><?=khongtimthayketqua?></strong>
         </div>
     <?php } ?>
     <div class="clear"></div>

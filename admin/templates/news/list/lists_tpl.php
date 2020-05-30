@@ -79,7 +79,7 @@
                                 </td>
                                 <?php if($config['news'][$type]['show_images_list']) { ?>
                                     <td class="align-middle">
-                                    	<a href="<?=$linkEdit?>&id=<?=$items[$i]['id']?>" title="<?=$items[$i]['tenvi']?>"><img class="rounded img-preview" onerror="src='assets/images/noimage.png'" src="<?=_upload_news.$items[$i]['photo']?>" alt="<?=$items[$i]['tenvi']?>"></a>
+                                    	<a href="<?=$linkEdit?>&id=<?=$items[$i]['id']?>" title="<?=$items[$i]['tenvi']?>"><img class="rounded img-preview" onerror="src='assets/images/noimage.png'" src="<?=UPLOAD_NEWS.$items[$i]['photo']?>" alt="<?=$items[$i]['tenvi']?>"></a>
                                     </td>
                                 <?php } ?>
                                 <td class="align-middle">

@@ -1,5 +1,5 @@
 <?php
-if(!defined('_SOURCE')) die("Error");
+if(!defined('SOURCES')) die("Error");
 
 $act = htmlspecialchars($_REQUEST['act']);
 $id = htmlspecialchars($_REQUEST['id']);
@@ -107,17 +107,17 @@ function save_item()
 
 	if($id)
 	{
-		if($photo = uploadImage("file", $config['tags'][$type]['img_type'], _upload_tags,$file_name))
+		if($photo = uploadImage("file", $config['tags'][$type]['img_type'], UPLOAD_TAGS,$file_name))
 		{
 			$data['photo'] = $photo;
-			$data['thumb'] = createThumb($data['photo'], $config['tags'][$type]['thumb_width'], $config['tags'][$type]['thumb_height'], _upload_tags,$file_name,$config['tags'][$type]['thumb_ratio']);			
+			$data['thumb'] = createThumb($data['photo'], $config['tags'][$type]['thumb_width'], $config['tags'][$type]['thumb_height'], UPLOAD_TAGS,$file_name,$config['tags'][$type]['thumb_ratio']);			
 			
 			$row = $d->rawQueryOne("select id, photo, thumb from #_tags where id = ? and type = ?",array($id,$type));
 
 			if($row['id'])
 			{
-				delete_file(_upload_tags.$row['photo']);
-				delete_file(_upload_tags.$row['thumb']);
+				delete_file(UPLOAD_TAGS.$row['photo']);
+				delete_file(UPLOAD_TAGS.$row['thumb']);
 			}
 		}
 
@@ -145,10 +145,10 @@ function save_item()
 	}
 	else
 	{
-		if($photo = uploadImage("file", $config['tags'][$type]['img_type'], _upload_tags,$file_name))
+		if($photo = uploadImage("file", $config['tags'][$type]['img_type'], UPLOAD_TAGS,$file_name))
 		{
 			$data['photo'] = $photo;
-			$data['thumb'] = createThumb($data['photo'], $config['tags'][$type]['thumb_width'], $config['tags'][$type]['thumb_height'], _upload_tags,$file_name,$config['tags'][$type]['thumb_ratio']);				
+			$data['thumb'] = createThumb($data['photo'], $config['tags'][$type]['thumb_width'], $config['tags'][$type]['thumb_height'], UPLOAD_TAGS,$file_name,$config['tags'][$type]['thumb_ratio']);				
 		}					
 		
 		$data['ngaytao'] = time();
@@ -189,8 +189,8 @@ function delete_item()
 
 		if($row['id'])
 		{
-			delete_file(_upload_tags.$row['photo']);
-			delete_file(_upload_tags.$row['thumb']);
+			delete_file(UPLOAD_TAGS.$row['photo']);
+			delete_file(UPLOAD_TAGS.$row['thumb']);
 			$d->rawQuery("delete from #_tags where id = ?",array($id));
 
 			transfer("Xóa dữ liệu thành công", "index.php?com=tags&act=man&type=".$type."&p=".$curPage);
@@ -213,8 +213,8 @@ function delete_item()
 
 			if($row['id'])
 			{
-				delete_file(_upload_tags.$row['photo']);
-				delete_file(_upload_tags.$row['thumb']);
+				delete_file(UPLOAD_TAGS.$row['photo']);
+				delete_file(UPLOAD_TAGS.$row['thumb']);
 				$d->rawQuery("delete from #_tags where id = ?",array($id));
 			}
 		}
