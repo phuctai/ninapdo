@@ -48,3 +48,7 @@
 **Ngày: 29/05/2020**
 
 1/ Chỉnh lại phần gán giá trị SESSION username trong file ajax_login.php
+
+**Ngày: 30/05/2020**
+
+1/ Chỉnh lại các define website, define ngôn ngữ, bỏ các '_' đầu dòng của define
