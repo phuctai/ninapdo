@@ -52,3 +52,5 @@
 **Ngày: 30/05/2020**
 
 1/ Chỉnh lại các define website, define ngôn ngữ, bỏ các '_' đầu dòng của define
+
+2/ Chỉnh lỗi cập nhật thông tin user khi không nhập password
