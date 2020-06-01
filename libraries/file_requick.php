@@ -109,7 +109,7 @@
 			$template = isset($_GET['id']) ? "news_detail" : "news";
 			$type_og = isset($_GET['id']) ? "article" : "object";
 			$type = $com;
-			$title_crumb = _tuyendung;
+			$title_crumb = tuyendung;
 			break;
 
 		case 'chinh-sach':
@@ -138,7 +138,7 @@
 			$source = "search";
 			$template = "product";
 			$type_og = "object";
-			$title_crumb = _timkiem;
+			$title_crumb = timkiem;
 			break;
 
 		case 'tags-san-pham':
@@ -162,7 +162,7 @@
 			$template = isset($_GET['id']) ? "album_detail" : "album";
 			$type_og = isset($_GET['id']) ? "article" : "object";
 			$type = $com;
-			$title_crumb = _thuvienanh;
+			$title_crumb = thuvienanh;
 			break;
 		
 		case 'video':
@@ -176,7 +176,7 @@
 		case 'gio-hang':
 			$source = "giohang";
 			$template = 'giohang';
-			$title_crumb = _giohang;
+			$title_crumb = giohang;
 			break;
 
 		case 'account':
