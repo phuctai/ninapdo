@@ -11,13 +11,13 @@
 	if($coupon['ngayketthuc']<time())
 	{
 		$flag = 0;
-		$error = _mauudaidahethan;
+		$error = mauudaidahethan;
 	}
 
 	if(!$coupon['id'] || $coupon['tinhtrang']!=0)
 	{
 		$flag = 0;
-		$error = _mauudaidaduocsudunghoackhongtontai;
+		$error = mauudaidaduocsudunghoackhongtontai;
 	}
 
 	if($flag)
@@ -44,7 +44,7 @@
 		$totalText = number_format($total,0, ',', '.')."đ";
 		$endow = 0;
 		$endowType = 0;
-		$endowText = _chuacouudai;
+		$endowText = chuacouudai;
 	}
 
 	$data = array('error' => $error, 'endow' => $endow, 'endowID' => $endowID, 'endowType' => $endowType, 'endowText' => $endowText, 'total' => $total, 'totalText' => $totalText);
