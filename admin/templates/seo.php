@@ -72,7 +72,7 @@
                                         <?php if($slugurlArray) { ?>
                                             <p class="slug-seo-preview" id="seourlpreview<?=$k?>" data-seourlpreview="0"><?=$config_base?><strong><?=$slugurlArray[$k]?></strong></p>
                                         <?php } else { ?>
-                                            <p class="slug-seo-preview" id="seourlpreview<?=$k?>" data-seourlpreview="1"><?=$config_base?><strong><?=$item['tenkhongdau'.$k]?></strong></p>
+                                            <p class="slug-seo-preview" id="seourlpreview<?=$k?>" data-seourlpreview="<?=($com == 'setting') ? 0 : 1?>"><?=$config_base?><strong><?=$item['tenkhongdau'.$k]?></strong></p>
                                         <?php } ?>
                                         <p class="title-seo-preview text-split" id="title-seo-preview<?=$k?>"><?=($seo['title'.$k])?$seo['title'.$k]:"Title"?></p>
                                         <p class="description-seo-preview text-split" id="description-seo-preview<?=$k?>"><?=($seo['description'.$k])?$seo['description'.$k]:"Description"?></p>
@@ -128,7 +128,7 @@
                 <?php if($slugurlArray) { ?>
                     <p class="slug-seo-preview" id="seourlpreview<?=$k?>" data-seourlpreview="0"><?=$config_base?><strong><?=$slugurlArray[$k]?></strong></p>
                 <?php } else { ?>
-                    <p class="slug-seo-preview" id="seourlpreview<?=$k?>" data-seourlpreview="1"><?=$config_base?><strong><?=$item['tenkhongdau'.$k]?></strong></p>
+                    <p class="slug-seo-preview" id="seourlpreview<?=$k?>" data-seourlpreview="<?=($com == 'setting') ? 0 : 1?>"><?=$config_base?><strong><?=$item['tenkhongdau'.$k]?></strong></p>
                 <?php } ?>
                 <p class="title-seo-preview text-split" id="title-seo-preview<?=$k?>"><?=($seo['title'.$k])?$seo['title'.$k]:"Title"?></p>
                 <p class="description-seo-preview text-split" id="description-seo-preview<?=$k?>"><?=($seo['description'.$k])?$seo['description'.$k]:"Description"?></p>
