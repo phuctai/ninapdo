@@ -54,3 +54,9 @@
 1/ Chỉnh lại các define website, define ngôn ngữ, bỏ các '_' đầu dòng của define
 
 2/ Chỉnh lỗi cập nhật thông tin user khi không nhập password
+
+**Ngày: 02/06/2020**
+
+1/ Chỉnh lại giao diện thêm, sửa, xóa của 3 danh mục cấp 2,3,4 của mục News
+
+2/ Chỉnh lại phần slug không cho preview khi ở trang tĩnh
