@@ -606,9 +606,10 @@
 	function slugPreview(slug,lang,preview,self,status)
 	{
 		var slugnow = $("#slug"+lang).val();
+		var slugseopreview = $(".slug-seo-preview").data("seourlpreview");
 		if(preview || status == 'old') $("#slug"+lang).val(slug);
 		if(preview || self || status == 'old') $("#slugurlpreview"+lang+" strong").html(slug);
-		if(!slugnow || preview || self || status == 'old') $("#seourlpreview"+lang+" strong").html(slug);
+		if((!slugnow || preview || self || status == 'old') && slugseopreview) $("#seourlpreview"+lang+" strong").html(slug);
 	}
 	function slugAlert(error,lang,preview,self,status)
 	{
