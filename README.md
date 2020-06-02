@@ -27,7 +27,7 @@
 
 8/ Tối ưu và chỉnh một số lỗi ở phiên bản trước.
 
-**Ngày: 22/05/2020**
+**Ngày: 24/05/2020**
 
 1/ Chuyển thư mục layout sang dạng define
 
