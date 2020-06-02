@@ -1,5 +1,5 @@
 <?php
-	function get_main_list()
+    function get_main_list()
     {
         global $d, $type;
 
@@ -41,89 +41,100 @@
             <button type="reset" class="btn btn-sm bg-gradient-secondary"><i class="fas fa-redo mr-2"></i>Làm lại</button>
             <a class="btn btn-sm bg-gradient-danger" href="<?=$linkMan?>" title="Thoát"><i class="fas fa-sign-out-alt mr-2"></i>Thoát</a>
         </div>
-        <div class="card card-primary card-outline text-sm">
-            <div class="card-header">
-                <h3 class="card-title"><?=($act=="edit_cat")?"Cập nhật":"Thêm mới";?> <?=$config['news'][$type]['title_main_cat']?></h3>
-            </div>
-            <div class="card-body">
-                <div class="form-group-category row">
-                    <div class="form-group col-md-3 col-sm-4">
-                        <label class="d-block" for="id_list">Danh mục cấp 1:</label>
-                        <?=get_main_list()?>
-                    </div>
-                </div>
-                <?php if($config['news'][$type]['images_cat']) { ?>
-                    <div class="form-group">
-                        <label class="change-photo" for="file">
-                            <p>Upload hình ảnh:</p>
-                            <div class="rounded">
-                                <img class="rounded img-upload" src="<?=UPLOAD_NEWS.$item['photo']?>" onerror="src='assets/images/noimage.png'" alt="Alt Photo"/>
-                                <strong>
-                                    <b class="text-sm text-split"></b>
-                                    <span class="btn btn-sm bg-gradient-success"><i class="fas fa-camera mr-2"></i>Chọn hình</span>
-                                </strong>
-                            </div>
-                        </label>
-                        <strong class="d-block mt-2 mb-2 text-sm"><?php echo "Width: ".$config['news'][$type]['width_cat']." px - Height: ".$config['news'][$type]['height_cat']." px (".$config['news'][$type]['img_type_cat'].")" ?></strong>
-                        <div class="custom-file my-custom-file d-none">
-                            <input type="file" class="custom-file-input" name="file" id="file">
-                            <label class="custom-file-label" for="file">Chọn file</label>
+        <div class="row">
+            <div class="col-xl-8">
+                <?php
+                if($config['news'][$type]['slug_cat'])
+                {
+                    $slugchange = ($act=='edit_cat') ? 1 : 0;
+                    include TEMPLATE."slug.php";
+                }
+                ?>
+                <div class="card card-primary card-outline text-sm">
+                    <div class="card-header">
+                        <h3 class="card-title">Nội dung <?=$config['news'][$type]['title_main_cat']?></h3>
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
                         </div>
                     </div>
-                <?php } ?>
-                <div class="form-group">
-                    <label for="hienthi" class="d-inline-block align-middle mb-0 mr-2">Hiển thị:</label>
-                    <div class="custom-control custom-checkbox d-inline-block align-middle">
-                        <input type="checkbox" class="custom-control-input hienthi-checkbox" name="data[hienthi]" id="hienthi-checkbox" <?=(!isset($item['hienthi']) || $item['hienthi']==1)?'checked':''?>>
-                        <label for="hienthi-checkbox" class="custom-control-label"></label>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="stt" class="d-inline-block align-middle mb-0 mr-2">Số thứ tự:</label>
-                    <input type="number" class="form-control form-control-mini d-inline-block align-middle" min="0" name="data[stt]" id="stt" placeholder="Số thứ tự" value="<?=isset($item['stt'])?$item['stt']:1?>">
-                </div>
-                <?php
-                    if($config['news'][$type]['slug_cat'])
-                    {
-                        $slugchange = ($act=='edit_cat') ? 1 : 0;
-                        include TEMPLATE."slug.php";
-                    }
-                ?>
-                <div class="card card-primary card-outline card-outline-tabs">
-                    <div class="card-header p-0 border-bottom-0">
-                        <ul class="nav nav-tabs" id="custom-tabs-three-tab-lang" role="tablist">
-                            <?php foreach($config['website']['lang'] as $k => $v) { ?>
-                                <li class="nav-item">
-                                    <a class="nav-link <?=($k=='vi')?'active':''?>" id="tabs-lang" data-toggle="pill" href="#tabs-lang-<?=$k?>" role="tab" aria-controls="tabs-lang-<?=$k?>" aria-selected="true"><?=$v?></a>
-                                </li>
-                            <?php } ?>
-                        </ul>
-                    </div>
-                    <div class="card-body card-article">
-                        <div class="tab-content" id="custom-tabs-three-tabContent-lang">
-                            <?php foreach($config['website']['lang'] as $k => $v) { ?>
-                                <div class="tab-pane fade show <?=($k=='vi')?'active':''?>" id="tabs-lang-<?=$k?>" role="tabpanel" aria-labelledby="tabs-lang">
-                                    <div class="form-group">
-                                        <label for="ten<?=$k?>">Tiêu đề (<?=$k?>):</label>
-                                        <input type="text" class="form-control for-seo" name="data[ten<?=$k?>]" id="ten<?=$k?>" placeholder="Tiêu đề (<?=$k?>)" value="<?=$item['ten'.$k]?>" <?=($k=='vi')?'required':''?>>
-                                    </div>
-                                    <?php if($config['news'][$type]['mota_cat']) { ?>
-                                        <div class="form-group">
-                                            <label for="mota<?=$k?>">Mô tả (<?=$k?>):</label>
-                                            <textarea class="form-control for-seo <?=($config['news'][$type]['mota_cke_cat'])?'form-control-ckeditor':''?>" name="data[mota<?=$k?>]" id="mota<?=$k?>" rows="5" placeholder="Mô tả (<?=$k?>)"><?=htmlspecialchars_decode($item['mota'.$k])?></textarea>
-                                        </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="hienthi" class="d-inline-block align-middle mb-0 mr-2">Hiển thị:</label>
+                            <div class="custom-control custom-checkbox d-inline-block align-middle">
+                                <input type="checkbox" class="custom-control-input hienthi-checkbox" name="data[hienthi]" id="hienthi-checkbox" <?=(!isset($item['hienthi']) || $item['hienthi']==1)?'checked':''?>>
+                                <label for="hienthi-checkbox" class="custom-control-label"></label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="stt" class="d-inline-block align-middle mb-0 mr-2">Số thứ tự:</label>
+                            <input type="number" class="form-control form-control-mini d-inline-block align-middle" min="0" name="data[stt]" id="stt" placeholder="Số thứ tự" value="<?=isset($item['stt'])?$item['stt']:1?>">
+                        </div>
+                        <div class="card card-primary card-outline card-outline-tabs">
+                            <div class="card-header p-0 border-bottom-0">
+                                <ul class="nav nav-tabs" id="custom-tabs-three-tab-lang" role="tablist">
+                                    <?php foreach($config['website']['lang'] as $k => $v) { ?>
+                                        <li class="nav-item">
+                                            <a class="nav-link <?=($k=='vi')?'active':''?>" id="tabs-lang" data-toggle="pill" href="#tabs-lang-<?=$k?>" role="tab" aria-controls="tabs-lang-<?=$k?>" aria-selected="true"><?=$v?></a>
+                                        </li>
                                     <?php } ?>
-                                    <?php if($config['news'][$type]['noidung_cat']) { ?>
-                                        <div class="form-group">
-                                            <label for="noidung<?=$k?>">Nội dung (<?=$k?>):</label>
-                                            <textarea class="form-control for-seo <?=($config['news'][$type]['noidung_cke_cat'])?'form-control-ckeditor':''?>" name="data[noidung<?=$k?>]" id="noidung<?=$k?>" rows="5" placeholder="Nội dung (<?=$k?>)"><?=htmlspecialchars_decode($item['noidung'.$k])?></textarea>
+                                </ul>
+                            </div>
+                            <div class="card-body card-article">
+                                <div class="tab-content" id="custom-tabs-three-tabContent-lang">
+                                    <?php foreach($config['website']['lang'] as $k => $v) { ?>
+                                        <div class="tab-pane fade show <?=($k=='vi')?'active':''?>" id="tabs-lang-<?=$k?>" role="tabpanel" aria-labelledby="tabs-lang">
+                                            <div class="form-group">
+                                                <label for="ten<?=$k?>">Tiêu đề (<?=$k?>):</label>
+                                                <input type="text" class="form-control for-seo" name="data[ten<?=$k?>]" id="ten<?=$k?>" placeholder="Tiêu đề (<?=$k?>)" value="<?=$item['ten'.$k]?>" <?=($k=='vi')?'required':''?>>
+                                            </div>
+                                            <?php if($config['news'][$type]['mota_cat']) { ?>
+                                                <div class="form-group">
+                                                    <label for="mota<?=$k?>">Mô tả (<?=$k?>):</label>
+                                                    <textarea class="form-control for-seo <?=($config['news'][$type]['mota_cke_cat'])?'form-control-ckeditor':''?>" name="data[mota<?=$k?>]" id="mota<?=$k?>" rows="5" placeholder="Mô tả (<?=$k?>)"><?=htmlspecialchars_decode($item['mota'.$k])?></textarea>
+                                                </div>
+                                            <?php } ?>
+                                            <?php if($config['news'][$type]['noidung_cat']) { ?>
+                                                <div class="form-group">
+                                                    <label for="noidung<?=$k?>">Nội dung (<?=$k?>):</label>
+                                                    <textarea class="form-control for-seo <?=($config['news'][$type]['noidung_cke_cat'])?'form-control-ckeditor':''?>" name="data[noidung<?=$k?>]" id="noidung<?=$k?>" rows="5" placeholder="Nội dung (<?=$k?>)"><?=htmlspecialchars_decode($item['noidung'.$k])?></textarea>
+                                                </div>
+                                            <?php } ?>
                                         </div>
                                     <?php } ?>
                                 </div>
-                            <?php } ?>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="col-xl-4">
+                <div class="card card-primary card-outline text-sm">
+                    <div class="card-header">
+                        <h3 class="card-title">Danh mục cấp 1</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group-category">
+                            <?=get_main_list()?>
+                        </div>
+                    </div>
+                </div>
+                <?php if($config['news'][$type]['images_cat']) { ?>
+                    <div class="card card-primary card-outline text-sm">
+                        <div class="card-header">
+                            <h3 class="card-title">Hình ảnh <?=$config['news'][$type]['title_main_cat']?></h3>
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <?php
+                                $photoDetail = UPLOAD_NEWS.$item['photo'];
+                                $dimension = "Width: ".$config['news'][$type]['width_cat']." px - Height: ".$config['news'][$type]['height_cat']." px (".$config['news'][$type]['img_type_cat'].")";
+                                include TEMPLATE."image.php";
+                            ?>
+                        </div>
+                    </div>
+                <?php } ?>
             </div>
         </div>
         <?php if($config['news'][$type]['seo_cat']) { ?>
