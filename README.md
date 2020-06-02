@@ -6,6 +6,14 @@
 
 3/ File lang init: libraries > langinit.php
 
+**TEST**
+
+1/ http://demo18.ninavietnam.com.vn/test/vuvanban_1084920w/
+
+2/ http://demo18.ninavietnam.com.vn/test/angiaphuc_1190520w/
+
+3/ http://demo18.ninavietnam.com.vn/test/goldennq_1234220w/
+
 
 **CHANGELOG**
 
