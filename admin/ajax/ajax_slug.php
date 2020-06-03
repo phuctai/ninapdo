@@ -1,47 +1,34 @@
 <?php
 	include "ajax_config.php";
 
-	$error = "";
-	$status = htmlspecialchars($_POST['status']);
-	$title = htmlspecialchars($_POST['title']);
-	$lang = htmlspecialchars($_POST['lang']);
-	$com = htmlspecialchars($_POST['com']);
-	$act = htmlspecialchars($_POST['act']);
+	$flag = 1;
+	$slug = htmlspecialchars($_POST['slug']);
 	$id = htmlspecialchars($_POST['id']);
-	$slug = changeTitle($title);
-	$prefix = '';
-	$where = ($id) ? "id<>$id AND" : "";
+	$where = ($id) ? "id<>$id AND " : "";
 
-	if($status == 'old')
+	$table = array(
+		"table_product_list",
+		"table_product_cat",
+		"table_product_item",
+		"table_product_sub",
+		"table_product_brand",
+		"table_product",
+		"table_news_list",
+		"table_news_cat",
+		"table_news_item",
+		"table_news_sub",
+		"table_news"
+	);
+
+	foreach($table as $v)
 	{
-		if($act != 'edit')
+		$check = $d->rawQueryOne("SELECT id FROM $v WHERE $where (tenkhongdauvi = ? OR tenkhongdauen = ?)",array($slug,$slug));
+		if($check['id'])
 		{
-			$prefix = explode("edit",$act);
-			$prefix = $prefix[1];
+			$flag = 0;
+			break;
 		}
-		
-		$oldSlug = $d->rawQueryOne("SELECT tenkhongdau$lang FROM table_".$com.$prefix." WHERE id = ?",array($id));
-		$slug = $oldSlug['tenkhongdau'.$lang];
-		$error = 3;
 	}
-	else
-	{
-		if($com == 'product' || $com == 'news')
-		{
-			$listSlug = $d->rawQueryOne("SELECT id FROM table_".$com."_list WHERE $where (tenkhongdauvi = ? OR tenkhongdauen = ?)",array($slug,$slug));
-			$catSlug = $d->rawQueryOne("SELECT id FROM table_".$com."_cat WHERE $where (tenkhongdauvi = ? OR tenkhongdauen = ?)",array($slug,$slug));
-			$itemSlug = $d->rawQueryOne("SELECT id FROM table_".$com."_item WHERE $where (tenkhongdauvi = ? OR tenkhongdauen = ?)",array($slug,$slug));
-			$subSlug = $d->rawQueryOne("SELECT id FROM table_".$com."_sub WHERE $where (tenkhongdauvi = ? OR tenkhongdauen = ?)",array($slug,$slug));
-		}
 
-		if($com == 'product') $brandSlug = $d->rawQueryOne("SELECT id FROM table_".$com."_brand WHERE $where (tenkhongdauvi = ? OR tenkhongdauen = ?)",array($slug,$slug));
-		
-		$manSlug = $d->rawQueryOne("SELECT id FROM table_$com WHERE $where (tenkhongdauvi = ? OR tenkhongdauen = ?)",array($slug,$slug));
-
-		if($listSlug['id'] || $catSlug['id'] || $itemSlug['id'] || $subSlug['id'] || $brandSlug['id'] || $manSlug['id']) $error = 1;
-		else $error = 2;
-	}
-	
-	$data = array('slug' => $slug, 'error' => $error);
-	echo json_encode($data);
+	echo $flag;
 ?>

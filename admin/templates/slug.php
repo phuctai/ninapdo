@@ -6,15 +6,15 @@
     <div class="card-body card-slug">
         <?php if($slugchange) { ?>
             <div class="form-group mb-2">
-                <label for="slugchange-checkbox" class="d-inline-block align-middle text-info mb-0 mr-2">Thay đổi đường dẫn theo tiêu đề mới:</label>
+                <label for="slugchange" class="d-inline-block align-middle text-info mb-0 mr-2">Thay đổi đường dẫn theo tiêu đề mới:</label>
                 <div class="custom-control custom-checkbox d-inline-block align-middle">
-                    <input type="checkbox" class="custom-control-input slugchange-checkbox" name="slugchange" id="slugchange-checkbox" value="1">
-                    <label for="slugchange-checkbox" class="custom-control-label"></label>
+                    <input type="checkbox" class="custom-control-input" name="slugchange" id="slugchange">
+                    <label for="slugchange" class="custom-control-label"></label>
                 </div>
             </div>
         <?php } ?>
 
-        <input type="hidden" class="slug-hidden" data-com="<?=$com?>" data-act="<?=$act?>" data-id="<?=$id?>" data-preview="0">
+        <input type="hidden" class="slug-id" value="<?=$id?>">
 
         <?php if($config['website']['slug']['lang-active']) { ?>
             <div class="card card-primary card-outline card-outline-tabs">
@@ -33,8 +33,9 @@
                             <div class="tab-pane fade show <?=($k=='vi')?'active':''?>" id="tabs-sluglang-<?=$k?>" role="tabpanel" aria-labelledby="tabs-lang">
                                 <div class="form-gourp mb-0">
                                     <label class="d-block">Đường dẫn mẫu (<?=$k?>):<span class="pl-2 font-weight-normal" id="slugurlpreview<?=$k?>"><?=$config_base?><strong class="text-info"><?=$item['tenkhongdau'.$k]?></strong></span></label>
-                                    <input type="text" class="form-control check-slug slugchange" name="slug<?=$k?>" id="slug<?=$k?>" placeholder="Đường dẫn (<?=$k?>)" data-self="1" value="<?=(!$copy)?$item['tenkhongdau'.$k]:''?>">
-                                    <p class="alert-slug<?=$k?> text-warning d-none mt-2 mb-0" id="alert-slug-warning<?=$k?>">
+                                    <input type="text" class="form-control slug-input no-validate" name="slug<?=$k?>" id="slug<?=$k?>" placeholder="Đường dẫn (<?=$k?>)" value="<?=(!$copy)?$item['tenkhongdau'.$k]:''?>">
+                                    <input type="hidden" id="slug-default<?=$k?>" value="<?=(!$copy)?$item['tenkhongdau'.$k]:''?>">
+                                    <p class="alert-slug<?=$k?> text-danger d-none mt-2 mb-0" id="alert-slug-danger<?=$k?>">
                                         <i class="fas fa-exclamation-triangle mr-1"></i>
                                         <span>Đường dẫn đã tồn tại. Đường dẫn truy cập mục này có thể bị trùng lặp.</span>
                                     </p>
@@ -51,8 +52,9 @@
         <?php } else { $k = "vi"; ?>
             <div class="form-gourp mb-0">
                 <label class="d-block">Đường dẫn mẫu:<span class="pl-2 font-weight-normal" id="slugurlpreview<?=$k?>"><?=$config_base?><strong class="text-info"><?=$item['tenkhongdau'.$k]?></strong></span></label>
-                <input type="text" class="form-control check-slug slugchange" name="slug<?=$k?>" id="slug<?=$k?>" placeholder="Đường dẫn" data-self="1" value="<?=(!$copy)?$item['tenkhongdau'.$k]:''?>">
-                <p class="alert-slug<?=$k?> text-warning d-none mt-2 mb-0" id="alert-slug-warning<?=$k?>">
+                <input type="text" class="form-control slug-input no-validate" name="slug<?=$k?>" id="slug<?=$k?>" placeholder="Đường dẫn" value="<?=(!$copy)?$item['tenkhongdau'.$k]:''?>">
+                <input type="hidden" id="slug-default<?=$k?>" value="<?=(!$copy)?$item['tenkhongdau'.$k]:''?>">
+                <p class="alert-slug<?=$k?> text-danger d-none mt-2 mb-0" id="alert-slug-danger<?=$k?>">
                     <i class="fas fa-exclamation-triangle mr-1"></i>
                     <span>Đường dẫn đã tồn tại. Đường dẫn truy cập mục này có thể bị trùng lặp.</span>
                 </p>

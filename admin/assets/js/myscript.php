@@ -599,36 +599,43 @@
 	}
 
 	/* Slug */
-	function slugReset(lang)
+	function slugConvert(slug)
 	{
-		$(".alert-slug"+lang).addClass("d-none");
+	    slug = slug.toLowerCase();
+	    slug = slug.replace(/á|à|ả|ạ|ã|ă|ắ|ằ|ẳ|ẵ|ặ|â|ấ|ầ|ẩ|ẫ|ậ/gi, 'a');
+	    slug = slug.replace(/é|è|ẻ|ẽ|ẹ|ê|ế|ề|ể|ễ|ệ/gi, 'e');
+	    slug = slug.replace(/i|í|ì|ỉ|ĩ|ị/gi, 'i');
+	    slug = slug.replace(/ó|ò|ỏ|õ|ọ|ô|ố|ồ|ổ|ỗ|ộ|ơ|ớ|ờ|ở|ỡ|ợ/gi, 'o');
+	    slug = slug.replace(/ú|ù|ủ|ũ|ụ|ư|ứ|ừ|ử|ữ|ự/gi, 'u');
+	    slug = slug.replace(/ý|ỳ|ỷ|ỹ|ỵ/gi, 'y');
+	    slug = slug.replace(/đ/gi, 'd');
+	    slug = slug.replace(/\`|\~|\!|\@|\#|\||\$|\%|\^|\&|\*|\(|\)|\+|\=|\,|\.|\/|\?|\>|\<|\'|\"|\:|\;|_/gi, '');
+	    slug = slug.replace(/ /gi, "-");
+	    slug = slug.replace(/\-\-\-\-\-/gi, '-');
+	    slug = slug.replace(/\-\-\-\-/gi, '-');
+	    slug = slug.replace(/\-\-\-/gi, '-');
+	    slug = slug.replace(/\-\-/gi, '-');
+	    slug = '@' + slug + '@';
+	    slug = slug.replace(/\@\-|\-\@|\@/gi, '');
+	    return slug;
 	}
-	function slugPreview(slug,lang,preview,self,status)
+	function slugPreview(title,lang)
 	{
-		var slugnow = $("#slug"+lang).val();
-		var slugseopreview = $(".slug-seo-preview").data("seourlpreview");
-		if(preview || status == 'old') $("#slug"+lang).val(slug);
-		if(preview || self || status == 'old') $("#slugurlpreview"+lang+" strong").html(slug);
-		if((!slugnow || preview || self || status == 'old') && slugseopreview) $("#seourlpreview"+lang+" strong").html(slug);
+		var slug = slugConvert(title);
+
+		$("#slug"+lang).val(slug);
+		$("#slugurlpreview"+lang+" strong").html(slug);
+		$("#seourlpreview"+lang+" strong").html(slug);
 	}
-	function slugAlert(error,lang,preview,self,status)
+	function slugPreviewTitleSeo(title,lang)
 	{
-		if(preview || self || status == 'old')
+		if($("#title"+lang).length)
 		{
-			if(error == 1)
+			var titleSeo = $("#title"+lang).val();
+			if(!titleSeo)
 			{
-				$("#alert-slug-warning"+lang).removeClass("d-none");
-				$("#alert-slug-success"+lang).addClass("d-none");
-			}
-			else if(error == 2)
-			{
-				$("#alert-slug-warning"+lang).addClass("d-none");
-				$("#alert-slug-success"+lang).removeClass("d-none");
-			}
-			else if(error == 3)
-			{
-				$("#alert-slug-warning"+lang).addClass("d-none");
-				$("#alert-slug-success"+lang).addClass("d-none");
+				if(title) $("#title-seo-preview"+lang).html(title);
+				else $("#title-seo-preview"+lang).html("Title");	
 			}
 		}
 	}
@@ -636,6 +643,8 @@
 	{
 		var sluglang = "<?=$config['website']['slug']['preview']?>";
 		var inputArticle = $('.card-article input.for-seo');
+		var id = $('.slug-id').val();
+		var seourlstatic = $(".slug-seo-preview").data("seourlstatic");
 
 		inputArticle.each(function(index){
 			var ten = $(this).attr('id');
@@ -647,8 +656,17 @@
 					$('body').on("keyup","#"+ten,function(){
 						var title = $("#"+ten).val();
 
-						/* Check slug qua các table */
-						slugCheck(title,lang,"input","new");
+						if((!id || $("#slugchange").prop("checked")) && seourlstatic)
+						{
+							/* Slug preivew */
+							slugPreview(title,lang);
+						}
+
+						/* Slug preivew title seo */
+						slugPreviewTitleSeo(title,lang);
+
+						/* slug Alert */
+						slugAlert(2,lang);
 					})
 				}
 
@@ -657,8 +675,11 @@
 					$('body').on("keyup","#slug"+lang,function(){
 						var title = $("#slug"+lang).val();
 
-						/* Check slug qua các table */
-						slugCheck(title,lang,"slug","new");
+						/* Slug preivew */
+						slugPreview(title,lang);
+
+						/* slug Alert */
+						slugAlert(2,lang);
 					})
 				}
 			}
@@ -668,19 +689,15 @@
 	{
 		if(obj.is(':checked'))
 		{
-			$(".slug-hidden").attr("data-preview",1);
-			$(".slugchange").attr("readonly",true);
-
 			/* Load slug theo tiêu đề mới */
-			slugStatus("new");
+			slugStatus(1);
+			$(".slug-input").attr("readonly",true);
 		}
 		else
 		{
-			$(".slug-hidden").attr("data-preview",0);
-			$(".slugchange").attr("readonly",false);
-
 			/* Load slug theo tiêu đề cũ */
-			slugStatus("old");
+			slugStatus(0);
+			$(".slug-input").attr("readonly",false);
 		}
 	}
 	function slugStatus(status)
@@ -693,48 +710,81 @@
 			var lang = ten.substr(ten.length-2);
 			if(sluglang.indexOf(lang)>=0)
 			{
-				if($("#"+ten).length)
+				var title = "";
+				if(status == 1)
 				{
-					title = $("#"+ten).val();
+					if($("#"+ten).length)
+					{
+						title = $("#"+ten).val();
 
-					/* Check slug qua các table */
-					slugCheck(title,lang,"input",status);
+						/* Slug preivew */
+						slugPreview(title,lang);
+
+						/* Slug preivew title seo */
+						slugPreviewTitleSeo(title,lang);
+					}
+				}
+				else if(status == 0)
+				{
+					if($("#slug-default"+lang).length)
+					{
+						title = $("#slug-default"+lang).val();
+
+						/* Slug preivew */
+						slugPreview(title,lang);
+
+						/* Slug preivew title seo */
+						slugPreviewTitleSeo(title,lang);
+					}
 				}
 			}
 		});
 	}
-	function slugCheck(title,lang,type,status)
+	function slugAlert(result,lang)
 	{
-		var com = $(".slug-hidden").attr("data-com");
-		var act = $(".slug-hidden").attr("data-act");
-		var id = $(".slug-hidden").attr("data-id");
-		
-		/* Slug preview */
-		var preview = parseInt($(".slug-hidden").attr("data-preview"));
-
-		/* Slug self */
-		if(type == "slug") var self = parseInt($("#slug"+lang).attr("data-self"));
-		else var self = 0;
-
-		/* Slug check data */
-		if(title)
+		if(result == 1)
 		{
-			$.ajax({
-				url: 'ajax/ajax_slug.php',
-				type: 'POST',
-				dataType: 'json',
-				async: false,
-				data: {title:title,status:status,lang:lang,com:com,act:act,id:id},
-				success: function(result){
-					slugAlert(result.error,lang,preview,self,status);
-					slugPreview(result.slug,lang,preview,self,status);
+			$("#alert-slug-danger"+lang).addClass("d-none");
+			$("#alert-slug-success"+lang).removeClass("d-none");
+		}
+		else if(result == 0)
+		{
+			$("#alert-slug-danger"+lang).removeClass("d-none");
+			$("#alert-slug-success"+lang).addClass("d-none");
+		}
+		else if(result == 2)
+		{
+			$("#alert-slug-danger"+lang).addClass("d-none");
+			$("#alert-slug-success"+lang).addClass("d-none");
+		}
+	}
+	function slugCheck()
+	{
+		var sluglang = "<?=$config['website']['slug']['preview']?>";
+		var slugInput = $('.slug-input');
+		var id = $('.slug-id').val();
+
+		slugInput.each(function(index){
+			var slugId = $(this).attr('id');
+			var slug = $(this).val();
+			var lang = slugId.substr(slugId.length-2);
+			if(sluglang.indexOf(lang)>=0)
+			{
+				if(slug)
+				{
+					$.ajax({
+						url: 'ajax/ajax_slug.php',
+						type: 'POST',
+						dataType: 'html',
+						async: false,
+						data: {slug:slug,id:id},
+						success: function(result){
+							slugAlert(result,lang);
+						}
+					});
 				}
-			});
-		}
-		else
-		{
-			slugReset(lang);
-		}
+			}
+		});
 	}
 
 	/* Reader image */
@@ -924,10 +974,40 @@
 
 		/* Check required form */
 		$('.submit-check').click(function(event){
-			var element = $('.card-article :required:invalid');
 			var $this;
 
-			if(element.length)
+			/* Holdon */
+			holdonOpen();
+
+			/* Check slug */
+			slugCheck();
+
+			/* Check slug danger */
+			var elementSlug = $('.card-slug .text-danger:not(.d-none)');
+			if(elementSlug.length)
+			{
+				elementSlug.each(function(){
+					$this = $(this);
+					var closest = elementSlug.closest('.tab-pane');
+					var id = closest.attr('id');
+
+					$('.nav-tabs a[href="#'+id+'"]').tab('show');
+
+					return false;
+				});
+				
+				setTimeout(function(){
+					$('html,body').animate({scrollTop: $this.offset().top - 110},'medium');
+				},500);
+
+				holdonClose();
+
+				return false;
+			}
+
+			/* Check input empty */
+			var elementArticle = $('.card-article :required:invalid');
+			if(elementArticle.length)
 			{
 				if($('.card').hasClass('collapsed-card'))
 				{
@@ -936,9 +1016,9 @@
 					$('.card.collapsed-card').removeClass('collapsed-card');
 				}
 
-				element.each(function(){
+				elementArticle.each(function(){
 					$this = $(this);
-					var closest = element.closest('.tab-pane');
+					var closest = elementArticle.closest('.tab-pane');
 					var id = closest.attr('id');
 
 					$('.nav-tabs a[href="#'+id+'"]').tab('show');
@@ -948,7 +1028,9 @@
 				
 				setTimeout(function(){
 					$('html,body').animate({scrollTop: $this.offset().top - 90},'medium');
-				},500)
+				},500);
+
+				holdonClose();
 			}
 		});
 
@@ -1074,7 +1156,7 @@
 
 		/* Slug */
 		slugPress();
-		$('body').on("click","#slugchange-checkbox",function(){
+		$('body').on("click","#slugchange",function(){
 			slugChange($(this));
 		})
 
