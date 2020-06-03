@@ -68,3 +68,7 @@
 1/ Chỉnh lại giao diện thêm, sửa, xóa của 3 danh mục cấp 2,3,4 của mục News
 
 2/ Chỉnh lại phần slug không cho preview khi ở trang tĩnh, seopage, setting
+
+**Ngày: 03/06/2020**
+
+1/ Chỉnh lỗi xóa thuộc tính khi xóa sản phẩm, bài viết
