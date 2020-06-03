@@ -72,3 +72,5 @@
 **Ngày: 03/06/2020**
 
 1/ Chỉnh lỗi xóa thuộc tính khi xóa sản phẩm, bài viết
+
+2/ Tối ưu chức năng kiểm tra slug và seo
