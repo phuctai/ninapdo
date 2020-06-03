@@ -1,7 +1,7 @@
 <?php
 	if(!defined('SOURCES')) die("Error");		
 
-	$title_bar = _giohang;
+	$title_bar = giohang;
 
 	/* breadCrumbs */
 	if($title_crumb) $data['breadcrumbs'][] = array('slug'=>get_comlang('gio-hang',$lang),'name'=>$title_crumb);
