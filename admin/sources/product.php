@@ -571,6 +571,9 @@ function delete_item()
 	{
 		/* Xóa SEO */
 		$d->rawQuery("delete from #_seo where idmuc = ? and com = ? and act = ? and type = ?",array($id,$com,'man',$type));
+
+		/* Xóa thuộc tính */
+		$d->rawQuery("delete from #_attribute WHERE idmuc = ? AND com = ? AND act = ? AND type = ?",array($id,$com,'man',$type));
 		
 		/* Lấy dữ liệu */
 		$row = $d->rawQueryOne("select id, photo, thumb, taptin from #_product where id = ? and type = ?",array($id,$type));
@@ -611,6 +614,9 @@ function delete_item()
 
 			/* Xóa SEO */
 			$d->rawQuery("delete from #_seo where idmuc = ? and com = ? and act = ? and type = ?",array($id,$com,'man',$type));
+
+			/* Xóa thuộc tính */
+			$d->rawQuery("delete from #_attribute WHERE idmuc = ? AND com = ? AND act = ? AND type = ?",array($id,$com,'man',$type));
 
 			/* Lấy dữ liệu */
 			$row = $d->rawQueryOne("select id, photo, thumb, taptin from #_product where id = ? and type = ?",array($id,$type));
