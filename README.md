@@ -1,15 +1,15 @@
 **NOTES**
 
-1/  Database: libraries > database > sneakerltepdo.sql
+1/  Database: **libraries > database > sneakerltepdo.sql**
 
-2/  File config-type.php: libraries > config-type.php
+2/  File config-type.php: **libraries > config-type.php**
 
-3/  File lang init: libraries > langinit.php
+3/  File lang init: **libraries > langinit.php**
 
-4/  Các config sau mặc định để FALSE.
+4/  Các config sau mặc định để **FALSE**
     
-    // Chỉ bật TRUE khi website đó có yêu cầu về link ngôn ngữ (vi/TENKHONGDAU,en/TENKHONGDAU)
-    // Khi bật lên mà ko có link ngôn ngữ sẽ báo lỗi code tối ưu link
+    // Chỉ bật **TRUE** khi website đó có yêu cầu về link ngôn ngữ **(vi/TENKHONGDAU,en/TENKHONGDAU)**
+    // Khi bật lên mà ko có link ngôn ngữ sẽ báo **lỗi code tối ưu link**
 
     'slug' => array(
     	'lang-active' => false
@@ -19,7 +19,7 @@
     	'headings' => false,
     ),
     
-5/  Config comlang dùng để tạo phần ngôn ngữ seo cho trang tĩnh và các com trên thanh menu bên ngoài.
+5/  Config **comlang** dùng để tạo phần ngôn ngữ seo cho t**rang tĩnh và các com trên thanh menu bên ngoài**
     
     // Áp dụng cho menu và phần SEO trong admin
     
@@ -33,7 +33,7 @@
 		"lien-he" => array("vi"=>"lien-he","en"=>"contact")
 	)
 	
-6/  Khi làm ở local, tắt config active của google recaptcha bằng FALSE để có thể test được khi ko có mã captcha
+6/  Khi làm ở local, tắt config active của google recaptcha bằng **FALSE** để có thể test được khi ko có mã captcha
 
     'googleAPI' => array(
 		'recaptcha' => array(
