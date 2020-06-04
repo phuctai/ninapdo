@@ -240,7 +240,7 @@
                 <?php } ?>
 
                 <!-- Coupon -->
-                <?php if($config['coupon']['active']) { ?>
+                <?php if($config['coupon']) { ?>
                     <?php
                         $none = "";
                         $active = "";
