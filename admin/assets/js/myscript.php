@@ -977,7 +977,7 @@
 			var $this;
 
 			/* Holdon */
-			holdonOpen();
+			holdonOpen("sk-rect","Vui lòng chờ...","rgba(0,0,0,0.8)","white");
 
 			/* Check slug */
 			slugCheck();
