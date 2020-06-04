@@ -8,8 +8,8 @@
 
 4/  Các config sau mặc định để **FALSE**
     
-    // Chỉ bật **TRUE** khi website đó có yêu cầu về link ngôn ngữ **(vi/TENKHONGDAU,en/TENKHONGDAU)**
-    // Khi bật lên mà ko có link ngôn ngữ sẽ báo **lỗi code tối ưu link**
+    // Chỉ bật TRUE khi website đó có yêu cầu về link ngôn ngữ (vi/TENKHONGDAU,en/TENKHONGDAU)
+    // Khi bật lên mà ko có link ngôn ngữ sẽ báo lỗi code tối ưu link
 
     'slug' => array(
     	'lang-active' => false
