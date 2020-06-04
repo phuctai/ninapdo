@@ -1034,7 +1034,6 @@
 			}
 		});
 
-
 		/* Attribute */
 		$('body').on('click','.add-attribute', function(){
 			$html = $("#attribute-temp").html();
