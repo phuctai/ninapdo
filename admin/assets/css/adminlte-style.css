@@ -215,6 +215,7 @@
 /* Input */
 .form-control-mini{width:50px;padding:0.25rem;text-align:center;line-height:normal;font-size:14px;}
 .form-control-mini::-webkit-outer-spin-button,.form-control-mini::-webkit-inner-spin-button{-webkit-appearance:none;-moz-appearance:none;appearance:none;margin:0;}
+.form-control.no-validate:valid{border-color:#ced4da;background:none;padding:.375rem .75rem;}
 
 /* Input file */
 .my-custom-file label{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding-right:77px;}
