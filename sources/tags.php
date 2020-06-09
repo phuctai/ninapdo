@@ -61,7 +61,7 @@
 		$keywords_bar = $seo['keywords'.$seolangkey];
 		$description_bar = $seo['description'.$seolangkey];
 		$img_bar = $config_base.UPLOAD_TAGS_L."300x200x2/".$tags_detail['photo'];
-		$url_bar = getPageURL();
+		$url_bar = $func->getPageURL();
 
 		/* breadCrumbs */
 		if($title_crumb) $data['breadcrumbs'][] = array('slug'=>$func->get_slug($lang,$tags_detail['id'],'tags'),'name'=>$title_crumb);
