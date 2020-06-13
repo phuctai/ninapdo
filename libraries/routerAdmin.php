@@ -167,6 +167,10 @@
 			$source = "map";
 			break;
 
+		case 'cache':
+			$source = "cache";
+			break;
+
 		default:
 			$source = "";
 			$template = "index";

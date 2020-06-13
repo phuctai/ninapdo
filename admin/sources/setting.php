@@ -12,9 +12,6 @@ switch($act)
 	case "save":
 		save_setting();
 		break;
-	case "deleteCache":
-		deleteCache();
-		break;
 		
 	default:
 		$template = "404";
@@ -57,17 +54,5 @@ function save_setting()
 		if($d->insert('setting',$data)) $func->transfer("Thêm dữ liệu thành công", "index.php?com=setting&act=capnhat");
 		else $func->transfer("Thêm dữ liệu bị lỗi", "index.php?com=setting&act=capnhat",0);
 	}
-}
-
-/* Delete cache */
-function deleteCache()
-{
-	global $d, $func;
-
-	$Cache = new FileCache($d);
-	$Cache->Path = '../tmpcache';
-
-	if($Cache->DeleteCache()) $func->transfer("Xóa cache thành công", "index.php?com=setting&act=capnhat");
-	else $func->transfer("Xóa cache thất bại", "index.php?com=setting&act=capnhat",0);
 }
 ?>

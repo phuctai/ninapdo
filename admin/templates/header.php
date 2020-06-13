@@ -61,6 +61,13 @@
                         <span>Đổi mật khẩu</span>
                     </a>
                 </li>
+                <div class="dropdown-divider"></div>
+                <li>
+                    <a href="index.php?com=cache&act=delete" class="dropdown-item">
+                        <i class="far fa-trash-alt"></i>
+                        <span>Xóa bộ nhớ tạm</span>
+                    </a>
+                </li>
             </ul>
         </li>
         <li class="nav-item dropdown">

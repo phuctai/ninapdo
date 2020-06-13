@@ -34,8 +34,12 @@
                     die('Failed to create folders...');
                 }
             }
+            if(!file_exists($this->Path."/.htaccess"))
+            {
+                copy("./upload/.htaccess",$this->Path."/.htaccess");
+            }
 
-            return $this->Path.'/nina_cache' . md5($key);
+            return $this->Path.'/cache_' . md5($key);
         }
 
         public function fetch($key)

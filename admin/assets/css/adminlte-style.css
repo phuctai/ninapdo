@@ -129,7 +129,7 @@
 /* Header */
 .main-header .navbar-nav .nav-item .dropdown-menu{max-width:250px;}
 .main-header .navbar-nav .nav-item .dropdown-menu .dropdown-item{padding:.25rem 0.75rem;}
-.main-header .navbar-nav .nav-item .dropdown-menu .dropdown-item i{margin-right:.2rem;text-align:center;width:1.5rem;vertical-align:middle;}
+.main-header .navbar-nav .nav-item .dropdown-menu .dropdown-item i{margin-right:.2rem;margin-top:0.2rem;text-align:center;width:1.5rem;vertical-align:top;}
 .main-header .navbar-nav .nav-item .dropdown-menu .dropdown-divider{margin:.25rem 0;}
 .main-header .navbar-nav .nav-item .dropdown-menu .dropdown-divider:last-child{display:none;}
 .main-header .navbar-nav .nav-item.nav-item-hello span{max-width:100px;}
