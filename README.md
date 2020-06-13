@@ -47,6 +47,32 @@
 
 **CHANGELOG**
 
+**Ngày: 13/06/2020**
+
+1/ Slug: Kiểm tra slug không cho get_slug từ csdl tránh tốn tài nguyên.
+
+2/ AntiSQLInjection: Chỉ gọi và sử dụng bên ngoài web. Không dùng trong admin
+
+3/ Sắp xếp các thư mục index.php, class, css, ... gọn gàng hơn
+
+4/ Sitemap: Em tạo config type sitemap. Do Router xử lý nhiều nên e ko cho đồng bộ với router.
+
+5/ Timthumb: Bỏ cột thumb trong csdl. Xử lý dựa trên link thumbs của router (Toàn bộ website)
+
+6/ Set dung lượng upload hình < 4mb
+
+7/ Xử lý lưu cache SQL, xóa cache trong admin khi người dùng thao tác trong admin
+
+8/ Viết thêm Class Css Minify (Debug: True/Flase ko bị lỗi url trong các file css - Quy định đặt images và fonts e sẽ báo cáo sau)
+
+9/ Đổi tên Class in hoa chữ cái đầu cho đồng bộ.
+
+10/ Bỏ '&' trên router. Đổi thành '?'. Em viết thêm điều kiện kiểm tra trong hàm Pagination.
+
+11/ Viết phần 'Nhớ mật khẩu' cho đăng nhập bên ngoài. Tự logout khi user đăng nhập ở thiết bị khác.
+
+12/ Tách user thành 2 table: table_member - table_user
+
 **Ngày: 09/06/2020**
 
 1/ Tích hợp Router thay thế cho Htaccess
