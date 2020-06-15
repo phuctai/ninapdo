@@ -4,23 +4,27 @@
 
 2/  File config-type.php: **libraries > config-type.php**
 
-3/  File lang init: **libraries > langinit.php**
+3/  File lang init: **libraries > lang > langinit.php**
 
-4/  Các config sau mặc định để **FALSE**
+4/  Các config sau cần lưu ý
     
-    // Chỉ bật TRUE khi website đó có yêu cầu về link ngôn ngữ (vi/TENKHONGDAU,en/TENKHONGDAU)
-    // Khi bật lên mà ko có link ngôn ngữ sẽ báo lỗi code tối ưu link
+    // Slug - Seo chỉ nên để Tiếng Việt.
+    // Chỉ sử dụng đa ngôn ngữ khi đường dẫn có yêu cầu vi/tenkhongdau hoặc en/tenkhongdau
 
     'slug' => array(
-    	'lang-active' => false
-    ),
+		'lang' => array(
+			"vi"=>"Tiếng Việt",
+			// "en"=>"Tiếng Anh"
+		)
+	),
     'seo' => array(
-    	'lang-active' => false,
-    ),
+		'lang' => array(
+			"vi"=>"Tiếng Việt",
+			// "en"=>"Tiếng Anh"
+		)
+	)
     
-5/  Config **comlang** dùng để tạo phần ngôn ngữ seo cho t**rang tĩnh và các com trên thanh menu bên ngoài**
-    
-    // Áp dụng cho menu và phần SEO trong admin
+5/  Config **comlang** dùng để tạo phần Ngôn Ngữ SEO cho **Trang tĩnh trong admin**
     
     'comlang' => array(
 		"gioi-thieu" => array("vi"=>"gioi-thieu","en"=>"about-us"),
@@ -46,6 +50,18 @@
 7/  Các config từ dòng **Error reporting** trở xuống các bạn không cần cấu hình vì đã được đặt mặc định
 
 **CHANGELOG**
+
+**Ngày: 15/06/2020**
+
+1/ Lưu cache file js bằng LocalStorage.
+
+2/ Xóa toàn bộ các code kiểm tra Slug - Seo đa ngôn ngữ. Mặc định chạy Tiếng Việt. Sau này lập trình sẽ tự làm phần này.
+
+3/ Xóa chức năng tạo thuộc tính động trong phần sản phẩm.
+
+4/ Chuyển nút xóa bộ file tạm lên phần tool header của admin (Bản trước để trong phần Thông Tin Công Ty)
+
+5/ Xóa các đoạn code dư thừa
 
 **Ngày: 13/06/2020**
 
