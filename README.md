@@ -55,13 +55,15 @@
 
 1/ Lưu cache file js bằng LocalStorage.
 
-2/ Xóa toàn bộ các code kiểm tra Slug - Seo đa ngôn ngữ. Mặc định chạy Tiếng Việt. Sau này lập trình sẽ tự làm phần này.
+2/ Tạo watermark bằng Router. Cho thay đổi vị trí trong admin.
 
-3/ Xóa chức năng tạo thuộc tính động trong phần sản phẩm.
+3/ Xóa toàn bộ các code kiểm tra Slug - Seo đa ngôn ngữ. Mặc định chạy Tiếng Việt. Sau này lập trình sẽ tự làm phần này.
 
-4/ Chuyển nút xóa bộ file tạm lên phần tool header của admin (Bản trước để trong phần Thông Tin Công Ty)
+4/ Xóa chức năng tạo thuộc tính động trong phần sản phẩm.
 
-5/ Xóa các đoạn code dư thừa
+5/ Chuyển nút xóa bộ file tạm lên phần tool header của admin (Bản trước để trong phần Thông Tin Công Ty)
+
+6/ Xóa các đoạn code dư thừa
 
 **Ngày: 13/06/2020**
 
