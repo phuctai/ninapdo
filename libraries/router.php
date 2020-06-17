@@ -16,7 +16,7 @@
 
     /* Router */
     $router->setBasePath($config['database']['url']);
-    $router->map('GET|POST', '', 'index');
+    $router->map('GET|POST', '', 'index', 'index');
     $router->map('GET|POST', 'sitemap.xml', 'sitemap', 'sitemap');
     $router->map('GET|POST', '[a:com]', 'AllPage', 'show');
     $router->map('GET|POST', '[a:com]/[a:lang]/', 'AllPage', 'lang');
