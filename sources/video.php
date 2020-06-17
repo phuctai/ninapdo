@@ -3,8 +3,8 @@
 
 	/* Lấy tất cả video */
 	$where = "";
-	$where = "hienthi=1 and type = ?";
-	$params = array($type);
+	$where = "hienthi=1 and type = ? and act <> ?";
+	$params = array($type,'photo_static');
 
 	$curPage = $get_page;
 	$per_page = 10;
