@@ -46,8 +46,6 @@
 		/* Kiểm tra đăng nhập */
 		public function check_login()
 		{
-			global $d;
-
 			$token = $_SESSION['login']['token'];
 			$reuslr_products = $this->d->rawQuery("select * from #_user where quyen = ? and hienthi>0",array($token));
 
@@ -151,8 +149,6 @@
 		{
 			if($id || $act=='capnhat')
 			{
-				global $d;
-
 				if($id) $row = $this->d->rawQueryOne("select * from table_seo where idmuc = ? and com = ? and act = ? and type = ?",array($id,$com,$act,$type));
 				else $row = $this->d->rawQueryOne("select * from table_seo where com = ? and act = ? and type = ?",array($com,$act,$type));
 
@@ -163,30 +159,21 @@
 		/* Lấy hình thức thanh toán */
 		public function get_payments($payments=0)
 		{
-			global $d;
-
 			$row = $this->d->rawQueryOne("select tenvi from #_news where id = ?",array($payments));
-
 			return $row['tenvi'];
 		}
 
 		/* Lấy màu cart */
 		public function get_mau_cart($id)
 		{
-			global $d;
-
 			$row = $this->d->rawQueryOne("select mau, loaihienthi, photo, tenvi from #_product_mau where id = ?",array($id));
-
 			return $row;
 		}
 
 		/* Lấy places */
 		public function get_places($table,$id)
 		{
-			global $d;
-
 			$row = $this->d->rawQueryOne("select ten from #_$table where id = ?",array($id));
-
 			return $row['ten'];
 		}
 
