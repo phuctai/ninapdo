@@ -7,6 +7,10 @@
     if($deviceType == 'computer') @define('TEMPLATE','./templates/');
     else @define('TEMPLATE','./templates-mobile/');
 
+    /* Watermark */
+    $wtmPro = $d->rawQueryOne("SELECT hienthi, photo, position FROM table_photo WHERE type = ? AND act = ?",array('watermark','photo_static'));
+	$wtmNews = $d->rawQueryOne("SELECT hienthi, photo, position FROM table_photo WHERE type = ? AND act = ?",array('watermark-news','photo_static'));
+
     /* Router */
     $router->setBasePath($config['database']['url']);
     $router->map('GET|POST', '[a:com]', 'AllPage', 'show');
@@ -17,14 +21,12 @@
         $func->createThumb($w,$h,$z,$src,null);
     },'thumb');
     $router->map('GET', 'watermark/[i:w]x[i:h]x[i:z]/[**:src]', function($w,$h,$z,$src){
-        global $func, $d;
-        $watermark = $d->rawQueryOne("SELECT hienthi, photo, position FROM table_photo WHERE type = ? AND act = ?",array('watermark','photo_static'));
-        $func->createThumb($w,$h,$z,$src,$watermark);
+        global $func, $wtmPro;
+        $func->createThumb($w,$h,$z,$src,$wtmPro);
     },'watermark');
     $router->map('GET', 'watermark-news/[i:w]x[i:h]x[i:z]/[**:src]', function($w,$h,$z,$src){
-        global $func, $d;
-        $watermark = $d->rawQueryOne("SELECT hienthi, photo, position FROM table_photo WHERE type = ? AND act = ?",array('watermark-news','photo_static'));
-        $func->createThumb($w,$h,$z,$src,$watermark);
+        global $func, $wtmNews;
+        $func->createThumb($w,$h,$z,$src,$wtmNews);
     },'watermarkNews');
     $match = $router->match();
 	if(is_array($match))
