@@ -53,6 +53,14 @@
 
 **CHANGELOG**
 
+**Ngày: 22/06/2020**
+
+1/ Viết lại phần Seo, Breadcrumd, Watermark (Cơ bản - Nâng cao), Thumbs.
+
+2/ Tích hợp PHPMailer mới.
+
+3/ Chuyển các cột của setting sang dạng json.
+
 **Ngày: 16/06/2020**
 
 1/ Lưu cache file js bằng LocalStorage.
