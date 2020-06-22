@@ -535,7 +535,6 @@
     $nametype = "watermark";
     $config['photo']['photo_static'][$nametype]['title_main'] = "Watermark";
     $config['photo']['photo_static'][$nametype]['images'] = true;
-    $config['photo']['photo_static'][$nametype]['watermark'] = true;
     $config['photo']['photo_static'][$nametype]['watermark-advanced'] = true;
     $config['photo']['photo_static'][$nametype]['width'] = 50;
     $config['photo']['photo_static'][$nametype]['height'] = 50;
@@ -546,7 +545,6 @@
     $nametype = "watermark-news";
     $config['photo']['photo_static'][$nametype]['title_main'] = "Watermark tin tức";
     $config['photo']['photo_static'][$nametype]['images'] = true;
-    $config['photo']['photo_static'][$nametype]['watermark'] = true;
     $config['photo']['photo_static'][$nametype]['watermark-advanced'] = true;
     $config['photo']['photo_static'][$nametype]['width'] = 50;
     $config['photo']['photo_static'][$nametype]['height'] = 50;
