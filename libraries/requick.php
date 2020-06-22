@@ -104,12 +104,6 @@
 		'delete_street'
 	);
 	if(isset($_POST) && in_array($act, $cacheAction)) $cache->DeleteCache();
-
-	/* Check login null */
-	if((!isset($_SESSION[$login_name]) || $_SESSION[$login_name]==false) && $act!="login")
-	{
-		$func->redirect("index.php?com=user&act=login");
-	}
 	
 	/* Include sources */
 	if(file_exists(SOURCES.$com.'.php')) include SOURCES.$com.".php";
