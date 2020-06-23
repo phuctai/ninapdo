@@ -16,7 +16,7 @@
     <div class="card card-primary card-outline card-outline-tabs">
         <div class="card-header p-0 border-bottom-0">
             <ul class="nav nav-tabs" id="custom-tabs-three-tab-lang" role="tablist">
-                <?php foreach($config['website']['seo'] as $k => $v) { ?>
+                <?php foreach($config['website']['seo'] as $k => $v) { $seo_create .= $k.","; ?>
                     <li class="nav-item">
                         <a class="nav-link <?=($k=='vi')?'active':''?>" id="tabs-lang" data-toggle="pill" href="#tabs-seolang-<?=$k?>" role="tab" aria-controls="tabs-seolang-<?=$k?>" aria-selected="true">SEO (<?=$v?>)</a>
                     </li>
@@ -68,5 +68,6 @@
                 <?php } ?>
             </div>
         </div>
+        <input type="hidden" id="seo-create" value="<?=($seo_create) ? rtrim($seo_create,",") : ''?>">
     </div>
 </div>
