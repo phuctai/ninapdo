@@ -466,7 +466,7 @@
 	function seoCreate()
 	{
 		var flag = true;
-		var seolang = "vi,en";
+		var seolang = $("#seo-create").val();
 		var seolangArray = seolang.split(",");
 		var seolangCount = seolangArray.length;
 		var inputArticle = $('.card-article input.for-seo');
