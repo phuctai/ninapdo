@@ -161,12 +161,6 @@
 							<input type="text" class="form-control" name="data[options][fanpage]" id="fanpage" placeholder="Fanpage" value="<?=$options['fanpage']?>">
 						</div>
 					<?php } ?>
-					<?php if($config['setting']['copyright']) { ?>
-						<div class="form-group col-md-4 col-sm-6">
-							<label for="copyright">Copyright:</label>
-							<input type="text" class="form-control" name="data[options][copyright]" id="copyright" placeholder="Copyright" value="<?=$options['copyright']?>">
-						</div>
-					<?php } ?>
 					<?php if($config['setting']['toado']) { ?>
 						<div class="form-group col-md-4 col-sm-6">
 							<label for="toado">Tọa độ google map:</label>
