@@ -55,7 +55,7 @@
     </div>
     <div class="footer-powered">
         <div class="wrap-content d-flex align-items-center justify-content-between">
-            <p class="copyright"><?=$optsetting['copyright']?>. Design by Nina.vn</p>
+            <p class="copyright">2020 Copyright Sneaker Shoes. Design by Nina.vn</p>
             <p class="statistic">
                 <span><?=dangonline?>: <?=$online?></span>
                 <span><?=homnay?>: <?=$counter['today']?></span>
