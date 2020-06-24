@@ -8,7 +8,7 @@
 
 4/  **Sitemap** cấu hình trong config-type.php
 
-5/  Các phần nội dung liên quan đến ckeditor. Ra ngoài web lúc gọi mọi người sử dụng thêm hàm tmlspecialchars_decode(string) để bọc lại .
+5/  Các phần nội dung liên quan đến ckeditor. Ra ngoài web lúc gọi mọi người sử dụng thêm hàm htmlspecialchars_decode(string) để bọc lại 
 
 6/  Các config sau cần lưu ý
     
