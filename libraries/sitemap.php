@@ -17,19 +17,19 @@
 	}
 	foreach($config['sitemap']['product'] as $v)
 	{
-		$func->createSitemap($v,"product","list","c","daily","1","vi","stt,id");
-		$func->createSitemap($v,"product","cat","c","daily","1","vi","stt,id");
-		$func->createSitemap($v,"product","item","c","daily","1","vi","stt,id");
-		$func->createSitemap($v,"product","sub","c","daily","1","vi","stt,id");
-		$func->createSitemap($v,"product","brand","c","daily","1","vi","stt,id");
+		if($config['product'][$v]['list']) $func->createSitemap($v,"product","list","c","daily","1","vi","stt,id");
+		if($config['product'][$v]['cat']) $func->createSitemap($v,"product","cat","c","daily","1","vi","stt,id");
+		if($config['product'][$v]['item']) $func->createSitemap($v,"product","item","c","daily","1","vi","stt,id");
+		if($config['product'][$v]['sub']) $func->createSitemap($v,"product","sub","c","daily","1","vi","stt,id");
+		if($config['product'][$v]['brand']) $func->createSitemap($v,"product","brand","c","daily","1","vi","stt,id");
 		$func->createSitemap($v,"product","","c","daily","1","vi","stt,id");
 	}
 	foreach($config['sitemap']['news'] as $v)
 	{
-		$func->createSitemap($v,"news","list","c","daily","1","vi","stt,id");
-		$func->createSitemap($v,"news","cat","c","daily","1","vi","stt,id");
-		$func->createSitemap($v,"news","item","c","daily","1","vi","stt,id");
-		$func->createSitemap($v,"news","sub","c","daily","1","vi","stt,id");
+		if($config['news'][$v]['list']) $func->createSitemap($v,"news","list","c","daily","1","vi","stt,id");
+		if($config['news'][$v]['cat']) $func->createSitemap($v,"news","cat","c","daily","1","vi","stt,id");
+		if($config['news'][$v]['item']) $func->createSitemap($v,"news","item","c","daily","1","vi","stt,id");
+		if($config['news'][$v]['sub']) $func->createSitemap($v,"news","sub","c","daily","1","vi","stt,id");
 		$func->createSitemap($v,"news","","c","daily","1","vi","stt,id");
 	}
 	foreach($config['sitemap']['tags'] as $v)
