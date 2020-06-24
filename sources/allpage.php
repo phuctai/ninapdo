@@ -6,6 +6,7 @@
     $logo = $d->rawQueryOne("SELECT id, photo FROM table_photo WHERE type = ? AND act = ?",array('logo','photo_static'));
     $banner = $d->rawQueryOne("SELECT photo FROM table_photo WHERE type = ? AND act = ?",array('banner','photo_static'));
     $slogan = $d->rawQueryOne("SELECT ten$lang FROM table_static WHERE type = ?",array('slogan'));
+    $social = $d->rawQuery("SELECT ten$lang, photo, link FROM table_photo WHERE type = ? AND hienthi=1 ORDER BY stt,id DESC",array('mangxahoi'));
     $social1 = $d->rawQuery("SELECT ten$lang, photo, link FROM table_photo WHERE type = ? AND hienthi=1 ORDER BY stt,id DESC",array('mangxahoi1'));
     $social2 = $d->rawQuery("SELECT ten$lang, photo, link FROM table_photo WHERE type = ? AND hienthi=1 ORDER BY stt,id DESC",array('mangxahoi2'));
     $splistmenu = $d->rawQuery("SELECT ten$lang, tenkhongdauvi, tenkhongdauen, id FROM table_product_list WHERE hienthi=1 AND type = ? ORDER BY stt,id DESC",array('san-pham'));
