@@ -137,8 +137,8 @@
             "url" : "<?=$config_base?>",
             "sameAs" :
             [
-                <?php $sum_mxh = count($mxh); foreach ($mxh as $key => $value) { ?>
-                    "<?=$value['link']?>"<?=(($key+1)<$sum_mxh)?',':''?>
+                <?php $sum_social = count($social); foreach ($social as $key => $value) { ?>
+                    "<?=$value['link']?>"<?=(($key+1)<$sum_social)?',':''?>
                 <?php } ?>
             ],
             "address":
