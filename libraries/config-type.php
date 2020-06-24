@@ -658,7 +658,6 @@
     $config['setting']['fanpage'] = true;
     $config['setting']['toado'] = true;
     $config['setting']['toado_iframe'] = true;
-    $config['setting']['copyright'] = true;
 
     /* Seo page */
     $config['seopage']['page'] = array(
