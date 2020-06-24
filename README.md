@@ -8,7 +8,9 @@
 
 4/  **Sitemap** cấu hình trong config-type.php
 
-5/  Các config sau cần lưu ý
+5/  Các phần nội dung liên quan đến ckeditor. Ra ngoài web lúc gọi mọi người sử dụng thêm hàm tmlspecialchars_decode(string) để bọc lại .
+
+6/  Các config sau cần lưu ý
     
     // Slug - Seo chỉ nên để Tiếng Việt.
     // Chỉ sử dụng đa ngôn ngữ khi đường dẫn có yêu cầu vi/tenkhongdau hoặc en/tenkhongdau
@@ -26,7 +28,7 @@
 		)
 	)
     
-6/  Config **comlang** dùng để tạo phần Ngôn Ngữ SEO cho **Trang tĩnh trong admin**
+7/  Config **comlang** dùng để tạo phần Ngôn Ngữ SEO cho **Trang tĩnh trong admin**
     
     'comlang' => array(
 		"gioi-thieu" => array("vi"=>"gioi-thieu","en"=>"about-us"),
@@ -38,7 +40,7 @@
 		"lien-he" => array("vi"=>"lien-he","en"=>"contact")
 	)
 	
-7/  Khi làm ở local, tắt config active của google recaptcha bằng **FALSE** để có thể test được khi ko có mã captcha
+8/  Khi làm ở local, tắt config active của google recaptcha bằng **FALSE** để có thể test được khi ko có mã captcha
 
     'googleAPI' => array(
 		'recaptcha' => array(
@@ -49,7 +51,7 @@
 		)
 	),
 	
-8/  Các config từ dòng **Error reporting** trở xuống các bạn không cần cấu hình vì đã được đặt mặc định
+9/  Các config từ dòng **Error reporting** trở xuống các bạn không cần cấu hình vì đã được đặt mặc định
 
 **CHANGELOG**
 
