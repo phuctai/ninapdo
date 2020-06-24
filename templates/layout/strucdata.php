@@ -1,4 +1,4 @@
-<?php if($template=='product_detail') { ?>
+<?php if($template=='product/product_detail') { ?>
     <!-- Sản phẩm -->
     <script type="application/ld+json">
         {
@@ -55,7 +55,7 @@
             }
         }
     </script>
-<?php } else if($template=='news_detail') { ?>
+<?php } else if($template=='news/news_detail') { ?>
     <!-- Bài viết -->
     <script type="application/ld+json">
         {
@@ -91,7 +91,7 @@
             "description": "<?=$seo->getSeo('description')?>"
         }
     </script>
-<?php } else if($template=='static') { ?>
+<?php } else if($template=='static/static') { ?>
     <!-- Bài viết tĩnh -->
     <script type="application/ld+json">
         {
