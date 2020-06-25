@@ -17,7 +17,8 @@
 		"table_news_cat",
 		"table_news_item",
 		"table_news_sub",
-		"table_news"
+		"table_news",
+		"table_tags"
 	);
 
 	foreach($table as $v)
