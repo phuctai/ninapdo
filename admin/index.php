@@ -85,6 +85,12 @@
 
 			/* Allow element */
 			config.allowedContent = true;
+			
+			/* Entities */
+			config.entities = false;
+			config.entities_latin = false;
+			config.entities_greek = false;
+			config.basicEntities = false;
 
 			/* Config CSS */
 			config.contentsCss =
