@@ -10,7 +10,23 @@
 
 5/  Các phần nội dung liên quan đến ckeditor. Ra ngoài web lúc gọi mọi người sử dụng thêm hàm htmlspecialchars_decode(string) để bọc lại 
 
-6/  Các config sau cần lưu ý
+6/  Khi lên host cần lưu các config sau:
+    
+    // 'url' để lại dấu '/'
+    
+    'database' => array(
+		'url' => '/',
+	),
+	
+	// Để FALSE các config sau:
+	
+	'website' => array(
+    	'debug-developer' => false,
+    	'debug-css' => false,
+    	'debug-js' => false,
+    ),
+
+7/  Các config sau cần lưu ý
     
     // Slug - Seo chỉ nên để Tiếng Việt.
     // Chỉ sử dụng đa ngôn ngữ khi đường dẫn có yêu cầu vi/tenkhongdau hoặc en/tenkhongdau
@@ -28,7 +44,7 @@
 		)
 	)
     
-7/  Config **comlang** dùng để tạo phần Ngôn Ngữ SEO cho **Trang tĩnh trong admin**
+8/  Config **comlang** dùng để tạo phần Ngôn Ngữ SEO cho **Trang tĩnh trong admin**
     
     'comlang' => array(
 		"gioi-thieu" => array("vi"=>"gioi-thieu","en"=>"about-us"),
@@ -40,7 +56,7 @@
 		"lien-he" => array("vi"=>"lien-he","en"=>"contact")
 	)
 	
-8/  Khi làm ở local, tắt config active của google recaptcha bằng **FALSE** để có thể test được khi ko có mã captcha
+9/  Khi làm ở local, tắt config active của google recaptcha bằng **FALSE** để có thể test được khi ko có mã captcha
 
     'googleAPI' => array(
 		'recaptcha' => array(
@@ -51,7 +67,7 @@
 		)
 	),
 	
-9/  Các config từ dòng **Error reporting** trở xuống các bạn không cần cấu hình vì đã được đặt mặc định
+10/  Các config từ dòng **Error reporting** trở xuống các bạn không cần cấu hình vì đã được đặt mặc định
 
 **CHANGELOG**
 
