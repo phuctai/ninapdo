@@ -46,7 +46,7 @@
 		)
 	)
     
-8/  Config **comlang** dùng để tạo phần Ngôn Ngữ SEO cho **Trang tĩnh trong admin**
+    // Dùng để tạo phần Ngôn Ngữ SEO cho **Trang tĩnh trong admin** . Nếu trang không có ngôn ngữ khác thì chỉ cần thiết lập 'vi'
     
     'comlang' => array(
 		"gioi-thieu" => array("vi"=>"gioi-thieu","en"=>"about-us"),
@@ -58,7 +58,7 @@
 		"lien-he" => array("vi"=>"lien-he","en"=>"contact")
 	)
 	
-9/  Khi làm ở local, tắt config active của google recaptcha bằng **FALSE** để có thể test được khi ko có mã captcha
+    // Khi làm ở local, tắt config active của google recaptcha bằng **FALSE** để có thể test được khi ko có mã captcha
 
     'googleAPI' => array(
 		'recaptcha' => array(
@@ -68,8 +68,6 @@
 			'secretkey' => '6LezS5kUAAAAAGCGtfV7C1DyiqlPFFuxvacuJfdq'
 		)
 	),
-	
-10/  Các config từ dòng **Error reporting** trở xuống các bạn không cần cấu hình vì đã được đặt mặc định
 
 **CHANGELOG**
 
