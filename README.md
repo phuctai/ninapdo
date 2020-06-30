@@ -6,15 +6,13 @@
 
 3/  Lang Init: **libraries > lang > langinit.php**
 
-4/  **Sitemap** cấu hình trong config-type.php
+4/  Các phần nội dung liên quan đến ckeditor. Ra ngoài web lúc gọi mọi người sử dụng thêm hàm htmlspecialchars_decode(string) để bọc lại
 
-5/  Các phần nội dung liên quan đến ckeditor. Ra ngoài web lúc gọi mọi người sử dụng thêm hàm htmlspecialchars_decode(string) để bọc lại
-
-6/  Do trên gitlab tự xóa các Folder rỗng trong upload. Tạo lại 1 trong các folder sau nếu bị thiếu:
+5/  Do trên gitlab tự xóa các Folder rỗng trong upload. Tạo lại 1 trong các folder sau nếu bị thiếu:
 
     ** ckfinder, download, excel, mau, news, photo, product, seopage, sync, tags, temp, user **
 
-7/  Cần lưu ý các config sau:
+6/  Cần lưu ý các config sau:
     
     // 'url' để lại dấu '/' khi up lên host
     
