@@ -14,15 +14,15 @@
 
     ** ckfinder, download, excel, mau, news, photo, product, seopage, sync, tags, temp, user **
 
-7/  Khi lên host cần lưu các config sau:
+7/  Cần lưu ý các config sau:
     
-    // 'url' để lại dấu '/'
+    // 'url' để lại dấu '/' khi up lên host
     
     'database' => array(
 		'url' => '/',
 	),
 	
-	// Để FALSE các config sau:
+	// Để FALSE các config sau khi up lên host
 	
 	'website' => array(
     	'debug-developer' => false,
