@@ -14,7 +14,7 @@
 
     ** ckfinder, download, excel, mau, news, photo, product, seopage, sync, tags, temp, user **
 
-6/  Khi lên host cần lưu các config sau:
+7/  Khi lên host cần lưu các config sau:
     
     // 'url' để lại dấu '/'
     
@@ -46,7 +46,7 @@
 		)
 	)
     
-7/  Config **comlang** dùng để tạo phần Ngôn Ngữ SEO cho **Trang tĩnh trong admin**
+8/  Config **comlang** dùng để tạo phần Ngôn Ngữ SEO cho **Trang tĩnh trong admin**
     
     'comlang' => array(
 		"gioi-thieu" => array("vi"=>"gioi-thieu","en"=>"about-us"),
@@ -58,7 +58,7 @@
 		"lien-he" => array("vi"=>"lien-he","en"=>"contact")
 	)
 	
-8/  Khi làm ở local, tắt config active của google recaptcha bằng **FALSE** để có thể test được khi ko có mã captcha
+9/  Khi làm ở local, tắt config active của google recaptcha bằng **FALSE** để có thể test được khi ko có mã captcha
 
     'googleAPI' => array(
 		'recaptcha' => array(
@@ -69,7 +69,7 @@
 		)
 	),
 	
-9/  Các config từ dòng **Error reporting** trở xuống các bạn không cần cấu hình vì đã được đặt mặc định
+10/  Các config từ dòng **Error reporting** trở xuống các bạn không cần cấu hình vì đã được đặt mặc định
 
 **CHANGELOG**
 
