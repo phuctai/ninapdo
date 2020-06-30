@@ -8,7 +8,11 @@
 
 4/  **Sitemap** cấu hình trong config-type.php
 
-5/  Các phần nội dung liên quan đến ckeditor. Ra ngoài web lúc gọi mọi người sử dụng thêm hàm htmlspecialchars_decode(string) để bọc lại 
+5/  Các phần nội dung liên quan đến ckeditor. Ra ngoài web lúc gọi mọi người sử dụng thêm hàm htmlspecialchars_decode(string) để bọc lại
+
+6/  Do trên gitlab tự xóa các Folder rỗng trong upload. Tạo lại 1 trong các folder sau nếu bị thiếu:
+
+    **- ckfinder, download, excel, mau, news, photo, product, seopage, sync, tags, temp, user**
 
 6/  Khi lên host cần lưu các config sau:
     
