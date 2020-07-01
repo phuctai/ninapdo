@@ -9,7 +9,7 @@
 		/* Tìm kiếm sản phẩm */
 		$where = "";
 		$where = "type = ? and (ten$lang LIKE ? or tenkhongdauvi LIKE ? or tenkhongdauen LIKE ?) and hienthi=1";
-		$params = array("thuc-don","%$tukhoa%","%$tukhoa%","%$tukhoa%");
+		$params = array("san-pham","%$tukhoa%","%$tukhoa%","%$tukhoa%");
 
 		$curPage = $get_page;
 		$per_page = 20;
