@@ -6,13 +6,13 @@
 
 	if(count($district)>0)
 	{ ?>  
-		<option value="0"><?=quanhuyen?></option>
+		<option value=""><?=quanhuyen?></option>
 		<?php for($i=0;$i<count($district);$i++) { ?>
 			<option value="<?=$district[$i]['id']?>"><?=$district[$i]['ten']?></option>
 		<?php }
 	}
 	else
 	{ ?>
-		<option value="0"><?=quanhuyen?></option>
+		<option value=""><?=quanhuyen?></option>
 	<?php }
 ?>
