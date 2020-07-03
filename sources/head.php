@@ -16,7 +16,7 @@
 <link href="<?=UPLOAD_PHOTO_L.$favicon['photo']?>" rel="shortcut icon" type="image/x-icon" />
 
 <!-- Webmaster Tool -->
-<?=$setting['mastertool']?>
+<?=htmlspecialchars_decode($setting['mastertool'])?>
 
 <?php if(count($config['arrayDomainSSL'])) { ?>
 	<!-- Security Policy -->
