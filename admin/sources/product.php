@@ -1665,7 +1665,8 @@
 		global $d, $curPage, $func, $config, $com, $type;
 
 		if(empty($_POST)) $func->transfer("Không nhận được dữ liệu", "index.php?com=product&act=man_brand&type=".$type."&p=".$curPage, false);
-
+        
+        $file_name = $func->uploadName($_FILES['file']["name"]);
 		$id = htmlspecialchars($_POST['id']);
 
 		/* Post dữ liệu */
@@ -1687,7 +1688,6 @@
 
 		if($id)
 		{
-			$file_name = $func->uploadName($_FILES['file']["name"]);			
 			if($photo = $func->uploadImage("file", $config['product'][$type]['img_type_brand'], UPLOAD_PRODUCT,$file_name))
 			{
 				$data['photo'] = $photo;
