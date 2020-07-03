@@ -156,7 +156,7 @@
 			            <div class="input-triple-cart w-clear">
 			            	<div class="input-cart">
 								<select class="select-cart select-city custom-select" required id="city" name="city" onchange="load_district(this.value);">
-									<option value="0"><?=tinhthanh?></option>
+									<option value=""><?=tinhthanh?></option>
 									<?php for($i=0;$i<count($city);$i++) { ?>
 										<option value="<?=$city[$i]['id']?>"><?=$city[$i]['ten']?></option>
 									<?php } ?>
@@ -165,13 +165,13 @@
 			            	</div>
 			            	<div class="input-cart">
 								<select class="select-cart select-district custom-select" required id="district" name="district" onchange="load_wards(this.value);">
-									<option value="0"><?=quanhuyen?></option>
+									<option value=""><?=quanhuyen?></option>
 								</select>
 								<div class="invalid-feedback"><?=vuilongchonquanhuyen?></div>
 							</div>
 							<div class="input-cart">
 								<select class="select-cart select-wards custom-select" required id="wards" name="wards" onchange="load_ship(this.value);">
-									<option value="0"><?=phuongxa?></option>
+									<option value=""><?=phuongxa?></option>
 								</select>
 								<div class="invalid-feedback"><?=vuilongchonphuongxa?></div>
 							</div>
