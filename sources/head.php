@@ -58,6 +58,3 @@
 
 <!-- Chống đổi màu trên IOS -->
 <meta name="format-detection" content="telephone=no">
-
-<!-- Theme color -->
-<meta name="theme-color" content="#ec2d3f">
