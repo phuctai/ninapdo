@@ -1438,10 +1438,23 @@
                 }
             },
             afterShow: function(){
+            	var jFilerItems = $(".my-jFiler-items .jFiler-items-list li.jFiler-item");
+            	var jFilerItemsLength = 0;
+            	var jFilerItemsLast = 0;
+            	if(jFilerItems.length)
+            	{
+            		jFilerItemsLength = jFilerItems.length;
+            		jFilerItemsLast = parseInt(jFilerItems.last().find("input[type=number]").val());
+            	}
             	$(".jFiler-items-list li.jFiler-item").each(function(index){
             		var colClass = $(".col-filer").val();
-            		if(!$(this).hasClass(colClass)) $("li.jFiler-item").addClass(colClass);
-            		$(this).find("input[type=number]").val(index+1);
+            		var parent = $(this).parent();
+            		if(!parent.is("#jFilerSortable"))
+            		{
+            			jFilerItemsLast += 1;
+	            		$(this).find("input[type=number]").val(jFilerItemsLast);
+            		}
+	            	if(!$(this).hasClass(colClass)) $("li.jFiler-item").addClass(colClass);
             	});
             },
             addMore: true,
