@@ -47,11 +47,13 @@
 <meta property="og:image:height" content="<?=$seo->getSeo('photo:height')?>" />
 
 <!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="<?=$seo->getSeo('url')?>">
-<meta property="twitter:title" content="<?=$seo->getSeo('title')?>">
-<meta property="twitter:description" content="<?=$seo->getSeo('description')?>">
-<meta property="twitter:image" content="<?=$seo->getSeo('photo')?>">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="<?=$optsetting['email']?>" />
+<meta name="twitter:creator" content="<?=$setting['ten'.$lang]?>" />
+<meta property="og:url" content="<?=$seo->getSeo('url')?>" />
+<meta property="og:title" content="<?=$seo->getSeo('title')?>" />
+<meta property="og:description" content="<?=$seo->getSeo('description')?>" />
+<meta property="og:image" content="<?=$seo->getSeo('photo')?>" />
 
 <!-- Canonical -->
 <link rel="canonical" href="<?=$func->getCurrentPageURL()?>" />
