@@ -22,7 +22,7 @@
 		public function getCss()
 		{
 			if(empty($this->pathCss)) die("No files to optimize");
-			return ($this->debugCss) ? $this->defaultCss() : $this->miniCss();
+			echo ($this->debugCss) ? $this->defaultCss() : $this->miniCss();
 		}
 
 		private function miniCss()
