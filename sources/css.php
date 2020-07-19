@@ -25,7 +25,7 @@
     $css->setCss("./assets/owlcarousel2/owl.carousel.css");
     $css->setCss("./assets/owlcarousel2/owl.theme.default.css");
     $css->setCss("./assets/css/style.css");
-    echo $css->getCss();
+    $css->getCss();
 ?>
 
 <!-- Background -->
