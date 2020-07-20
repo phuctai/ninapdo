@@ -15,6 +15,7 @@
     };
 </script>
 <?php
+    $js->setCache("cached");
     $js->setJs("./assets/bootstrap/js/bootstrap.js");
     $js->setJs("./assets/js/wow.min.js");
     $js->setJs("./assets/mmenu/mmenu.js");
