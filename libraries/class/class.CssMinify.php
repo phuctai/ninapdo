@@ -3,10 +3,6 @@
 	{
 		private $pathCss = array();
 		private $debugCss;
-		private $pathImg = '../images';
-		private $pathRepImg = 'assets/images';
-		private $pathFonts = '../fonts';
-		private $pathRepFonts = 'assets/fonts';
 		private $cacheFile = 'assets/css/cached.css';
 		private $cacheSize = false;
 
@@ -48,20 +44,13 @@
 
 				if($strCss)
 				{
-					$strCss = $this->replaceCss($strCss);
 					$file = fopen($this->cacheFile, "w") or die("Unable to open file");
 					fwrite($file, $strCss);
 					fclose($file);
 				}
 			}
-			else
-			{
-				$myfile = fopen($this->cacheFile, "r") or die("Unable to open file");
-				$sizefile = filesize($this->cacheFile);
-				$strCss = fread($myfile,$sizefile);
-			}
 
-			return '<style type="text/css">'.$strCss.'</style>';
+			return '<link href="'.$this->cacheFile.'" rel="stylesheet">';
 		}
 
 		private function defaultCss()
@@ -85,13 +74,6 @@
 			}
 
 			return $linkCss;
-		}
-
-		private function replaceCss($strCss)
-		{
-			$strCss = str_replace($this->pathImg, $this->pathRepImg, $strCss);
-			$strCss = str_replace($this->pathFonts, $this->pathRepFonts, $strCss);
-			return $strCss;
 		}
 
 		private function compressCss($buffer)
