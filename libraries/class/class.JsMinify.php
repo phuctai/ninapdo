@@ -3,14 +3,13 @@
 	{
 		private $pathJs = array();
 		private $debugJs;
-		private $cacheFile = 'assets/js/cached.js';
+		private $cacheFile = 'assets/js/';
 		private $cacheSize = false;
 
 		function __construct($debugJs, $func)
 		{
 			$this->debugJs = $debugJs;
 			$this->func = $func;
-			$this->cacheSize = filesize($this->cacheFile);
 		}
 
 		public function setJs($path)
@@ -22,6 +21,12 @@
 		{
 			if(empty($this->pathJs)) die("No files to optimize");
 			return ($this->debugJs) ? $this->defaultJs() : $this->miniJs();
+		}
+
+		public function setCache($name)
+		{
+			$this->cacheFile = $this->cacheFile.$name.'.js';
+			$this->cacheSize = filesize($this->cacheFile);
 		}
 
 		private function miniJs()
