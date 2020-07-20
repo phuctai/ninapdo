@@ -3,6 +3,7 @@
 
 <!-- Css -->
 <?php
+    $css->setCache("cached");
     $css->setCss("./assets/css/animate.min.css");
     $css->setCss("./assets/bootstrap/css/bootstrap.css");
     $css->setCss("./assets/fontawesome512/all.css");
