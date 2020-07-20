@@ -49,14 +49,8 @@
 					fclose($file);
 				}
 			}
-			else
-			{
-				$myfile = fopen($this->cacheFile, "r") or die("Unable to open file");
-				$sizefile = filesize($this->cacheFile);
-				$strJs = fread($myfile,$sizefile);
-			}
 
-			return '<script type="text/javascript">'.$strJs.'</script>';
+			return '<script type="text/javascript" src="'.$this->cacheFile.'"></script>';
 		}
 
 		private function defaultJs()
