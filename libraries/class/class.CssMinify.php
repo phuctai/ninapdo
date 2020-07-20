@@ -3,14 +3,13 @@
 	{
 		private $pathCss = array();
 		private $debugCss;
-		private $cacheFile = 'assets/css/cached.css';
+		private $cacheFile = 'assets/css/';
 		private $cacheSize = false;
 
 		function __construct($debugCss, $func)
 		{
 			$this->debugCss = $debugCss;
 			$this->func = $func;
-			$this->cacheSize = filesize($this->cacheFile);
 		}
 
 		public function setCss($path)
@@ -22,6 +21,12 @@
 		{
 			if(empty($this->pathCss)) die("No files to optimize");
 			return ($this->debugCss) ? $this->defaultCss() : $this->miniCss();
+		}
+
+		public function setCache($name)
+		{
+			$this->cacheFile = $this->cacheFile.$name.'.css';
+			$this->cacheSize = filesize($this->cacheFile);
 		}
 
 		private function miniCss()
