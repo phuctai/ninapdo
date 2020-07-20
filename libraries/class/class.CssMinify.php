@@ -48,6 +48,7 @@
 
 				if($strCss)
 				{
+					$strCss = $this->replaceCss($strCss);
 					$file = fopen($this->cacheFile, "w") or die("Unable to open file");
 					fwrite($file, $strCss);
 					fclose($file);
@@ -59,8 +60,6 @@
 				$sizefile = filesize($this->cacheFile);
 				$strCss = fread($myfile,$sizefile);
 			}
-
-			if($strCss) $strCss = $this->replaceCss($strCss);
 
 			return '<style type="text/css">'.$strCss.'</style>';
 		}
