@@ -582,7 +582,7 @@
 	}
 
 	/* Slug */
-	function slugConvert(slug)
+	function slugConvert(slug,focus=false)
 	{
 	    slug = slug.toLowerCase();
 	    slug = slug.replace(/á|à|ả|ạ|ã|ă|ắ|ằ|ẳ|ẵ|ặ|â|ấ|ầ|ẩ|ẫ|ậ/gi, 'a');
@@ -598,13 +598,18 @@
 	    slug = slug.replace(/\-\-\-\-/gi, '-');
 	    slug = slug.replace(/\-\-\-/gi, '-');
 	    slug = slug.replace(/\-\-/gi, '-');
-	    slug = '@' + slug + '@';
-	    slug = slug.replace(/\@\-|\-\@|\@/gi, '');
+	    
+		if(!focus)
+		{
+			slug = '@' + slug + '@';
+			slug = slug.replace(/\@\-|\-\@|\@/gi, '');
+		}
+
 	    return slug;
 	}
-	function slugPreview(title,lang)
+	function slugPreview(title,lang,focus=false)
 	{
-		var slug = slugConvert(title);
+		var slug = slugConvert(title,focus);
 
 		$("#slug"+lang).val(slug);
 		$("#slugurlpreview"+lang+" strong").html(slug);
@@ -659,7 +664,7 @@
 						var title = $("#slug"+lang).val();
 
 						/* Slug preivew */
-						slugPreview(title,lang);
+						slugPreview(title,lang,true);
 
 						/* slug Alert */
 						slugAlert(2,lang);
