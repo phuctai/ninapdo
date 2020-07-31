@@ -191,6 +191,6 @@
 			<?php include TEMPLATE.LAYOUT."footer.php"; ?>
 			<?php include "assets/js/myscript.php"; ?>
 		</div>
-	<?php } else { include TEMPLATE.$template."_tpl.php" ; } ?>
+	<?php } else { include TEMPLATE."user/login_tpl.php" ; } ?>
 </body>
 </html>
