@@ -118,7 +118,10 @@
 			$arr_file_del = explode(',',$arr_chuoi);
 
 			$dem = 0;
-	        $myFile = $_FILES['files'];
+			if(isset($_FILES['files']))
+			{
+			$myFile = $_FILES['files'];
+			}
 	        $fileCount = count($myFile["name"]);
 
 	        for($i=0;$i<$fileCount;$i++) 
