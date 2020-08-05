@@ -727,7 +727,7 @@
 		}
 
 		/* Upload images */
-		public function uploadImage($file, $extension, $folder, $newname='')
+		public function uploadImage($file='', $extension='', $folder='', $newname='')
 		{
 			global $config;
 
