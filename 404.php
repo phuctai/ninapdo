@@ -4,7 +4,7 @@
     /* Config */
     require_once LIBRARIES."config.php";
     require_once LIBRARIES.'autoload.php';
-    $autoload = new AutoLoad();
+    new AutoLoad();
     $d = new PDODb($config['database']);
 ?>
 <!DOCTYPE html>
